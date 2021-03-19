@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lugdunum</string>
+    <string name="play_button">Jouer</string>
+    <string name="rules_button">Règles</string>
+</resources>
