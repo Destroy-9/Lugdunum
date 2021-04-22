@@ -11,6 +11,7 @@ import android.widget.ImageView;
 public class ChoiceJourneyActivity extends AppCompatActivity {
 
     private ImageView mSettingsIcon;
+    private Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,13 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ChoiceJourneyActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+        mButton = (Button) findViewById(R.id.button);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)  {
+                Intent intent = new Intent(ChoiceJourneyActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
