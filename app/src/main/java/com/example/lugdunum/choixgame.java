@@ -35,7 +35,9 @@ public class choixgame extends AppCompatActivity {
         mGoTheatre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(choixgame.this, theatre_game.class);
+                startActivity(intent);
             }
         });
         mGoCuriosites = (Button) findViewById(R.id.button_game_1);

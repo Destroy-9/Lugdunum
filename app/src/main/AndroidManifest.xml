@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lugdunum">
-        <activity android:name=".choixgame"></activity>
+        <activity android:name=".theatre_game"></activity>
+        <activity android:name=".choixgame" />
         <activity android:name=".fourviere_game" />
         <activity
             android:name=".SettingsActivity"
