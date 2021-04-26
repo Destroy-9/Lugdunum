@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lugdunum">
-        <activity android:name=".SettingsActivity"
-            android:parentActivityName=".ChoiceJourneyActivity">
-        </activity>
-        <activity android:name=".RulesActivity"
-            android:parentActivityName=".SettingsActivity"/>
-        <activity android:name=".ChoiceJourneyActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".choixgame"></activity>
+        <activity android:name=".fourviere_game" />
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".ChoiceJourneyActivity" />
+        <activity
+            android:name=".RulesActivity"
+            android:parentActivityName=".SettingsActivity" />
+        <activity
+            android:name=".ChoiceJourneyActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
