@@ -8,20 +8,30 @@
     tools:context=".theatre_game">
 
     <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:textColor="#990000FF"
-        android:textSize="36sp"
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Pouvez-vous trouver cet endroit ?"></TextView>
+        android:text="Last location"></TextView>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pouvez-vous trouver cet endroit ?"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#990000FF"
+        android:translationY="200dp"></TextView>
 
     <ImageView
         android:id="@+id/findThisPlace"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:translationY="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +46,7 @@
         android:layout_margin="5dp"
         android:background="@android:color/white"
         android:text="Found"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:translationY="200dp"/>
 
 </LinearLayout>
