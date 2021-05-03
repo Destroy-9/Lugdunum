@@ -11,25 +11,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lugdunum">
-        <activity android:name=".theatre_game"></activity>
+        <activity android:name=".Activity6"/>
+        <activity android:name=".Activity5"/>
+        <activity android:name=".Activity4"/>
+        <activity android:name=".Activity3"/>
+        <activity android:name=".Activity2"/>
+        <activity android:name=".MainActivity1"/>
+        <activity android:name=".theatre_game" />
         <activity android:name=".choixgame" />
         <activity android:name=".fourviere_game" />
         <activity
             android:name=".SettingsActivity"
             android:parentActivityName=".ChoiceJourneyActivity" />
+
+        <activity
+            android:name=".pop"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".RulesActivity"
             android:parentActivityName=".SettingsActivity" />
         <activity
             android:name=".ChoiceJourneyActivity"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".pop1"
+            android:theme="@style/CustomTheme"/>
+
         <activity android:name=".MainActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -44,7 +44,8 @@ public class choixgame extends AppCompatActivity {
         mGoCuriosites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(choixgame.this, MainActivity1.class);
+                startActivity(intent);
             }
         });
 
