@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lugdunum.games.CuriosityGameActivity;
+import com.example.lugdunum.games.FourviereGameActivity;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -39,12 +41,14 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     SupportMapFragment mapFragment;
     ImageView mHelpButton;
     TextView mDescription;
+    Circle[] interets;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         mapFragment = (SupportMapFragment) fragmentManager.findFragmentById(R.id.map);
         fragmentManager.beginTransaction().hide(mapFragment).commit();
         mDescription = (TextView) findViewById(R.id.description);
@@ -132,7 +136,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 .strokeWidth(5)
                 .fillColor(0x55FF6666);
 
-        Circle[] interets = new Circle[11];
+        interets = new Circle[11];
         for (int i = 0; i < interets.length; i++) {
             switch (i) {
                 case 0:
@@ -183,6 +187,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                     System.out.println("ca passe ici");
             }
         }
+        interets[0].setVisible(true);
         interets[1].setVisible(false);
         interets[2].setVisible(false);
         interets[3].setVisible(false);
@@ -206,6 +211,45 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             LatLng here = new LatLng(latitude, longitude);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here,15));
             //mMap.addMarker(new MarkerOptions().position(here).title("Vous êtes ici"));
+            testPos(location);
+        }
+    }
+
+    public void testPos(@NonNull Location location){
+        int res=0;
+        Toast.makeText(this, "ca passe ici", Toast.LENGTH_LONG).show();
+        //LatLng test = new LatLng(45.756796,4.816242);
+        float results [] = new float [1];
+        while (!interets[res].isVisible() && res<10){
+            res++;
+        }
+        Location.distanceBetween(
+                interets[res].getCenter().latitude, interets[res].getCenter().longitude,
+                location.getLatitude(), location.getLongitude(),
+                results
+        );
+        if (results[0]<interets[res].getRadius()){
+            interets[res].setVisible(false);
+            interets[res+1].setVisible(true);
+            mDescription.setVisibility(View.VISIBLE);
+            fragmentManager.beginTransaction().hide(mapFragment).commit();
+            setGame(res);
+
+        }
+        Toast.makeText(this, "ca passe la", Toast.LENGTH_LONG).show();
+    }
+
+    public void setGame(int numero){
+        Intent intent;
+        switch (numero){
+            case 0:
+                intent = new Intent(MapsActivity.this, CuriosityGameActivity.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(MapsActivity.this, FourviereGameActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
