@@ -12,6 +12,8 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
 
     private ImageView mSettingsIcon;
     private Button mButton;
+    private ImageView mPlayButton2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +29,17 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         mButton = (Button) findViewById(R.id.button);
         mButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v)  {
+            public void onClick(View v) {
                 Intent intent = new Intent(ChoiceJourneyActivity.this, MapsActivity.class);
-                startActivity(intent);
             }
         });
+
+
+        //creation of the link between mainActivity and ChoiceJourneyActivity
+        mPlayButton2 = (ImageView) findViewById(R.id.playButton2);
+
     }
 }
