@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class ChoiceJourneyActivity extends AppCompatActivity {
 
     private ImageView mSettingsIcon;
-    private Button mButton;
-    private ImageView mPlayButton2;
+    private Button mMapButton;
+    private Button mGameButton;
 
 
     @Override
@@ -30,16 +31,23 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
             }
         });
 
-        mButton = (Button) findViewById(R.id.button);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        mMapButton = (Button) findViewById(R.id.mapButton);
+        mMapButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Toast.makeText(ChoiceJourneyActivity.this, "Chargement du parcours", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ChoiceJourneyActivity.this, MapsActivity.class);
+                startActivity(intent);
             }
         });
 
 
         //creation of the link between mainActivity and ChoiceJourneyActivity
-        mPlayButton2 = (ImageView) findViewById(R.id.playButton2);
-
+        mGameButton = (Button) findViewById(R.id.gameButton);
+        mGameButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(ChoiceJourneyActivity.this, choixgame.class);
+                startActivity(intent);
+            }
+        });
     }
 }
