@@ -1,4 +1,4 @@
-package com.example.lugdunum;
+package com.example.lugdunum.games;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class fourviere_game extends AppCompatActivity implements View.OnClickListener{
+import com.example.lugdunum.R;
+
+public class FourviereGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView mStatue1;
     private ImageView mStatue2;

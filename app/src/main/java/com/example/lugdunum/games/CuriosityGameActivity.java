@@ -1,4 +1,4 @@
-package com.example.lugdunum;
+package com.example.lugdunum.games;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,19 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity1 extends AppCompatActivity {
+import com.example.lugdunum.R;
+
+public class CuriosityGameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.activity_curiosity_game);
 
         Button b3 = (Button)findViewById(R.id.button);
 
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity1.this, Activity2.class));
+                startActivity(new Intent(CuriosityGameActivity.this, CrayonActivity.class));
             }
         });
     }

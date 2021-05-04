@@ -15,6 +15,6 @@
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="3dp"
-        android:background="@drawable/chaise1"
+        android:background="@drawable/chair1"
         android:text="info" />
 </RelativeLayout>

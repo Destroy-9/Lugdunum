@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity2">
-
+    tools:context=".games.CuriosityGameActivity">
     <TextView
+        android:id="@+id/textView"
         android:layout_width="805dp"
         android:layout_height="1291dp"
 
@@ -20,36 +20,31 @@
         android:layout_marginEnd="-3dp"
         android:layout_marginRight="-3dp"
         android:layout_marginBottom="-13dp"
+        android:background="@drawable/without"
         android:fontFamily="serif"
+        android:text="Devinez ou est la tour crayon dans l'image?"
         android:textColor="#EADCDC"
-        android:textSize="21sp"
-        android:text="Bien vu !"
-        android:background="@drawable/background"/>
+        android:textSize="21sp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="111dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="394dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:text="Plus d'info" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginBottom="18dp"
-        android:text="Next game" />
-
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginRight="147dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:insetLeft="20dp"
+        android:insetTop="20dp"
+        android:insetRight="20dp"
+        android:insetBottom="20dp"
+        android:text=""
+        android:visibility="visible"
+        app:elevation="20dp" />
 
 </RelativeLayout>
+

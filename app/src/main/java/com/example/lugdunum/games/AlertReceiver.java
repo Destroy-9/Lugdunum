@@ -1,4 +1,4 @@
-package com.example.lugdunum;
+package com.example.lugdunum.games;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,8 +1,10 @@
-package com.example.lugdunum;
+package com.example.lugdunum.games;
 import  android.app.Activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+
+import com.example.lugdunum.R;
 
 public class pop1 extends Activity {
 

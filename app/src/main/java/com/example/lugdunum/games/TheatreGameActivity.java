@@ -1,4 +1,4 @@
-package com.example.lugdunum;
+package com.example.lugdunum.games;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.app.AutomaticZenRule;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -23,7 +22,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class theatre_game extends AppCompatActivity {
+import com.example.lugdunum.R;
+import com.example.lugdunum.games.AlertReceiver;
+
+public class TheatreGameActivity extends AppCompatActivity {
     private TextView question1;
     private ImageView img;
     public static Button found_btn;

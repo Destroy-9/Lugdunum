@@ -45,7 +45,7 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
         mGameButton = (Button) findViewById(R.id.gameButton);
         mGameButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(ChoiceJourneyActivity.this, choixgame.class);
+                Intent intent = new Intent(ChoiceJourneyActivity.this, ChoiceGameActivity.class);
                 startActivity(intent);
             }
         });

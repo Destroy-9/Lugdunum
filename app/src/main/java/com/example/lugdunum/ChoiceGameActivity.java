@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-public class choixgame extends AppCompatActivity {
+import com.example.lugdunum.games.CuriosityGameActivity;
+import com.example.lugdunum.games.FourviereGameActivity;
+import com.example.lugdunum.games.TheatreGameActivity;
+
+public class ChoiceGameActivity extends AppCompatActivity {
 
     private Button mGoCuriosites;
     private Button mGoTheatre;
@@ -25,7 +27,7 @@ public class choixgame extends AppCompatActivity {
         mGoFourviere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(choixgame.this, fourviere_game.class);
+                Intent intent = new Intent(ChoiceGameActivity.this, FourviereGameActivity.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +38,7 @@ public class choixgame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(choixgame.this, theatre_game.class);
+                Intent intent = new Intent(ChoiceGameActivity.this, TheatreGameActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +46,7 @@ public class choixgame extends AppCompatActivity {
         mGoCuriosites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(choixgame.this, MainActivity1.class);
+                Intent intent = new Intent(ChoiceGameActivity.this, CuriosityGameActivity.class);
                 startActivity(intent);
             }
         });

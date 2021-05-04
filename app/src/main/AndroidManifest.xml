@@ -38,18 +38,18 @@
             android:name=".SettingsActivity"
             android:parentActivityName=".ChoiceJourneyActivity"/>
 
-        <activity android:name=".Activity6"/>
-        <activity android:name=".Activity5"/>
-        <activity android:name=".Activity4"/>
-        <activity android:name=".Activity3"/>
-        <activity android:name=".Activity2"/>
-        <activity android:name=".MainActivity1"/>
-        <activity android:name=".theatre_game" />
-        <activity android:name=".choixgame" />
-        <activity android:name=".fourviere_game" />
+        <activity android:name=".games.ChairAnswerActivity"/>
+        <activity android:name=".games.ChairActivity"/>
+        <activity android:name=".games.BridgeAnswerActivity"/>
+        <activity android:name=".games.BridgeActivity"/>
+        <activity android:name=".games.CrayonActivity"/>
+        <activity android:name=".games.CuriosityGameActivity"/>
+        <activity android:name=".games.TheatreGameActivity" />
+        <activity android:name=".ChoiceGameActivity" />
+        <activity android:name=".games.FourviereGameActivity" />
 
         <activity
-            android:name=".pop"
+            android:name=".games.pop"
             android:theme="@style/CustomTheme" />
         <activity
             android:name=".RulesActivity"
@@ -58,7 +58,7 @@
             android:name=".ChoiceJourneyActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".pop1"
+            android:name=".games.pop1"
             android:theme="@style/CustomTheme"/>
 
 
