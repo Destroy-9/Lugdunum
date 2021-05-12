@@ -48,7 +48,7 @@ Bienvenue dans mon chez moi ! C'est ici que je passais le plus clair de mon temp
 
 *Lancement du jeux theatre_game*
 
-Oui, je sais, c'est juste une scène. Mais ce que je voudrais te montrer c'est surtout la bouche d'égouts au centre du cercle formé par la scène. Lorsque tu te trouves sur ce point, tous les sons que tu émets te reviennent en écho de façon uniforme. Essaie de déclamer ce poème de Guy Créquie si tu t'y sens : 
+Oui, je sais, c'est juste une scène. Mais ce que je voudrais te montrer c'est surtout la bouche d'égout au centre du cercle formé par la scène. Lorsque tu te trouves sur ce point, tous les sons que tu émets te reviennent en écho de façon uniforme. Essaie de déclamer ce poème de Guy Créquie si tu t'y sens : 
 
 LYON (LUGDUNUM) - Ville Mystérieuse
 
