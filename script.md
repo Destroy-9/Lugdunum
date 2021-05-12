@@ -34,7 +34,7 @@ Oh ! Tu as trouvé ! J'ai entendu dire en captant une onde radio en 2001 que ce 
 
 *Lancement du jeu du jardin des curiosités*
 
-Merci pour m'avoir raffraichit la mémoire ! Si tu veux te poser un peu sur le chemin pour manger ou te reposer, c'est un bon spot ici. Sinon, on peut attendre le théâtre antique de Fourvière. Dis moi quand tu veux partir. 
+Merci de m'avoir rafraîchi la mémoire ! Si tu veux te poser un peu sur le chemin pour manger ou te reposer, c'est un bon spot ici. Sinon, on peut attendre le théâtre antique de Fourvière. Dis moi quand tu veux partir. 
 
 *Bouton **partir*** 
 
