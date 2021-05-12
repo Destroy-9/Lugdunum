@@ -139,9 +139,9 @@ Est ta destinée.
 
 Ce théâtre est l'un des plus anciens du monde romain, et le plus ancien de Gaule. Il date de 15 avant J-C dans votre calendrier. À l'époque, il pouvait accueillir 10 000 spectateurs ! Même après des années de scène, j'avais toujours autant le trac avant de jouer ici. 
 
-De l'autre côté du site archéologique, tu peux trouver *l'Odéon*, qui était utilisé pour les représentations musicales, les lectures publiques, ou les récitations poétiques. Il est beaucoup plus petit que le *Grand Théâtre* et beaucoup plus jeune. Il n'a que 3 000 places et n'a été construit qu'à la fin du 1er siècle après J-C. 
+De l'autre côté du site archéologique, tu peux trouver *l'Odéon*, qui était utilisé pour les représentations musicales, les lectures publiques, ou les récitations poétiques. Il est beaucoup plus petit que le *Grand Théâtre*, et beaucoup plus jeune. Il n'a que 3 000 places et n'a été construit qu'à la fin du 1er siècle après J-C. 
 
-Dans les vestiges supérieurs, tu peux retrouver le sanctuaire du Cybèle, qui était une divinité greco-romaine personnifiant la nature sauvage. Il y a aussi le prétoire du gouverneur de Lyon dans les parages, mais n'y vas pas, c'est dangereux les prétoires (c'est ce que vous appelez un palai de justice je crois maintenant). 
+Il y a aussi le prétoire du gouverneur de Lyon dans les parages, mais n'y vas pas, c'est dangereux les prétoires (c'est ce que vous appelez un palais de justice je crois maintenant). 
 
 Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte les marches et va en direction de la basilique de Fourvière, on se retrouve là-bas !
 
