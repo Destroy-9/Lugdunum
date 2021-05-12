@@ -14,7 +14,7 @@ En l'an 711, des intempéries diluviennent s'abattirent sur la cité de Lugdunum
 
 Depuis, je me matérialise régulièrement à travers tout ce que je peux. La dernière fois que c'est arrivé, c'était lors de la tempête de 1999, j'avais pu me condenser en nuage. C'est la première fois que je retourne véritablement sur terre depuis ce qui est arrivé, grâce à ton application. Comme quoi, il y a du bon aussi dans les nouvelles technologies (même si les ondes perturbent mon cycle du sommeil). 
 
-Bon, j'ai assez parlé ! J'ai besoin de toi pour me reconnecter à mon ancienne vie tant que je peux exister dans ton téléphone. Descend la rue du Trion, je veux voir si la fontaine est toujours là. 
+Bon, j'ai assez parlé ! J'ai besoin de toi pour me reconnecter à mon ancienne vie tant que je peux exister dans ton téléphone. Descend la rue de Trion, je veux voir si la fontaine est toujours là. 
 
 *photo de la fontaine à trouver*
 
