@@ -24,7 +24,7 @@ Bon, j'ai assez parlé ! J'ai besoin de toi pour me reconnecter à mon ancienne 
 * **Rhino :** *bzzz bzzz*
 Nous voilà devant la fontaine de Trion ! C'est marrant, elle ressemble vraiment aux fontaines qu'on trouvait à mon époque. Pourtant, elle n'a été construite qu'en 1836 pour alimenter le quartier en eau. C'est l'architecte René Dardel qui l'a construite (c'est aussi lui qui a créé la fontaine de la place Saint-Jean). Je me rappelle de son sourire satisfait à la fin. J'avais pu capter un rayon de soleil qui m'avait projeté un instant contre la fontaine à son inauguration. J'y avais déjà fait un poc... oups. 
 
-Il y a un autre endroit un peu plus loin que j'ai découvert sur un coup de soleil. Si tu descends encore un tout petit peu, tu vas tomber sur un parking sur ta droite. Tout au fond de ce parking (attention, il est un peu long), il y a un portail qui ressemble à ça *photo*. Rends toi y, il y a un jardin derrière si mes souvenirs sont exacts. 
+Il y a un autre endroit un peu plus loin que j'ai découvert sur un coup de soleil. Si tu descends encore un tout petit peu, tu vas tomber sur un parking sur ta droite. Tout au fond de ce parking (attention, il est un peu long), il y a un portail qui ressemble à ça *photo*. Rends t'y, il y a un jardin derrière si mes souvenirs sont exacts. 
 
 
 ### Jardin des curiosités
