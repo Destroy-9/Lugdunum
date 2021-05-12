@@ -155,7 +155,7 @@ J'ai quelques souvenirs de statues présentes dans le coin, mais je n'arrive plu
 
 *Lancement du jeu Fourvière*
 
-Merci à toi ! C'est marrant, je remarque que la Basilique n'est toujours pas beaucoup plus avancée que la dernière fois que je suis venu. Je ne sais pas si tu as fais attention, mais l'une des statues que tu as dû retrouver avait une forme assez rectangulaire. Des blocs de pierre presque vierges comme celui-là, il y en a plein, mais faute de sculpteurs et de financements, ils ne sont pas terminés. Incroyable non ? 
+Merci à toi ! C'est marrant, je remarque que la Basilique n'est toujours pas beaucoup plus avancée que la dernière fois que je suis venu. Je ne sais pas si tu as fait attention, mais l'une des statues que tu as dû retrouver avait une forme assez rectangulaire. Des blocs de pierre presque vierges comme celui-là, il y en a plein, mais faute de sculpteurs et de financement, ils ne sont pas terminés. Incroyable non ? 
 
 Je te laisse contempler l'éblouissant intérieur de la Basilique Notre-Dame de Fourvière si tu le souhaites, ainsi que la magnifique vue sur la ville de Lyon qu'on peut avoir sur l'esplanade. Dis moi quand tu veux partir !
 
