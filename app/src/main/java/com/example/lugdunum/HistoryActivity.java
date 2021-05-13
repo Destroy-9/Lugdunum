@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -20,10 +21,11 @@ public class HistoryActivity extends AppCompatActivity {
 
     private TextSwitcher mTextHistory;
     private Button mNextBtn;
+    private ImageView mImage;
     private String history[];
     private Scenario scenario;
-    int messageCount;
-    int currentIndex;
+    private int messageCount;
+    private int currentIndex;
 
 
 
@@ -35,6 +37,7 @@ public class HistoryActivity extends AppCompatActivity {
         // get The references if Button and TextSwitcher
         mNextBtn = (Button) findViewById(R.id.nextButton);
         mTextHistory = (TextSwitcher) findViewById(R.id.historySwitcher);
+        mImage = (ImageView) findViewById(R.id.image);
 
         // Set the ViewFactory of the TextSwitcher that will create TextView object when asked
         mTextHistory.setFactory(new ViewSwitcher.ViewFactory() {
@@ -78,7 +81,12 @@ public class HistoryActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 currentIndex++;
                 // If index reaches maximum then reset it
+                if (currentIndex == messageCount-1){
+                    mImage.setImageResource(scenario.getContent());
+                }
                 if (currentIndex == messageCount) {
+                    mImage.setImageResource(R.drawable.rhino);
+                    scenario.incState();
                     history = scenario.getHistory();
                     messageCount = history.length;
                     currentIndex = 0;
