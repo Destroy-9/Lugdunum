@@ -5,16 +5,15 @@
 *L'utilisateur sort du funiculaire, l'app détecte sa position et lance le jeu*
 
 * **Rhino :** *bzzz bzzz    bzzz bzzz*
-Ave *user* ! En quelle année sommes-nous ? Ah, c'est marqué là : *date*
-*year* !? Déjà !? 
+Ave *user* ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?
 
-Pardon, tu ne dois pas comprendre ce que je raconte. Mon nom est *name*. Je suis né en l'an 700, en plein pendant le règne de Jules César. Je crois que vous nommez cette année "53 avant J-C". Je n'ai jamais compris pourquoi vous considérez que Jules César a règné 50 ans avant lui-même d'ailleurs... Mais peu importe. 
+Pardon, tu ne dois pas comprendre ce que je raconte. Heureusement, ta langue n'est pas si différente de la mienne. Mon nom complet est *Julius Valerius Insalius* mais utilise mon cognomen,*Rhinus*, c'est plus court. Je suis né en l'an 700, en plein pendant le règne de Jules César. Que dis-tu, les dates ne correspondent pas ? En quelle année sommes-nous ? Ah, *date* je vois. Si mes calculs sont bons... Je crois que vous nommez cette année "53 avant J-C". J'avoue je n'ai pas encore compris pourquoi vous considérez que Jules César a règné 50 ans avant lui-même d'ailleurs... Mais peu importe, je dois encore me "mettre à jour" sur votre culture haha. 
 
-En l'an 711, des intempéries diluviennent s'abattirent sur la cité de Lugdunum durant plusieurs jours, et il arriva ce dont tout le monde avait peur à l'époque : le ciel nous tomba sur la tête. Lorsque celui-ci relâcha son étreinte sur la terre, beaucoup de personnes restèrent prisonnières des nuages, dont moi. Ce fut un moment terrible. Voir tous mes amis rester à terre quand moi je m'envolais... Mais ce n'est pas tout, car lorsque les nuages s'évaporèrent, je me suis évaporé avec eux. Cela sonna le glas de mon existence physique. Je devins un âme errante entre ciel et terre. 
+En l'an 711, des intempéries diluviennes s'abattirent sur la cité de Lugdunum durant plusieurs jours, et il arriva ce dont tout le monde avait peur à l'époque : le ciel nous tomba sur la tête ! Lorsque celui-ci relâcha son étreinte sur la terre, beaucoup de personnes restèrent prisonnières des nuages, dont moi. Ce fut un moment terrible. Voir tous mes amis rester à terre quand, moi seul, m'envolais... Mais ce n'est pas tout, car lorsque les nuages s'évaporèrent, je me suis évaporé avec eux. Cela sonna le glas de mon existence physique. Je devins une âme errante entre ciel et terre. 
 
-Depuis, je me matérialise régulièrement à travers tout ce que je peux. La dernière fois que c'est arrivé, c'était lors de la tempête de 1999, j'avais pu me condenser en nuage. C'est la première fois que je retourne véritablement sur terre depuis ce qui est arrivé, grâce à ton application. Comme quoi, il y a du bon aussi dans les nouvelles technologies (même si les ondes perturbent mon cycle du sommeil). 
+Depuis, je me matérialise régulièrement à travers tout ce que je peux. La dernière fois que c'est arrivé, c'était lors de la tempête de 1999, j'avais pu me condenser en nuage. Mais malheursement, avec la toute cette pollution qui s'accentue au fil des décennies, j'ai préféré changer de réseau. Et oui, tu l'as compris, je suis actuellement dans ce que vous appelez Internet ! Ce labyrinthe est beaucoup trop grand pour moi donc je me suis perdu et j'ai attendu la venue d'une âme charitable.
 
-Bon, j'ai assez parlé ! J'ai besoin de toi pour me reconnecter à mon ancienne vie tant que je peux exister dans ton téléphone. Descend la rue de Trion, je veux voir si la fontaine est toujours là. 
+Bon, j'ai assez parlé ! J'ai besoin de toi pour me reconnecter à mon ancienne vie tant que je peux exister dans ton téléphone. Descend la rue de Trion, je veux voir si la fontaine est toujours là. Pendant ce temps, je me documenterai sur ce qui s'est passé pendant ces deux millénaires. 
 
 *photo de la fontaine à trouver*
 
@@ -30,21 +29,21 @@ Il y a un autre endroit un peu plus loin que j'ai découvert sur un coup de sole
 ### Jardin des curiosités
 
 * **Rhino :** *bzzz bzzz*
-Oh ! Tu as trouvé ! J'ai entendu dire en captant une onde radio en 2001 que ce jardin avait été offert par la ville de Montréal pour le 20 ème anniversaire des relations de coopération avec Lyon. Pour cette occasion, le sculpteur québecois Michel Goulet avait gravé 6 chaises. C'était très beau ce qu'il avait écrit dessus, peut-être pourrais-tu m'aider à retrouver ses gravures ? Je vois aussi que des bâtiments ont poussé dans le coin. J'ai un peu de mal à faire le lien entre ce que j'ai entendu et ce que je vois maintenant, peux-tu m'aider ?
+Oh ! Tu as trouvé ! J'ai entendu dire en captant une onde radio en 2001 que ce jardin avait été offert par la ville de Montréal pour le 20ème anniversaire des relations de coopération avec Lyon. Pour cette occasion, le sculpteur québecois Michel Goulet avait gravé 6 chaises. C'était très beau ce qu'il avait écrit dessus, peut-être pourrais-tu m'aider à retrouver ses gravures ? Je vois aussi que des bâtiments ont poussé dans le coin. J'ai un peu de mal à faire le lien entre ce que j'ai entendu et ce que je vois maintenant, peux-tu m'aider ?
 
 *Lancement du jeu du jardin des curiosités*
 
-Merci de m'avoir rafraîchi la mémoire ! Si tu veux te poser un peu sur le chemin pour manger ou te reposer, c'est un bon spot ici. Sinon, on peut attendre le théâtre antique de Fourvière. Dis moi quand tu veux partir. 
+Merci de m'avoir rafraîchi la mémoire ! Si tu veux te poser un peu sur le chemin pour manger ou te reposer, c'est un bon spot ici. Sinon, on peut atteindre le théâtre antique de Fourvière. Dis moi quand tu veux partir. 
 
 *Bouton **partir*** 
 
-Très bien, on s'en va. Le mieux est de retourner sur nos pas, et de reprendre notre route à la sortie du parking. À la sortie du parking, donc, on continue de descendre un peu, en se mettant sur le trottoir de gauche. On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romaines. Je me suis douché toute ma vie là dedans ! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la *Grotte Bérelle*, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. Enfin, arrivés vers la place des minimes, on restera bien à gauche pour remonter en direction du théâtre ! On se retrouve là-bas. 
+Très bien, on s'en va. Le mieux est de retourner sur nos pas, et de reprendre notre route à la sortie du parking. À la sortie du parking, donc, on continue de descendre un peu, en se mettant sur le trottoir de gauche. On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romains. Je me suis lavé toute ma vie là-dedans avec mon maître Caius Iulius Caesar! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la *Grotte Bérelle*, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. Enfin, arrivés vers la place des minimes, on restera bien à gauche pour remonter en direction du théâtre ! On se retrouve là-bas. 
 
 
 ### Site archéologique gallo-romain
 
 * **Rhino :** *bzzz bzzz*
-Bienvenue dans mon chez moi ! C'est ici que je passais le plus clair de mon temps ! Je ne t'en ai pas parlé avant, mais à l'époque où j'avais un corps, j'étais comédien. Je formais un duo comique avec mon ami Cirus. On nous appelait "Les RhinoCirus". Je suis très nostalgique de cette époque. Il y avait un endroit que j'appréciais particulièrement, sauras-tu le retrouver ? 
+Bienvenue dans mon chez moi ! C'est ici que je passais le plus clair de mon temps ! Je ne t'en ai pas parlé avant, mais à l'époque où j'avais un corps, j'étais comédien. Je formais un duo comique avec mon ami Cirus. On nous appelait "Les RhinoCirus". Je suis très nostalgique de cette époque, si je n'avais pas été emporté, je suis sûr que nous aurions été connu aujourd'hui ! D'ailleurs, Il y avait un endroit que j'appréciais particulièrement, sauras-tu le retrouver ? 
 
 *Lancement du jeux theatre_game*
 
@@ -149,13 +148,13 @@ Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte 
 ### Fourvière 
 
 * **Rhino :** *bzzz bzzz*
-Tu as trouvé la basilique ! Elle est chouette non ? Cet endroit était le forum Vetus à mon époque (d'où le nom de Fourvière). Si mes souvenirs son exacts, les architectes Pierre Bossan et Louis Sainte-Marie Perrin ont construit la basilique par dessus entre 1873 et 1884 pour accueillir tous les pèlerins qui venaient de plus en plus nombreux pour le culte de la Vierge Marie. Avant sa construction, seule la tour avec la vierge en or au dessus existait. Cette magnifique statue dorée fut d'ailleurs ajoutée le 8 décembre 1852, en souvenir des échevins qui avaient imploré Marie de les délivrer de la peste deux siècles plus tôt. À cette occasion, tous les lyonnais ont allumé une bougie sur leur fenêtre. Ça te rappelle quelque chose ? Eh oui, la fête des lumières est née le 8 décembre 1852 ! 
+Tu as trouvé la basilique ! Elle est chouette, non ? Cet endroit était le forum Vetus à mon époque (d'où le nom de Fourvière). D'après mes sources, les architectes Pierre Bossan et Louis Sainte-Marie Perrin ont construit la basilique par dessus entre 1873 et 1884 pour accueillir tous les pèlerins qui venaient de plus en plus nombreux pour le culte de la Vierge Marie. Avant sa construction, seule la tour avec la vierge en or au dessus existait. Cette magnifique statue dorée fut d'ailleurs ajoutée le 8 décembre 1852, en souvenir des échevins qui avaient imploré Marie de les délivrer de la peste deux siècles plus tôt. À cette occasion, tous les lyonnais ont allumé une bougie sur leur fenêtre. Ça te rappelle quelque chose ? Eh oui, la fête des lumières est née le 8 décembre 1852 ! 
 
-J'ai quelques souvenirs de statues présentes dans le coin, mais je n'arrive plus à me souvenir où, Peux-tu m'aider ?
+J'ai quelques souvenirs de statues présentes dans le coin, mais je n'arrive plus à me souvenir où. Peux-tu m'aider ?
 
 *Lancement du jeu Fourvière*
 
-Merci à toi ! C'est marrant, je remarque que la Basilique n'est toujours pas beaucoup plus avancée que la dernière fois que je suis venu. Je ne sais pas si tu as fait attention, mais l'une des statues que tu as dû retrouver avait une forme assez rectangulaire. Des blocs de pierre presque vierges comme celui-là, il y en a plein, mais faute de sculpteurs et de financement, ils ne sont pas terminés. Incroyable non ? 
+Merci à toi ! C'est marrant, je remarque que la Basilique n'est toujours pas beaucoup plus avancée que la dernière fois que je suis venu. Je ne sais pas si tu as fait attention, mais l'une des statues que tu as dû retrouver avait une forme assez rectangulaire. Des blocs de pierre presque vierges comme celui-là, il y en a plein, mais faute de sculpteurs et de financement, ils ne sont pas terminés. Incroyable, non ? 
 
 Je te laisse contempler l'éblouissant intérieur de la Basilique Notre-Dame de Fourvière si tu le souhaites, ainsi que la magnifique vue sur la ville de Lyon qu'on peut avoir sur l'esplanade. Dis moi quand tu veux partir !
 
@@ -165,7 +164,7 @@ Super, allons-y ! Quand tu es sur l'esplanade, il te faut descendre les escalier
 
 *Bouton **Je suis en bas***
 
-Cher *user*, c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Reviens quand tu veux, tu pourras m'y retrouver. 
+Cher *user*, c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Je sens mon âme apaisée, je peux te l'avouer maintenant, j'avais quelques remords d'avoir quitté les miens... Mais en revoyant tous ces lieux, cela m'a libéré. Je sens notre connexion s'affaiblir... J'en ai fait du chemin, mes ancêtres sont partis de Cartage durant les guerres puniques, puis je suis née dans l'enceinte d ela capital de l'Empire, animal fétiche de l'empereur et puis la suite... est assez floue, jusqu'à notre rencontre. Merci !
 
 Rassures toi, je ne te quitte pas comme ça, perdu au milieu de la ville. Tu es ici dans la rue du Boeuf, dans laquelle se trouve une traboule au numéro 27. Pousse la porte, et traverse la. En sortant de la traboule, tourne à droite dans la rue Saint-Jean. En continuant tout droit, tu traverseras la place Saint-Jean sur laquelle se trouve la Cathédrale, puis tu trouveras l'entrée du funiculaire. 
 
