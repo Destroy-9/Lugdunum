@@ -1,7 +1,15 @@
 package com.example.lugdunum;
 
+import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.lugdunum.games.CuriosityGameActivity;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class Scenario {
     private int state;
@@ -21,7 +29,9 @@ public class Scenario {
     };
     private String curiosites[] = {
             "Oh ! Tu as trouvé ! J'ai entendu dire en captant une onde radio en 2001 que ce jardin avait été offert par la ville de Montréal pour le 20 ème anniversaire des relations de coopération avec Lyon. Pour cette occasion, le sculpteur québecois Michel Goulet avait gravé 6 chaises. ",
-            "C'était très beau ce qu'il avait écrit dessus, peut-être pourrais-tu m'aider à retrouver ses gravures ? Je vois aussi que des bâtiments ont poussé dans le coin. J'ai un peu de mal à faire le lien entre ce que j'ai entendu et ce que je vois maintenant, peux-tu m'aider ?",
+            "C'était très beau ce qu'il avait écrit dessus, peut-être pourrais-tu m'aider à retrouver ses gravures ? Je vois aussi que des bâtiments ont poussé dans le coin. J'ai un peu de mal à faire le lien entre ce que j'ai entendu et ce que je vois maintenant, peux-tu m'aider ?"
+    };
+    private String curiosites2[] = {
             "Merci de m'avoir rafraîchi la mémoire ! Si tu veux te poser un peu sur le chemin pour manger ou te reposer, c'est un bon spot ici. Sinon, on peut attendre le théâtre antique de Fourvière. Dis moi quand tu veux partir. "
     };
     private String curiosites_leave[] = {
@@ -82,21 +92,23 @@ public class Scenario {
                 break;
             case 2: res = curiosites;
                 break;
-            case 3: res = curiosites_leave;
+            case 3: res = curiosites2;
                 break;
-            case 4: res = theatre1;
+            case 4: res = curiosites_leave;
                 break;
-            case 5: res = theatre2;
+            case 5: res = theatre1;
                 break;
-            case 6: res = theatre3;
+            case 6: res = theatre2;
                 break;
-            case 7: res = fourviere1;
+            case 7: res = theatre3;
                 break;
-            case 8: res = fourviere2;
+            case 8: res = fourviere1;
                 break;
-            case 9: res = fourviere_leave;
+            case 9: res = fourviere2;
                 break;
-            case 10: res = traboule;
+            case 10: res = fourviere_leave;
+                break;
+            case 11: res = traboule;
                 break;
             default: res = fin;
                 break;
@@ -105,13 +117,42 @@ public class Scenario {
         return res;
     }
 
-    public int getContent(){
+    public int getContent(ImageView mImage, ImageView mPoem, Button mNextBtn){
         int res;
 
         switch (state) {
-            case 0: res = R.drawable.fountain;
+            case 0: mImage.setImageResource(R.drawable.fountain);
+                res = 0;
                 break;
-            default: res = R.drawable.rhino;
+            case 1: mImage.setImageResource(R.drawable.curiositeportal);
+                res = 0;
+                break;
+            case 2: res = 1;
+                break;
+            case 3:
+                res = 0;
+                mNextBtn.setText("Partir");
+                break;
+            case 5: res = 2;
+                break;
+            case 6: res = 0;
+                mPoem.setImageResource(R.drawable.poem);
+                mImage.setImageResource(0);
+                break;
+            case 8: res = 3;
+                break;
+            case 9:
+                res = 0;
+                mNextBtn.setText("Partir");
+                break;
+            case 10: res = 0;
+                mNextBtn.setText("Je suis en bas !");
+                break;
+            case 11: res = 4;
+                mNextBtn.setText("Finir");
+                break;
+            default: mImage.setImageResource(R.drawable.rhino);
+                res = 0;
                 break;
         }
 
@@ -124,5 +165,9 @@ public class Scenario {
 
     public void incState(){
         state++;
+    }
+
+    public void decState(){
+        state--;
     }
 }
