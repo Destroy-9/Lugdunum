@@ -3,26 +3,18 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.app.Activity;
 import android.widget.Toast;
-import android.widget.ViewAnimator;
 
-import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.lugdunum.R;
@@ -80,14 +72,14 @@ public class CuriosityGameActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1 = findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
-        button4 = (Button) findViewById(R.id.button4);
-        button5 = (Button) findViewById(R.id.button5);
-        button6 = (Button) findViewById(R.id.button6);
-        button7 = (Button) findViewById(R.id.button7);
-        button8 = (Button) findViewById(R.id.button8);
+        button1 = findViewById(R.id.jean);
+        button2 = (Button) findViewById(R.id.tonpere);
+        button3 = (Button) findViewById(R.id.tamere);
+        button4 = (Button) findViewById(R.id.toncosuin);
+        button5 = (Button) findViewById(R.id.chi);
+        button6 = (Button) findViewById(R.id.non);
+        button7 = (Button) findViewById(R.id.ezio);
+        button8 = (Button) findViewById(R.id.bim);
         mytxtvw=(TextView)findViewById(R.id.myTextView);
         bienvu=(TextView)findViewById(R.id.myTextView1);
         text2=(TextView)findViewById(R.id.myTextView2);
@@ -96,7 +88,7 @@ public class CuriosityGameActivity extends Activity {
 
         layout = findViewById(R.id.ConstraintLayout);
 
-        button8.setOnClickListener(new View.OnClickListener() {
+   /*     button8.setOnClickListener(new View.OnClickListener() {
 
             @SuppressLint("WrongConstant")
             @Override
@@ -133,7 +125,7 @@ public class CuriosityGameActivity extends Activity {
                 button1.setVisibility(View.INVISIBLE);
                 button2.setVisibility(View.VISIBLE);
                 button3.setVisibility(View.VISIBLE);
-                layout.setBackgroundResource(R.drawable.avectourcrayon);
+                layout.setBackgroundResource(R.drawable.with_crayon);
 
 
             }
@@ -149,7 +141,7 @@ public class CuriosityGameActivity extends Activity {
                 Button button = (Button) v;
                 button.setVisibility(View.INVISIBLE);
                 button4.setVisibility(View.VISIBLE);
-                layout.setBackgroundResource(R.drawable.sanspont);
+                layout.setBackgroundResource(R.drawable.without_bridge);
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
@@ -157,14 +149,14 @@ public class CuriosityGameActivity extends Activity {
             public void onClick(View v) {
                 text2.setVisibility((text2.getVisibility() == View.VISIBLE)
                                             ? View.GONE : View.INVISIBLE);
-                layout.setBackgroundResource(R.drawable.avecpont);
+                layout.setBackgroundResource(R.drawable.with_bridge);
                 button5.setVisibility(View.VISIBLE);
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layout.setBackgroundResource(R.drawable.sanschaise);
+                layout.setBackgroundResource(R.drawable.without_chair);
                 button6.setVisibility(View.VISIBLE);
                 button5.setVisibility(View.INVISIBLE);
 
@@ -174,7 +166,7 @@ public class CuriosityGameActivity extends Activity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layout.setBackgroundResource(R.drawable.avecchaise);
+                layout.setBackgroundResource(R.drawable.with_chair);
                 button7.setVisibility(View.VISIBLE);
 
             }
@@ -190,6 +182,6 @@ public class CuriosityGameActivity extends Activity {
             public void onClick(View v) {
                 showDialogShare();
             }
-        });
+        });*/
     }
 }

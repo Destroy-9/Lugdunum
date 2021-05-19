@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +19,7 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
     private ImageView mStatue2;
     private ImageView mStatue3;
     private ImageView mStatue4;
-    private ImageView mImageView;
+    private TextView mText;
 
     private boolean mEnableTouchEvents;
 
@@ -52,8 +51,8 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
         mStatue3.setOnClickListener(this);
         mStatue4.setOnClickListener(this);
 
-        mImageView = (ImageView) findViewById(R.id.endroit);
-        mImageView.setImageDrawable(Drawable.createFromPath("Endroit " + mTabEndroit[mIndexEndroit])); //A CHANGER AVEC IMAGE FOND
+        mText = (TextView) findViewById(R.id.endroit);
+        mText.setText("Endroit " + mTabEndroit[mIndexEndroit]); //A CHANGER AVEC IMAGE FOND
 
         mEnableTouchEvents = true;
 
