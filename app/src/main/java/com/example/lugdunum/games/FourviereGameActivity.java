@@ -19,6 +19,7 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
     private ImageView mStatlion;
     private ImageView mImageView;
 
+
     private boolean mEnableTouchEvents;
 
     private int mScore;
@@ -61,6 +62,7 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
             break;
 
         }
+
 
 
 

@@ -1,50 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/without_crayon"
+    android:orientation="vertical"
     tools:context=".games.CuriosityGameActivity">
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="805dp"
-        android:layout_height="1291dp"
 
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="-3dp"
-        android:layout_marginRight="-3dp"
-        android:layout_marginBottom="-13dp"
-        android:background="@drawable/without"
-        android:fontFamily="serif"
-        android:text="Devinez ou est la tour crayon dans l'image?"
-        android:textColor="#EADCDC"
-        android:textSize="21sp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="111dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="147dp"
-        android:layout_marginRight="147dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:insetLeft="20dp"
-        android:insetTop="20dp"
-        android:insetRight="20dp"
-        android:insetBottom="20dp"
-        android:text=""
-        android:visibility="visible"
-        app:elevation="20dp" />
+        android:id="@+id/crayonHidden"
+        android:layout_width="99dp"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:text=" "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/nextGameIsBridge"
+        android:layout_width="145dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="552dp"
+        android:text="Next game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/moreInfo"
+        android:layout_width="110dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="324dp"
+        android:text="Plus d'info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/bridgeHidden"
+        android:layout_width="114dp"
+        android:layout_height="63dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/nextGameIsChair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Next game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/myTextView"
+        android:layout_width="179dp"
+        android:layout_height="87dp"
+        android:text="Devinez où est la tour crayon dans l'image...."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/wellSpotted"
+        android:layout_width="135dp"
+        android:layout_height="34dp"
+        android:text="Bien vu !!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/findBridge"
+        android:layout_width="313dp"
+        android:layout_height="69dp"
+        android:text="De meme, retrouvez le pont dans l'image !!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/chairHidden"
+        android:layout_width="99dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginLeft="220dp"
+        android:text=""
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/closeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="388dp"
+        android:text="Vue de près"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/wrongTouch"
+        android:layout_width="204dp"
+        android:layout_height="304dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/myTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
