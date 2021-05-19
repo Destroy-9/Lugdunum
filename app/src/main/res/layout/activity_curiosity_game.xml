@@ -11,7 +11,7 @@
 
 
     <Button
-        android:id="@+id/jean"
+        android:id="@+id/crayonHidden"
         android:layout_width="99dp"
         android:layout_height="150dp"
         android:background="@android:color/transparent"
@@ -19,13 +19,13 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintVertical_bias="0.187" />
 
     <Button
-        android:id="@+id/tonpere"
+        android:id="@+id/nextGameIsBridge"
         android:layout_width="145dp"
         android:layout_height="47dp"
         android:layout_marginTop="552dp"
@@ -37,7 +37,7 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/tamere"
+        android:id="@+id/moreInfo"
         android:layout_width="110dp"
         android:layout_height="34dp"
         android:layout_marginTop="324dp"
@@ -49,7 +49,7 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/toncosuin"
+        android:id="@+id/bridgeHidden"
         android:layout_width="114dp"
         android:layout_height="63dp"
         android:background="@android:color/transparent"
@@ -62,7 +62,7 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/chi"
+        android:id="@+id/nextGameIsChair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="536dp"
@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/myTextView1"
+        android:id="@+id/wellSpotted"
         android:layout_width="135dp"
         android:layout_height="34dp"
         android:text="Bien vu !!"
@@ -103,7 +103,7 @@
         android:visibility="gone"/>
 
     <TextView
-        android:id="@+id/myTextView2"
+        android:id="@+id/findBridge"
         android:layout_width="313dp"
         android:layout_height="69dp"
         android:text="De meme, retrouvez le pont dans l'image !!"
@@ -117,7 +117,7 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/non"
+        android:id="@+id/chairHidden"
         android:layout_width="99dp"
         android:layout_height="87dp"
         android:layout_marginStart="220dp"
@@ -131,7 +131,7 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/ezio"
+        android:id="@+id/closeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -143,7 +143,7 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/bim"
+        android:id="@+id/wrongTouch"
         android:layout_width="204dp"
         android:layout_height="304dp"
         android:background="@android:color/transparent"

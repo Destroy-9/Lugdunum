@@ -21,29 +21,26 @@ import com.example.lugdunum.R;
 
 public class CuriosityGameActivity extends Activity {
 
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button button7;
-    Button button8;
+    private Button mButtonCrayonHidden;
+    private Button mButtonNextGameIsBridge;
+    private Button mButtonMoreInfo;
+    private Button mButtonBridgeHidden;
+    private Button mButtonNextGameIsChair;
+    private Button mButtonChairHidden;
+    private Button mButtonCloseView;
+    private Button mButtonWrongTouch;
 
 
-    ConstraintLayout layout;
-    TextView mytext;
+    private ConstraintLayout mLayout;
+    private TextView mytext;
     private View view;
     private LayoutInflater LayoutInflater;
     private PopupWindow popupWindow;
     private TextView mytxtvw;
-    private TextView bienvu;
-    private TextView text2;
+    private TextView mTextViewWellSpotted;
+    private TextView mTextViewFindBridge;
     private Toast toast;
     private Context context;
-
-
-
 
 
 
@@ -70,118 +67,110 @@ public class CuriosityGameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_curiosity_game);
 
-        button1 = findViewById(R.id.jean);
-        button2 = (Button) findViewById(R.id.tonpere);
-        button3 = (Button) findViewById(R.id.tamere);
-        button4 = (Button) findViewById(R.id.toncosuin);
-        button5 = (Button) findViewById(R.id.chi);
-        button6 = (Button) findViewById(R.id.non);
-        button7 = (Button) findViewById(R.id.ezio);
-        button8 = (Button) findViewById(R.id.bim);
+        mButtonCrayonHidden = (Button) findViewById(R.id.crayonHidden);
+        mButtonNextGameIsBridge = (Button) findViewById(R.id.nextGameIsBridge);
+        mButtonMoreInfo = (Button) findViewById(R.id.moreInfo);
+        mButtonBridgeHidden = (Button) findViewById(R.id.bridgeHidden);
+        mButtonNextGameIsChair = (Button) findViewById(R.id.nextGameIsChair);
+        mButtonChairHidden = (Button) findViewById(R.id.chairHidden);
+        mButtonCloseView = (Button) findViewById(R.id.closeView);
+        mButtonWrongTouch = (Button) findViewById(R.id.wrongTouch);
         mytxtvw=(TextView)findViewById(R.id.myTextView);
-        bienvu=(TextView)findViewById(R.id.myTextView1);
-        text2=(TextView)findViewById(R.id.myTextView2);
+        mTextViewWellSpotted =(TextView)findViewById(R.id.wellSpotted);
+        mTextViewFindBridge =(TextView)findViewById(R.id.findBridge);
+        mLayout = findViewById(R.id.ConstraintLayout);
 
 
-
-        layout = findViewById(R.id.ConstraintLayout);
-
-   /*     button8.setOnClickListener(new View.OnClickListener() {
-
+        mButtonWrongTouch.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("WrongConstant")
             @Override
-
             public void onClick(View v) {
                 Toast toast=Toast.makeText(getApplicationContext(),"Essayez encore", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 100, 100); // last two args are X and Y are used for setting position
                 toast.setDuration(2000);
                 toast.show();
-
             }
         });
 
 
-        button1.setOnClickListener(new View.OnClickListener() {
-
-
-
+        mButtonCrayonHidden.setOnClickListener(new View.OnClickListener() {
             @Override
-
-
             public void onClick(View v) {
                 if(toast != null) {
                     toast.cancel();  //if a toast exists it deletes it, allowing you to create a new one
                 }
-
-                bienvu.setVisibility((bienvu.getVisibility() == View.VISIBLE)
+                mTextViewWellSpotted.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
                                              ? View.GONE : View.VISIBLE);
-
-
                 mytxtvw.setVisibility((mytxtvw.getVisibility() == View.VISIBLE)
                                               ? View.GONE : View.INVISIBLE);
-                button8.setVisibility(View.INVISIBLE);
-                button1.setVisibility(View.INVISIBLE);
-                button2.setVisibility(View.VISIBLE);
-                button3.setVisibility(View.VISIBLE);
-                layout.setBackgroundResource(R.drawable.with_crayon);
-
-
+                mButtonWrongTouch.setVisibility(View.INVISIBLE);
+                mButtonCrayonHidden.setVisibility(View.INVISIBLE);
+                mButtonNextGameIsBridge.setVisibility(View.VISIBLE);
+                mButtonMoreInfo.setVisibility(View.VISIBLE);
+                mLayout.setBackgroundResource(R.drawable.with_crayon);
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+
+
+        mButtonNextGameIsBridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bienvu.setVisibility((bienvu.getVisibility() == View.VISIBLE)
+                mTextViewWellSpotted.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
                                              ? View.GONE : View.INVISIBLE);
-                text2.setVisibility((text2.getVisibility() == View.VISIBLE)
+                mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                                             ? View.GONE : View.VISIBLE);
-                button3.setVisibility(View.GONE);
+                mButtonMoreInfo.setVisibility(View.GONE);
                 Button button = (Button) v;
                 button.setVisibility(View.INVISIBLE);
-                button4.setVisibility(View.VISIBLE);
-                layout.setBackgroundResource(R.drawable.without_bridge);
+                mButtonBridgeHidden.setVisibility(View.VISIBLE);
+                mLayout.setBackgroundResource(R.drawable.without_bridge);
             }
         });
-        button4.setOnClickListener(new View.OnClickListener() {
+
+
+        mButtonBridgeHidden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text2.setVisibility((text2.getVisibility() == View.VISIBLE)
+                mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                                             ? View.GONE : View.INVISIBLE);
-                layout.setBackgroundResource(R.drawable.with_bridge);
-                button5.setVisibility(View.VISIBLE);
+                mLayout.setBackgroundResource(R.drawable.with_bridge);
+                mButtonNextGameIsChair.setVisibility(View.VISIBLE);
             }
         });
-        button5.setOnClickListener(new View.OnClickListener() {
+
+
+        mButtonNextGameIsChair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layout.setBackgroundResource(R.drawable.without_chair);
-                button6.setVisibility(View.VISIBLE);
-                button5.setVisibility(View.INVISIBLE);
-
-
+                mLayout.setBackgroundResource(R.drawable.without_chair);
+                mButtonChairHidden.setVisibility(View.VISIBLE);
+                mButtonNextGameIsChair.setVisibility(View.INVISIBLE);
             }
         });
-        button6.setOnClickListener(new View.OnClickListener() {
+        mButtonChairHidden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                layout.setBackgroundResource(R.drawable.with_chair);
-                button7.setVisibility(View.VISIBLE);
-
+                mLayout.setBackgroundResource(R.drawable.with_chair);
+                mButtonCloseView.setVisibility(View.VISIBLE);
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
+
+
+        mButtonMoreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialogTour();
             }
         });
-        button7.setOnClickListener(new View.OnClickListener() {
+
+
+        mButtonCloseView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialogShare();
             }
-        });*/
+        });
     }
 }
