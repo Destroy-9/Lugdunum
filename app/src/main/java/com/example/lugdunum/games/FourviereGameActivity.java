@@ -8,18 +8,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.lugdunum.R;
 
 public class FourviereGameActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private ImageView mStatue1;
-    private ImageView mStatue2;
-    private ImageView mStatue3;
-    private ImageView mStatue4;
-    private TextView mText;
+    private ImageView mstatnoire;
+    private ImageView mStatmarie;
+    private ImageView mStatcroix;
+    private ImageView mStatlion;
+    private ImageView mImageView;
+
 
     private boolean mEnableTouchEvents;
 
@@ -38,21 +37,34 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         mTabEndroit = new int[]{4, 1, 2, 3};
 
-        mStatue1 = (ImageView) findViewById(R.id.statue1);
-        mStatue2 = (ImageView) findViewById(R.id.statue2);
-        mStatue3 = (ImageView) findViewById(R.id.statue3);
-        mStatue4 = (ImageView) findViewById(R.id.statue4);
-        mStatue1.setTag(1);
-        mStatue2.setTag(2);
-        mStatue3.setTag(3);
-        mStatue4.setTag(4);
-        mStatue1.setOnClickListener(this);
-        mStatue2.setOnClickListener(this);
-        mStatue3.setOnClickListener(this);
-        mStatue4.setOnClickListener(this);
+        mstatnoire = (ImageView) findViewById(R.id.statnoire);
+        mStatmarie = (ImageView) findViewById(R.id.marie);
+        mStatcroix = (ImageView) findViewById(R.id.croix);
+        mStatlion = (ImageView) findViewById(R.id.lion);
+        mstatnoire.setTag(1);
+        mStatmarie.setTag(2);
+        mStatcroix.setTag(3);
+        mStatlion.setTag(4);
+        mstatnoire.setOnClickListener(this);
+        mStatmarie.setOnClickListener(this);
+        mStatcroix.setOnClickListener(this);
+        mStatlion.setOnClickListener(this);
 
-        mText = (TextView) findViewById(R.id.endroit);
-        mText.setText("Endroit " + mTabEndroit[mIndexEndroit]); //A CHANGER AVEC IMAGE FOND
+        mImageView = (ImageView) findViewById(R.id.endroit);
+        switch(mTabEndroit[mIndexEndroit]){
+            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+            break;
+            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+            break;
+            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+            break;
+            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+            break;
+
+        }
+
+
+
 
         mEnableTouchEvents = true;
 
@@ -80,8 +92,19 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
             }else {
                 mIndexEndroit++;
             }
+            switch(mTabEndroit[mIndexEndroit]){
+                case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                    break;
+                case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                    break;
+                case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                    break;
+                case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                    break;
 
-            mText.setText("Endroit " + mTabEndroit[mIndexEndroit]);
+            }
+
+
 
 
         }
@@ -99,7 +122,17 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
                         // Start
                         mScore = 0;
                         mIndexEndroit = 0;
-                        mText.setText("Endroit " + mTabEndroit[mIndexEndroit]);
+                        switch(mTabEndroit[mIndexEndroit]){
+                            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                                break;
+                            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                                break;
+                            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                                break;
+                            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                                break;
+
+                        }
 
                     }
                 })
@@ -112,29 +145,49 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle("Dommage")
-                .setMessage("Tu as seulement eu " + mScore + " réponses positives!")
+                .setMessage("Tu as eu " + mScore + " réponses positives!")
                 .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Try Again
                         mScore = 0;
                         mIndexEndroit = 0;
-                        mText.setText("Endroit " + mTabEndroit[mIndexEndroit]);
+                        switch(mTabEndroit[mIndexEndroit]){
+                            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                                break;
+                            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                                break;
+                            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                                break;
+                            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                                break;
+
+                        }
 
                     }
                 })
-                .setNeutralButton("Aled", new DialogInterface.OnClickListener() {
+                .setNeutralButton("à l'aide!!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         builder.setTitle("Aide")
-                                .setMessage("4 1 2 3")
+                                .setMessage("4 3 1 2")
                                 .setPositiveButton("Go", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         mScore = 0;
                                         mIndexEndroit = 0;
-                                        mText.setText("Endroit " + mTabEndroit[mIndexEndroit]);
+                                        switch(mTabEndroit[mIndexEndroit]){
+                                            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                                                break;
+                                            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                                                break;
+                                            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                                                break;
+                                            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                                                break;
+
+                                        }
                                     }
                                 })
                                 .setCancelable(false)
