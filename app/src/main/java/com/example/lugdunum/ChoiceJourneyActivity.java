@@ -14,6 +14,7 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
     private ImageView mSettingsIcon;
     private Button mMapButton;
     private Button mGameButton;
+    private Button mHistoryButton;
 
 
     @Override
@@ -46,6 +47,15 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
         mGameButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ChoiceJourneyActivity.this, ChoiceGameActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mHistoryButton = (Button) findViewById(R.id.historyButton);
+        mHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChoiceJourneyActivity.this, HistoryActivity.class);
                 startActivity(intent);
             }
         });
