@@ -23,28 +23,21 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".SettingsActivity"
-            android:parentActivityName=".ChoiceJourneyActivity" />
-        <activity android:name=".games.ChairAnswerActivity" />
-        <activity android:name=".games.ChairActivity" />
-        <activity android:name=".games.BridgeAnswerActivity" />
-        <activity android:name=".games.BridgeActivity" />
-        <activity android:name=".games.CrayonActivity" />
-        <activity android:name=".games.CuriosityGameActivity" />
+
+            android:parentActivityName=".ChoiceJourneyActivity"/>
+
+
+        <activity android:name=".games.CuriosityGameActivity"/>
         <activity android:name=".games.TheatreGameActivity" />
         <activity android:name=".ChoiceGameActivity" />
         <activity android:name=".games.FourviereGameActivity" />
-        <activity
-            android:name=".games.pop"
-            android:theme="@style/CustomTheme" />
         <activity
             android:name=".RulesActivity"
             android:parentActivityName=".SettingsActivity" />
         <activity
             android:name=".ChoiceJourneyActivity"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".games.pop1"
-            android:theme="@style/CustomTheme" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
