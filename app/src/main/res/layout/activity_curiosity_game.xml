@@ -19,17 +19,17 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <Button
         android:id="@+id/nextGameIsBridge"
         android:layout_width="145dp"
         android:layout_height="47dp"
         android:layout_marginTop="552dp"
-        android:text="Next game"
+        android:text="Suivant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
 
     <Button
         android:id="@+id/bridgeHidden"
-        android:layout_width="114dp"
+        android:layout_width="200dp"
         android:layout_height="63dp"
         android:background="@android:color/transparent"
         android:text=""
@@ -68,7 +68,7 @@
         android:layout_marginTop="536dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Next game"
+        android:text="Suivant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
@@ -78,7 +78,7 @@
         android:id="@+id/myTextView"
         android:layout_width="179dp"
         android:layout_height="87dp"
-        android:text="Devinez où est la tour crayon dans l'image...."
+        android:text="Trouve la tour Crayon dans l'image...."
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +106,7 @@
         android:id="@+id/findBridge"
         android:layout_width="313dp"
         android:layout_height="69dp"
-        android:text="De meme, retrouvez le pont dans l'image !!"
+        android:text="De même, retrouve le pont dans l'image !!"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,7 +119,7 @@
     <Button
         android:id="@+id/chairHidden"
         android:layout_width="99dp"
-        android:layout_height="87dp"
+        android:layout_height="100dp"
         android:layout_marginStart="220dp"
         android:layout_marginLeft="220dp"
         android:text=""
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523"
+        app:layout_constraintVertical_bias="0.45"
         android:visibility="gone"/>
 
     <Button
@@ -154,6 +154,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.191" />
+
+    <Button
+        android:id="@+id/nextEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Suivant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

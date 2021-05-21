@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.lugdunum.HistoryActivity;
 import com.example.lugdunum.R;
 
 public class CuriosityGameActivity extends Activity {
@@ -29,18 +30,19 @@ public class CuriosityGameActivity extends Activity {
     private Button mButtonChairHidden;
     private Button mButtonCloseView;
     private Button mButtonWrongTouch;
+    private Button mButtonEnd;
 
 
     private ConstraintLayout mLayout;
-    private TextView mytext;
-    private View view;
-    private LayoutInflater LayoutInflater;
-    private PopupWindow popupWindow;
+    //private TextView mytext;
+    //private View view;
+    //private LayoutInflater LayoutInflater;
+    //private PopupWindow popupWindow;
     private TextView mytxtvw;
     private TextView mTextViewWellSpotted;
     private TextView mTextViewFindBridge;
     private Toast toast;
-    private Context context;
+    //private Context context;
 
 
 
@@ -77,6 +79,7 @@ public class CuriosityGameActivity extends Activity {
         mButtonChairHidden = (Button) findViewById(R.id.chairHidden);
         mButtonCloseView = (Button) findViewById(R.id.closeView);
         mButtonWrongTouch = (Button) findViewById(R.id.wrongTouch);
+        mButtonEnd = (Button) findViewById(R.id.nextEnd);
         mytxtvw=(TextView)findViewById(R.id.myTextView);
         mTextViewWellSpotted =(TextView)findViewById(R.id.wellSpotted);
         mTextViewFindBridge =(TextView)findViewById(R.id.findBridge);
@@ -87,7 +90,7 @@ public class CuriosityGameActivity extends Activity {
             @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
-                Toast toast=Toast.makeText(getApplicationContext(),"Essayez encore", Toast.LENGTH_SHORT);
+                Toast toast=Toast.makeText(getApplicationContext(),"Essaie encore", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 100, 100); // last two args are X and Y are used for setting position
                 toast.setDuration(2000);
                 toast.show();
@@ -145,6 +148,9 @@ public class CuriosityGameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mLayout.setBackgroundResource(R.drawable.without_chair);
+                mTextViewFindBridge.setText("Il manque une chaise ici, peux-tu la trouver ?");
+                mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.INVISIBLE)
+                        ? View.GONE : View.VISIBLE);
                 mButtonChairHidden.setVisibility(View.VISIBLE);
                 mButtonNextGameIsChair.setVisibility(View.INVISIBLE);
             }
@@ -152,8 +158,18 @@ public class CuriosityGameActivity extends Activity {
         mButtonChairHidden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
+                        ? View.GONE : View.INVISIBLE);
                 mLayout.setBackgroundResource(R.drawable.with_chair);
                 mButtonCloseView.setVisibility(View.VISIBLE);
+                mButtonEnd.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mButtonEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CuriosityGameActivity.this.finish();
             }
         });
 
