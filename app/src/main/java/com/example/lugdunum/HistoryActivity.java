@@ -27,7 +27,6 @@ import android.widget.ViewSwitcher;
 
 import com.example.lugdunum.games.CuriosityGameActivity;
 import com.example.lugdunum.games.FourviereGameActivity;
-import com.example.lugdunum.games.TheatreGameActivity;
 import com.google.android.gms.common.util.Strings;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -121,7 +120,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         //text and image appear on start
         currentIndex++;
         mTextHistory.setCurrentText(history[currentIndex]);
-        mImage.setImageResource(R.drawable.rhino1);
+        mImage.setImageResource(scenario.getCurrentRhino());
         mBackBtn.setVisibility(View.GONE);
         // ClickListener for NEXT button
         // When clicked on Button TextSwitcher will switch between labels
@@ -141,20 +140,16 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                         startActivity(intent);
                     }
                     else if (gameNumber == 2){
-                        Intent intent = new Intent(HistoryActivity.this, TheatreGameActivity.class);
-                        startActivity(intent);
-                    }
-                    else if (gameNumber == 3){
                         Intent intent = new Intent(HistoryActivity.this, FourviereGameActivity.class);
                         startActivity(intent);
                     }
-                    else if (gameNumber == 4){
+                    else if (gameNumber == 3){
                         HistoryActivity.this.finish();
                     }
-                    mImage.setImageResource(R.drawable.rhino2);
-                    mPoem.setImageResource(0);
                     mNextBtn.setText("Suivant");
                     scenario.incState();
+                    mImage.setImageResource(scenario.getCurrentRhino());
+                    mPoem.setImageResource(0);
                     history = scenario.getHistory();
                     messageCount = history.length;
                     currentIndex = 0;
@@ -176,18 +171,24 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
                 currentIndex--;
                 // If index reaches maximum then reset it
-                if (currentIndex == -1) {
-                    mImage.setImageResource(R.drawable.rhino2);
-                    mPoem.setImageResource(0);
-                    mNextBtn.setText("Suivant");
+                if (currentIndex == 0 && scenario.getState() == 0){
+                    if (mBackBtn.getVisibility() == View.VISIBLE){
+                        mBackBtn.setVisibility(View.GONE);
+                    }
+                }
+                else if (currentIndex == -1) {
                     scenario.decState();
                     history = scenario.getHistory();
+                    mNextBtn.setText("Suivant");
                     gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
                     messageCount = history.length;
-                    currentIndex = messageCount-1;
+                    currentIndex = messageCount - 1;
+
+                    mImage.setImageResource(scenario.getCurrentRhino());
+                    mPoem.setImageResource(0);
                 }
                 else{
-                    mImage.setImageResource(R.drawable.rhino2);
+                    mImage.setImageResource(scenario.getCurrentRhino());
                     mPoem.setImageResource(0);
                     mNextBtn.setText("Suivant");
                 }
