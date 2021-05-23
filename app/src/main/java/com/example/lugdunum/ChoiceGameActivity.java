@@ -9,12 +9,10 @@ import android.widget.Button;
 
 import com.example.lugdunum.games.CuriosityGameActivity;
 import com.example.lugdunum.games.FourviereGameActivity;
-import com.example.lugdunum.games.TheatreGameActivity;
 
 public class ChoiceGameActivity extends AppCompatActivity {
 
     private Button mGoCuriosites;
-    private Button mGoTheatre;
     private Button mGoFourviere;
 
     @Override
@@ -33,15 +31,7 @@ public class ChoiceGameActivity extends AppCompatActivity {
         });
 
         //no links for the other games
-        mGoTheatre = (Button) findViewById(R.id.button_game_2);
-        mGoTheatre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ChoiceGameActivity.this, TheatreGameActivity.class);
-                startActivity(intent);
-            }
-        });
+
         mGoCuriosites = (Button) findViewById(R.id.button_game_1);
         mGoCuriosites.setOnClickListener(new View.OnClickListener() {
             @Override

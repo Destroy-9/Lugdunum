@@ -43,7 +43,7 @@ public class Scenario {
     };
     private String theatre1[] = {
             "Bienvenue dans mon chez moi ! C'est ici que je passais le plus clair de mon temps ! Je ne t'en ai pas parlé avant, mais à l'époque où j'avais un corps, j'étais comédien. Je formais un duo comique avec mon ami Cirus. On nous appelait \"Les RhinoCirus\". ",
-            "Je suis très nostalgique de cette époque. Il y avait un endroit que j'appréciais particulièrement, sauras-tu le retrouver ? "
+            "Je suis très nostalgique de cette époque. Il y avait un endroit que j'appréciais particulièrement, saurais-tu le retrouver ? "
     };
     private String theatre2[] = {
             "Oui, je sais, c'est juste une scène. Mais ce que je voudrais te montrer c'est surtout la bouche d'égout au centre du cercle formé par la scène. Lorsque tu te trouves sur ce point, tous les sons que tu émets te reviennent en écho de façon uniforme. ",
@@ -51,7 +51,9 @@ public class Scenario {
     };
     private String theatre3[] = {
             "Ce théâtre est l'un des plus anciens du monde romain, et le plus ancien de Gaule. Il date de 15 avant J-C dans votre calendrier. À l'époque, il pouvait accueillir 10 000 spectateurs ! Même après des années de scène, j'avais toujours autant le trac avant de jouer ici. ",
-            "De l'autre côté du site archéologique, tu peux trouver l'Odéon, qui était utilisé pour les représentations musicales, les lectures publiques, ou les récitations poétiques. Il est beaucoup plus petit que le Grand Théâtre, et beaucoup plus jeune. Il n'a que 3 000 places et n'a été construit qu'à la fin du 1er siècle après J-C. ",
+            "De l'autre côté du site archéologique, tu peux trouver l'Odéon, qui était utilisé pour les représentations musicales, les lectures publiques, ou les récitations poétiques. Il est beaucoup plus petit que le Grand Théâtre, et beaucoup plus jeune. Il n'a que 3 000 places et n'a été construit qu'à la fin du 1er siècle après J-C. "
+    };
+    private String theatre4[] = {
             "Il y a aussi le prétoire du gouverneur de Lyon dans les parages, mais n'y vas pas, c'est dangereux les prétoires (c'est ce que vous appelez un palais de justice je crois maintenant). ",
             "Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte les marches et va en direction de la basilique de Fourvière, on se retrouve là-bas !"
     };
@@ -79,8 +81,12 @@ public class Scenario {
     };
     private String fin[] = {"Je te souhaite bon vent, *user* !"};
 
+    private int currentRhino;
+
     public Scenario() {
+
         state = 0;
+        currentRhino = R.drawable.rhino1;
     }
 
     public String[] getHistory(){
@@ -103,13 +109,15 @@ public class Scenario {
                 break;
             case 7: res = theatre3;
                 break;
-            case 8: res = fourviere1;
+            case 8: res = theatre4;
                 break;
-            case 9: res = fourviere2;
+            case 9: res = fourviere1;
                 break;
-            case 10: res = fourviere_leave;
+            case 10: res = fourviere2;
                 break;
-            case 11: res = traboule;
+            case 11: res = fourviere_leave;
+                break;
+            case 12: res = traboule;
                 break;
             default: res = fin;
                 break;
@@ -134,26 +142,30 @@ public class Scenario {
                 res = 0;
                 mNextBtn.setText("Partir");
                 break;
-            case 5: res = 2;
+            case 5: res = 0;
+                mImage.setImageResource(R.drawable.theater);
+                mNextBtn.setText("Trouvé !");
                 break;
             case 6: res = 0;
                 mPoem.setImageResource(R.drawable.poem);
                 mImage.setImageResource(0);
                 break;
-            case 8: res = 3;
+            case 7: res = 0;
+                mImage.setImageResource(R.drawable.odeon);
                 break;
-            case 9:
+            case 9: res = 2;
+                break;
+            case 10:
                 res = 0;
                 mNextBtn.setText("Partir");
                 break;
-            case 10: res = 0;
+            case 11: res = 0;
                 mNextBtn.setText("Je suis en bas !");
                 break;
-            case 11: res = 4;
+            case 12: res = 3;
                 mNextBtn.setText("Finir");
-                mImage.setImageResource(R.drawable.rhino3);
                 break;
-            default: mImage.setImageResource(R.drawable.rhino2);
+            default: mImage.setImageResource(getCurrentRhino());
                 res = 0;
                 break;
         }
@@ -171,5 +183,19 @@ public class Scenario {
 
     public void decState(){
         state--;
+    }
+
+    public int getCurrentRhino() {
+        if (state < 2){
+            currentRhino = R.drawable.rhino1;
+        }
+        else if (state < 12){
+            currentRhino = R.drawable.rhino2;
+        }
+        else{
+            currentRhino = R.drawable.rhino3;
+        }
+
+        return currentRhino;
     }
 }
