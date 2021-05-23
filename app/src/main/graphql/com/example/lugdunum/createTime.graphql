@@ -1,0 +1,7 @@
+mutation createTime($hour: Int!, $minutes: Int!){
+    addTime(hour: $hour, minutes: $minutes){
+        id,
+        hour,
+        minutes
+    }
+}
