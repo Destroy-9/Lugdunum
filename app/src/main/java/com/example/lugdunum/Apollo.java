@@ -7,6 +7,6 @@ public class Apollo {
     // First, create an `ApolloClient`
     // Replace the serverUrl with your GraphQL endpoint
     public static ApolloClient apolloClient = ApolloClient.builder()
-            .serverUrl("https://localhost:3000/graphql/endpoint")
+            .serverUrl("http://10.0.2.2:3000/graphql")
             .build();
 }

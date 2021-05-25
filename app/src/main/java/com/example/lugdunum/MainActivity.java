@@ -19,6 +19,8 @@ import com.apollographql.apollo.exception.ApolloException;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView mPlayButton;
@@ -81,8 +83,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mUser = new User(mPseudo.getText().toString(), mPassword.getText().toString());
+                System.out.println("***Pseudo : "+mPseudo.getText().toString()+" ***");
+                System.out.println("***Mot de passe : "+mPassword.getText().toString()+" ***");
+
+                CreateUserMutation createUserMutation = CreateUserMutation.builder()
+                        .username(mPseudo.getText().toString())
+                        .password(mPassword.getText().toString())
+                        .build();
                 Apollo.apolloClient
-                        .mutate(new CreateUserMutation(mPseudo.getText().toString(),mPassword.getText().toString()))
+                        .mutate(createUserMutation)
                         .enqueue(new ApolloCall.Callback<CreateUserMutation.Data>() {
                             @Override
                             public void onResponse(@NotNull Response<CreateUserMutation.Data> response) {
@@ -94,6 +103,19 @@ public class MainActivity extends AppCompatActivity {
                                 Log.e("TAG", e.getMessage(), e);
                             }
                         });
+               /* GetUserQuery getUserQuery = GetUserQuery.builder().build();
+                Apollo.apolloClient.query(getUserQuery)
+                        .enqueue(new ApolloCall.Callback<GetUserQuery.Data>() {
+                            @Override
+                            public void onResponse(@NotNull Response<GetUserQuery.Data> response) {
+                                Log.e("Apollo", "Launch site: " + Objects.requireNonNull(response.getData()).toString());
+                            }
+
+                            @Override
+                            public void onFailure(@NotNull ApolloException e) {
+                                Log.e("Apollo", "Error", e);
+                            }
+                        });*/
 
                 //creation of the link between mainActivity and ChoiceJourneyActivity
                 Intent intent = new Intent(MainActivity.this, ChoiceJourneyActivity.class);
