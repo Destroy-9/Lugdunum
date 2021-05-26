@@ -180,12 +180,13 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     scenario.decState();
                     history = scenario.getHistory();
                     mNextBtn.setText("Suivant");
-                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
                     messageCount = history.length;
                     currentIndex = messageCount - 1;
-
                     mImage.setImageResource(scenario.getCurrentRhino());
                     mPoem.setImageResource(0);
+
+                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
+
                 }
                 else{
                     mImage.setImageResource(scenario.getCurrentRhino());

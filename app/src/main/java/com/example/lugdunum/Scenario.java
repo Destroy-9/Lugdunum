@@ -37,8 +37,8 @@ public class Scenario {
     };
     private String curiosites_leave[] = {
             "Très bien, on s'en va. Le mieux est de retourner sur nos pas, et de reprendre notre route à la sortie du parking. À la sortie du parking, donc, on continue de descendre un peu, en se mettant sur le trottoir de gauche. ",
-            "On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romaines. Je me suis douché toute ma vie là dedans ! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. ",
-            "Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la *Grotte Bérelle*, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. ",
+            "On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romains. Je me suis douché toute ma vie là dedans ! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. ",
+            "Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la Grotte Bérelle, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. ",
             "Enfin, arrivés vers la place des minimes, on restera bien à gauche pour remonter en direction du théâtre ! On se retrouve là-bas. "
     };
     private String theatre1[] = {
