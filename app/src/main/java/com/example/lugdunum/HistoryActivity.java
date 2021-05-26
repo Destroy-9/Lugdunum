@@ -131,10 +131,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 currentIndex++;
-                // If index reaches maximum then reset it
-                if (currentIndex == messageCount-1 || messageCount == 1){
-                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
-                }
                 if (currentIndex == messageCount) {
                     if (gameNumber == 1){
                         Intent intent = new Intent(HistoryActivity.this, CuriosityGameActivity.class);
@@ -156,6 +152,11 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     currentIndex = 0;
                 }
                 mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
+
+                // If index reaches maximum then reset it
+                if (currentIndex == messageCount-1 || messageCount == 1){
+                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
+                }
 
                 if (mBackBtn.getVisibility() == View.GONE){
                     mBackBtn.setVisibility(View.VISIBLE);

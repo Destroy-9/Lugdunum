@@ -39,6 +39,9 @@ public class Scenario {
     private String curiosites_leave[] = {
             "Très bien, on s'en va. Le mieux est de retourner sur nos pas, et de reprendre notre route à la sortie du parking. À la sortie du parking, donc, on continue de descendre un peu, en se mettant sur le trottoir de gauche. ",
             "On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romains. Je me suis douché toute ma vie là dedans ! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. ",
+            "En face, tu peux admirer la façade de l'église Saint-Just, construite en 1662 par les Chanoines de Saint-Just. "
+    };
+    private String entree_theatre[] = {
             "Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la Grotte Bérelle, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. ",
             "Enfin, arrivés vers la place des minimes, on restera bien à gauche pour remonter en direction du théâtre ! On se retrouve là-bas. "
     };
@@ -71,16 +74,22 @@ public class Scenario {
             "Je te laisse contempler l'éblouissant intérieur de la Basilique Notre-Dame de Fourvière si tu le souhaites, ainsi que la magnifique vue sur la ville de Lyon qui est disponible en allant vers l'esplanade. Dis moi quand tu veux partir !"
     };
     private String fourviere_leave[] = {
-            "Super, allons-y ! Quand tu es sur l'esplanade, il te faut descendre les escaliers qui te mèneront au jardin du Rosaire. La balade est plutôt agréable tu verras. ",
+            "Super, allons-y ! Quand tu es sur l'esplanade, il te faut descendre les escaliers qui te mèneront au jardin du Rosaire. La balade est plutôt agréable tu verras. "
+    };
+    private String escaliers[] = {
             "En bas du jardin, quand tu passeras le portail, il te faudra traverser la route pour prendre les escaliers. Je te laisse me dire lorsque tu arrives en bas. "
     };
     private String traboule[] = {
             "Cher *user*, c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Reviens quand tu veux, tu pourras m'y retrouver. ",
-            "Rassures toi, je ne te quitte pas comme ça, perdu au milieu de la ville. Tu es ici dans la rue du Boeuf, dans laquelle se trouve une traboule au numéro 27. Pousse la porte, et traverse la. ",
+            "Rassures toi, je ne te quitte pas comme ça, perdu au milieu de la ville. Tu es ici dans la rue du Boeuf, dans laquelle se trouve une traboule au numéro 27. Pousse la porte, et traverse la. "
+    };
+    private String traboule_in[] = {
             "En sortant de la traboule, tourne à droite dans la rue Saint-Jean. En continuant tout droit, tu traverseras la place Saint-Jean sur laquelle se trouve la Cathédrale, puis tu trouveras l'entrée du funiculaire.",
             "À la sortie de la traboule, je ne serai plus là. Je me serai évaporé dans les combles. "
     };
-    private String fin[] = {"Je te souhaite bon vent, *user* !"};
+    private String fin[] = {
+            "Je te souhaite bon vent, *user* !"
+    };
 
     private int currentRhino;
 
@@ -104,21 +113,27 @@ public class Scenario {
                 break;
             case 4: res = curiosites_leave;
                 break;
-            case 5: res = theatre1;
+            case 5: res = entree_theatre;
                 break;
-            case 6: res = theatre2;
+            case 6: res = theatre1;
                 break;
-            case 7: res = theatre3;
+            case 7: res = theatre2;
                 break;
-            case 8: res = theatre4;
+            case 8: res = theatre3;
                 break;
-            case 9: res = fourviere1;
+            case 9: res = theatre4;
                 break;
-            case 10: res = fourviere2;
+            case 10: res = fourviere1;
                 break;
-            case 11: res = fourviere_leave;
+            case 11: res = fourviere2;
                 break;
-            case 12: res = traboule;
+            case 12: res = fourviere_leave;
+                break;
+            case 13: res = escaliers;
+                break;
+            case 14: res = traboule;
+                break;
+            case 15: res = traboule_in;
                 break;
             default: res = fin;
                 break;
@@ -143,27 +158,43 @@ public class Scenario {
                 res = 0;
                 mNextBtn.setText("Partir");
                 break;
+            case 4: res = 0;
+                mImage.setImageResource(R.drawable.eglisesaintjust);
+                break;
             case 5: res = 0;
+                mImage.setImageResource(R.drawable.entreetheatre);
+                break;
+            case 6: res = 0;
                 mImage.setImageResource(R.drawable.theater);
                 mNextBtn.setText("Trouvé !");
                 break;
-            case 6: res = 0;
+            case 7: res = 0;
                 mPoem.setImageResource(R.drawable.poem);
                 mImage.setImageResource(0);
                 break;
-            case 7: res = 0;
+            case 8: res = 0;
                 mImage.setImageResource(R.drawable.odeon);
                 break;
-            case 9: res = 2;
+            case 9: res = 0;
+                mImage.setImageResource(R.drawable.sortietheatre);
                 break;
-            case 10:
+            case 10: res = 2;
+                break;
+            case 11:
                 res = 0;
                 mNextBtn.setText("Partir");
                 break;
-            case 11: res = 0;
-                mNextBtn.setText("Je suis en bas !");
+            case 12: res = 0;
+                mImage.setImageResource(R.drawable.sortieesplanade);
                 break;
-            case 12: res = 3;
+            case 13: res = 0;
+                mNextBtn.setText("Je suis en bas !");
+                mImage.setImageResource(R.drawable.escaliersfin);
+                break;
+            case 14: res = 0;
+                mImage.setImageResource(R.drawable.porte27);
+                break;
+            case 15: res = 3;
                 mNextBtn.setText("Finir");
                 break;
             default: mImage.setImageResource(getCurrentRhino());
