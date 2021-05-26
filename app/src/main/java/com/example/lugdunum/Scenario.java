@@ -59,7 +59,10 @@ public class Scenario {
     };
     private String theatre4[] = {
             "Il y a aussi le prétoire du gouverneur de Lyon dans les parages, mais n'y vas pas, c'est dangereux les prétoires (c'est ce que vous appelez un palais de justice je crois maintenant). ",
-            "Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte les marches et va en direction de la basilique de Fourvière, on se retrouve là-bas !"
+            "Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte les marches et va en direction de la basilique de Fourvière."
+    };
+    private String fourviere0[] = {
+            "Elle ressemble à ça. On se retrouve là-bas !"
     };
     private String fourviere1[] = {
             "Tu as trouvé la basilique ! Elle est chouette non ? Cet endroit était le forum Vetus à mon époque (d'où le nom de Fourvière). ",
@@ -123,17 +126,19 @@ public class Scenario {
                 break;
             case 9: res = theatre4;
                 break;
-            case 10: res = fourviere1;
+            case 10: res = fourviere0;
                 break;
-            case 11: res = fourviere2;
+            case 11: res = fourviere1;
                 break;
-            case 12: res = fourviere_leave;
+            case 12: res = fourviere2;
                 break;
-            case 13: res = escaliers;
+            case 13: res = fourviere_leave;
                 break;
-            case 14: res = traboule;
+            case 14: res = escaliers;
                 break;
-            case 15: res = traboule_in;
+            case 15: res = traboule;
+                break;
+            case 16: res = traboule_in;
                 break;
             default: res = fin;
                 break;
@@ -178,23 +183,26 @@ public class Scenario {
             case 9: res = 0;
                 mImage.setImageResource(R.drawable.sortietheatre);
                 break;
-            case 10: res = 2;
+            case 10: res = 0;
+                mImage.setImageResource(R.drawable.fourviere);
                 break;
-            case 11:
+            case 11: res = 2;
+                break;
+            case 12:
                 res = 0;
                 mNextBtn.setText("Partir");
                 break;
-            case 12: res = 0;
+            case 13: res = 0;
                 mImage.setImageResource(R.drawable.sortieesplanade);
                 break;
-            case 13: res = 0;
+            case 14: res = 0;
                 mNextBtn.setText("Je suis en bas !");
                 mImage.setImageResource(R.drawable.escaliersfin);
                 break;
-            case 14: res = 0;
+            case 15: res = 0;
                 mImage.setImageResource(R.drawable.porte27);
                 break;
-            case 15: res = 3;
+            case 16: res = 3;
                 mNextBtn.setText("Finir");
                 break;
             default: mImage.setImageResource(getCurrentRhino());
