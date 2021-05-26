@@ -14,6 +14,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -95,7 +96,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 // set the gravity of text to top and center horizontal
                 t.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
                 // set displayed text size
-                t.setTextSize(24);
+                t.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24.f);
                 return t;
             }
         });
