@@ -14,7 +14,7 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
     private ImageView mSettingsIcon;
     private Button mMapButton;
     private Button mGameButton;
-    private Button mHistoryButton;
+    private ImageView mHistoryButton;
 
 
     @Override
@@ -51,7 +51,7 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
             }
         });
 
-        mHistoryButton = (Button) findViewById(R.id.historyButton);
+        mHistoryButton = (ImageView) findViewById(R.id.historyButton);
         mHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

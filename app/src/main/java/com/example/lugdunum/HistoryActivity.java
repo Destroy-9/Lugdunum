@@ -14,6 +14,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -95,7 +96,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 // set the gravity of text to top and center horizontal
                 t.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
                 // set displayed text size
-                t.setTextSize(24);
+                t.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24.f);
                 return t;
             }
         });
@@ -130,10 +131,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 currentIndex++;
-                // If index reaches maximum then reset it
-                if (currentIndex == messageCount-1 || messageCount == 1){
-                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
-                }
                 if (currentIndex == messageCount) {
                     if (gameNumber == 1){
                         Intent intent = new Intent(HistoryActivity.this, CuriosityGameActivity.class);
@@ -155,6 +152,11 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     currentIndex = 0;
                 }
                 mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
+
+                // If index reaches maximum then reset it
+                if (currentIndex == messageCount-1 || messageCount == 1){
+                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
+                }
 
                 if (mBackBtn.getVisibility() == View.GONE){
                     mBackBtn.setVisibility(View.VISIBLE);
@@ -180,12 +182,13 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     scenario.decState();
                     history = scenario.getHistory();
                     mNextBtn.setText("Suivant");
-                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
                     messageCount = history.length;
                     currentIndex = messageCount - 1;
-
                     mImage.setImageResource(scenario.getCurrentRhino());
                     mPoem.setImageResource(0);
+
+                    gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
+
                 }
                 else{
                     mImage.setImageResource(scenario.getCurrentRhino());
