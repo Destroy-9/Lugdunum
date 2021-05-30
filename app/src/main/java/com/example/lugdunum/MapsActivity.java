@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.lugdunum.games.CuriosityGameActivity;
 import com.example.lugdunum.games.FourviereGameActivity;
+import com.example.lugdunum.games.TheatreGameActivity;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -43,6 +44,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     TextView mDescription;
     Circle[] interets;
     FragmentManager fragmentManager;
+    public final MapContent mContent = new MapContent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,77 +129,68 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
 
     public void afficheCerles() {
+            //problème avec le if created !
+            CircleOptions cercleType1 = new CircleOptions();
+            cercleType1
+                    .center(new LatLng(45.756773, 4.816251))
+                    .radius(100)
+                    .strokeColor(Color.RED)
+                    .strokeWidth(5)
+                    .fillColor(0x55FF6666);
 
-        CircleOptions cercleType1 = new CircleOptions();
-        cercleType1
-                .center(new LatLng(45.756773, 4.816251))
-                .radius(100)
-                .strokeColor(Color.RED)
-                .strokeWidth(5)
-                .fillColor(0x55FF6666);
-
-        interets = new Circle[11];
-        for (int i = 0; i < interets.length; i++) {
-            switch (i) {
-                case 0:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.756773, 4.816251));
-                    break;
-                case 1:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.755072, 4.821873));
-                    break;
-                case 2:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.75617, 4.820167));
-                    break;
-                case 3:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.756939, 4.819727));
-                    break;
-                case 4:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.75645, 4.821691));
-                    break;
-                case 5:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.758034, 4.821782));
-                    break;
-                case 6:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.758713, 4.819754));
-                    break;
-                case 7:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762301, 4.822372));
-                    break;
-                case 8:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762678, 4.823016));
-                    break;
-                case 9:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.76107, 4.824555));
-                    break;
-                case 10:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762111, 4.82746));
-                    break;
-                default:
-                    System.out.println("ca passe ici");
+            interets = new Circle[11];
+            for (int i = 0; i < interets.length; i++) {
+                switch (i) {
+                    case 0:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.756773, 4.816251));
+                        break;
+                    case 1:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.755072, 4.821873));
+                        break;
+                    case 2:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.75617, 4.820167));
+                        break;
+                    case 3:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.756939, 4.819727));
+                        break;
+                    case 4:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.75645, 4.821691));
+                        break;
+                    case 5:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.758034, 4.821782));
+                        break;
+                    case 6:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.758713, 4.819754));
+                        break;
+                    case 7:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.762301, 4.822372));
+                        break;
+                    case 8:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.762678, 4.823016));
+                        break;
+                    case 9:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.76107, 4.824555));
+                        break;
+                    case 10:
+                        interets[i] = mMap.addCircle(cercleType1);
+                        interets[i].setCenter(new LatLng(45.762111, 4.82746));
+                        break;
+                    default:
+                        System.out.println("ca passe ici");
+                }
             }
-        }
-        interets[0].setVisible(true);
-        interets[1].setVisible(false);
-        interets[2].setVisible(false);
-        interets[3].setVisible(false);
-        interets[4].setVisible(false);
-        interets[5].setVisible(false);
-        interets[6].setVisible(false);
-        interets[7].setVisible(false);
-        interets[8].setVisible(false);
-        interets[9].setVisible(false);
-        interets[10].setVisible(false);
+            setInvisibleCircle();
+
     }
 
         @Override
@@ -211,32 +204,45 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             LatLng here = new LatLng(latitude, longitude);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here,15));
             //mMap.addMarker(new MarkerOptions().position(here).title("Vous êtes ici"));
+
+            if (interets[mContent.numCercle].isVisible()==false){
+              interets[mContent.numCercle].setVisible(true);
+            }
             testPos(location);
         }
     }
 
     public void testPos(@NonNull Location location){
-        int res=0;
         Toast.makeText(this, "ca passe ici", Toast.LENGTH_LONG).show();
         //LatLng test = new LatLng(45.756796,4.816242);
         float results [] = new float [1];
-        while (!interets[res].isVisible() && res<10){
-            res++;
-        }
+
         Location.distanceBetween(
-                interets[res].getCenter().latitude, interets[res].getCenter().longitude,
+                interets[mContent.numCercle].getCenter().latitude, interets[mContent.numCercle].getCenter().longitude,
                 location.getLatitude(), location.getLongitude(),
                 results
         );
-        if (results[0]<interets[res].getRadius()){
-            interets[res].setVisible(false);
-            interets[res+1].setVisible(true);
+        if (results[0]<interets[mContent.numCercle].getRadius()){
+            setInvisibleCircle();
+            if (interets[mContent.numCercle+1].isVisible()==false){
+                interets[mContent.numCercle+1].setVisible(true);
+            }
             mDescription.setVisibility(View.VISIBLE);
             fragmentManager.beginTransaction().hide(mapFragment).commit();
-            setGame(res);
+            mContent.numCercle++;
+            setGame(mContent.numActiv);
+
+
+
 
         }
         Toast.makeText(this, "ca passe la", Toast.LENGTH_LONG).show();
+    }
+
+    public void setInvisibleCircle(){
+        for (int i=0; i< interets.length; i++){
+                interets[i].setVisible(false);
+        }
     }
 
     public void setGame(int numero){
@@ -245,10 +251,18 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             case 0:
                 intent = new Intent(MapsActivity.this, CuriosityGameActivity.class);
                 startActivity(intent);
+                interets[mContent.numCercle+1].setVisible(false);
+                mContent.numActiv++;
                 break;
             case 1:
                 intent = new Intent(MapsActivity.this, FourviereGameActivity.class);
                 startActivity(intent);
+                mContent.numActiv++;
+                break;
+            case 2:
+              //  intent = new Intent(MapsActivity.this, TheatreGameActivity.class);
+              //  startActivity(intent);
+                mContent.numActiv++;
                 break;
         }
     }
