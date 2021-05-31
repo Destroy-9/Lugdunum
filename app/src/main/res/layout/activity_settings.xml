@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".activity.SettingsActivity">
 
     <ImageView
         android:id="@+id/rulesButton"
@@ -14,5 +14,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rulesbutton" />
+        app:srcCompat="@drawable/rules_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

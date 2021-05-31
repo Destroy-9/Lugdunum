@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="440dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@android:color/white"
+
+
+    app:cardCornerRadius="10dp"
+    app:cardElevation="30dp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/zoom_crayon"/>
+
+
+        <TextView
+            android:layout_width="281dp"
+            android:layout_height="272dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="end"
+            android:text="Construite pour servir de repère visuel au même titre que la basilique de Fourvière, elle mesure 165m de haut, soit la hauteur de l'esplanade de la Basilique. Elle est composée de 41 étages pour une surface de 37 000m² et un diamètre de 44m. La pyramide qui lui a valu son surnom du Crayon est haute de 23m.
+    Elle repose sur un noyau central en béton armé (à l'intérieur duquel se trouvent les ascenseurs) et sur 71 poteaux répartis à la périphérie. Sa façade est en béton ajouré."
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/white"
+            android:textStyle="italic" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
