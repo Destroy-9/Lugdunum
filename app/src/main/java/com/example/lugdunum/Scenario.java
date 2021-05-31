@@ -1,15 +1,7 @@
 package com.example.lugdunum;
 
-import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import com.example.lugdunum.games.CuriosityGameActivity;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class Scenario {
     private int state;
@@ -99,7 +91,7 @@ public class Scenario {
     public Scenario() {
 
         state = 0;
-        currentRhino = R.drawable.rhino1;
+        currentRhino = R.drawable.rhino_arms_crossed;
     }
 
     public String[] getHistory(){
@@ -151,10 +143,10 @@ public class Scenario {
         int res;
 
         switch (state) {
-            case 0: mImage.setImageResource(R.drawable.fountain);
+            case 0: mImage.setImageResource(R.drawable.history_fountain);
                 res = 0;
                 break;
-            case 1: mImage.setImageResource(R.drawable.curiositeportal);
+            case 1: mImage.setImageResource(R.drawable.history_curiosity_portal);
                 res = 0;
                 break;
             case 2: res = 1;
@@ -164,27 +156,27 @@ public class Scenario {
                 mNextBtn.setText("Partir");
                 break;
             case 4: res = 0;
-                mImage.setImageResource(R.drawable.eglisesaintjust);
+                mImage.setImageResource(R.drawable.history_saint_juste_church);
                 break;
             case 5: res = 0;
-                mImage.setImageResource(R.drawable.entreetheatre);
+                mImage.setImageResource(R.drawable.history_theatre_entry);
                 break;
             case 6: res = 0;
-                mImage.setImageResource(R.drawable.theater);
+                mImage.setImageResource(R.drawable.history_theater);
                 mNextBtn.setText("Trouvé !");
                 break;
             case 7: res = 0;
-                mPoem.setImageResource(R.drawable.poem);
+                mPoem.setImageResource(R.drawable.history_poem);
                 mImage.setImageResource(0);
                 break;
             case 8: res = 0;
-                mImage.setImageResource(R.drawable.odeon);
+                mImage.setImageResource(R.drawable.history_odeon);
                 break;
             case 9: res = 0;
-                mImage.setImageResource(R.drawable.sortietheatre);
+                mImage.setImageResource(R.drawable.history_theatre_exit);
                 break;
             case 10: res = 0;
-                mImage.setImageResource(R.drawable.fourviere);
+                mImage.setImageResource(R.drawable.history_fourviere);
                 break;
             case 11: res = 2;
                 break;
@@ -193,14 +185,14 @@ public class Scenario {
                 mNextBtn.setText("Partir");
                 break;
             case 13: res = 0;
-                mImage.setImageResource(R.drawable.sortieesplanade);
+                mImage.setImageResource(R.drawable.history_esplanade_exit);
                 break;
             case 14: res = 0;
                 mNextBtn.setText("Je suis en bas !");
-                mImage.setImageResource(R.drawable.escaliersfin);
+                mImage.setImageResource(R.drawable.history_stairs_end);
                 break;
             case 15: res = 0;
-                mImage.setImageResource(R.drawable.porte27);
+                mImage.setImageResource(R.drawable.history_door27);
                 break;
             case 16: res = 3;
                 mNextBtn.setText("Finir");
@@ -227,13 +219,13 @@ public class Scenario {
 
     public int getCurrentRhino() {
         if (state < 2){
-            currentRhino = R.drawable.rhino1;
+            currentRhino = R.drawable.rhino_arms_crossed;
         }
         else if (state < 12){
-            currentRhino = R.drawable.rhino2;
+            currentRhino = R.drawable.rhino_without_helmet;
         }
         else{
-            currentRhino = R.drawable.rhino3;
+            currentRhino = R.drawable.rhino;
         }
 
         return currentRhino;

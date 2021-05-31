@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoiceJourneyActivity">
+    tools:context=".activity.ChoiceJourneyActivity">
 
     <ImageView
         android:id="@+id/lugdunum"
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/lugdunum" />
+        app:srcCompat="@drawable/logo_lugdunum" />
 
     <ImageView
         android:id="@+id/settingsIcon"
@@ -25,7 +25,7 @@
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/settingsbutton"/>
+        app:srcCompat="@drawable/settings_button"/>
 
     <TextView
         android:id="@+id/accueil"
@@ -68,7 +68,7 @@ Bonne visite !\n"
                 android:id="@+id/mapboussole"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:src="@drawable/mapboussole"
+                android:src="@drawable/map_compass"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +95,7 @@ Bonne visite !\n"
         android:id="@+id/historyButton"
         android:layout_height="55dp"
         android:layout_width="120dp"
-        android:src="@drawable/playbuttonblack"
+        android:src="@drawable/play_button_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="5dp"

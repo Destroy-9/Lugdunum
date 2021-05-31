@@ -23,7 +23,7 @@
         android:layout_width="411dp"
         android:layout_height="498dp"
         android:layout_marginBottom="132dp"
-        android:background="@drawable/lionpuzzle"
+        android:background="@drawable/fourviere_puzzle_lion"
         android:gravity="center"
 
         android:textColor="@android:color/black"
@@ -38,7 +38,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/statnoire"
+        android:id="@+id/blackStatue"
         android:layout_width="100dp"
         android:layout_height="107dp"
         android:layout_gravity="bottom"
@@ -52,10 +52,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.991"
-        app:srcCompat="@drawable/statnoire" />
+        app:srcCompat="@drawable/fourviere_black_statue" />
 
     <ImageView
-        android:id="@+id/marie"
+        android:id="@+id/marieStatue"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_gravity="bottom"
@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977"
-        app:srcCompat="@drawable/statmarie" />
+        app:srcCompat="@drawable/fourviere_marie_statue" />
 
     <ImageView
         android:id="@+id/croix"
@@ -86,7 +86,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.984"
-        app:srcCompat="@drawable/croix" />
+        app:srcCompat="@drawable/fourviere_cross" />
 
     <ImageView
         android:id="@+id/lion"
@@ -103,7 +103,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/lion" />
+        app:srcCompat="@drawable/fourviere_lion" />
 
 
 
