@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.api.Response;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private User mUser;
     private boolean mOnLogin = false;
     private boolean mCreateNewUser = false;
-    private boolean mUserValidated =false;
+    private boolean mUserValidated = false;
 
 
 
@@ -121,7 +122,11 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("***Pseudo : "+mPseudo.getText().toString()+" ***");
                 System.out.println("***Mot de passe : "+mPassword.getText().toString()+" ***");
 
-                /*if (mOnLogin) {
+                // To enter in debug mode
+                if (mUser.getPseudo().equals("CMN<3") && mUser.getPassword().equals("DijkstraGo2021")){
+                    Toast.makeText(MainActivity.this, "Mode debug activé", Toast.LENGTH_LONG).show();
+                }
+                /*elif (mOnLogin) {
                     GetUserQuery getUserQuery = GetUserQuery.builder().build();
                     Apollo.apolloClient.query(getUserQuery)
                         .enqueue(new ApolloCall.Callback<GetUserQuery.Data>() {
