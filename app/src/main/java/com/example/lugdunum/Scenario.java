@@ -221,7 +221,7 @@ public class Scenario {
         if (state < 2){
             currentRhino = R.drawable.rhino_arms_crossed;
         }
-        else if (state < 12){
+        else if (state < 15){
             currentRhino = R.drawable.rhino_without_helmet;
         }
         else{
