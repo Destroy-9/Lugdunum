@@ -116,7 +116,7 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         builder.setTitle("Bienvenue")
                 .setMessage("Regarde autour de toi, cela te permettra d'associer les statues au bon environnement !")
-                .setPositiveButton("Play", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Jouer", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Start
@@ -146,7 +146,7 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         builder.setTitle("Dommage")
                 .setMessage("Tu as eu " + mScore + " réponses positives!")
-                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Essaie encore", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Try Again
