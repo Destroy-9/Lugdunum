@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.SettingsActivity"
-    android:background="@drawable/fond4">
+    android:background="@drawable/background_columns_left">
 
     <ImageView
         android:id="@+id/rulesButton"
@@ -15,5 +15,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/regles" />
+        app:srcCompat="@drawable/rules_button_red" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.ChoiceJourneyActivity"
-    android:background="@drawable/fond1">
+    android:background="@drawable/background_door">
     style="@android:style/TextAppearance.DeviceDefault.Medium">
 
     <ImageView
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_lugdunum" />
+        app:srcCompat="@drawable/logo_lugdunum_black" />
 
     <ImageView
         android:id="@+id/settingsIcon"
@@ -41,6 +41,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/introduction_paragraph"
+        android:textColor="#870000"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -54,6 +55,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/team"
+        android:textColor="#870000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/introduction_paragraph" />
 
@@ -91,6 +93,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginBottom="4dp"
         android:text="@string/hill_explanation"
+        android:textColor="#870000"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/historyButton"

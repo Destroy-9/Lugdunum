@@ -19,7 +19,7 @@ public class ChoiceGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choixgame);
+        setContentView(R.layout.activity_choice_game);
 
         //creation of the link between choicegame and fourvieregame
         mGoFourviere = (Button) findViewById(R.id.button_game_3);

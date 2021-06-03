@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
-    android:background="@drawable/ecranacc">
+    android:background="@drawable/welcome_screen">
 
     <ImageView
         android:id="@+id/playButton"
@@ -17,7 +17,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/play_button" />
 
@@ -25,68 +24,54 @@
         android:id="@+id/editTextTextPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginBottom="60dp"
         android:autofillHints="@string/pseudo"
         android:ems="10"
         android:inputType="textPersonName"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLaurelWreath"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="60dp"
         android:autofillHints="@string/password"
         android:ems="10"
         android:inputType="textPassword"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPseudo"
         tools:ignore="LabelFor" />
 
     <ImageView
-        android:id="@+id/logoLaurelWreath"
-        android:layout_width="372dp"
-        android:layout_height="195dp"
-        android:layout_marginTop="28dp"
-        android:contentDescription="@string/logolaurelwreath"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_laurel_wreath" />
-
-    <ImageView
         android:id="@+id/loginButton"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="290dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/loginbutton"
         app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLaurelWreath"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/login_button" />
+        app:srcCompat="@drawable/login_button_red" />
 
     <ImageView
         android:id="@+id/signInButton"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="290dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/signinbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/sign_in_button" />
+        app:srcCompat="@drawable/sign_in_button_red" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

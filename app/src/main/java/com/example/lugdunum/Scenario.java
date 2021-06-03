@@ -51,7 +51,7 @@ public class Scenario {
             "Essaie de déclamer ce poème de Guy Créquie si tu t'y sens : "
     };
     private String theatre3[] = {
-            "Ce théâtre est l'un des plus anciens du monde romain, et le plus ancien de Gaule. Il date de 15 avant J-C dans votre calendrier. À l'époque, il pouvait accueillir 10 000 spectateurs ! Même après des années de scène, j'avais toujours autant le trac avant de jouer ici. ",
+            "Ce théâtre est l'un des plus anciens du monde romain, et le plus ancien de Gaule. Il date de 15 avant J-C dans votre calendrier. À l'époque, il pouvait accueillir 10 000 spectateurs ! Même après des années de scène, j'avais toujours autant le trac avant de play_button_red.png ici. ",
             "De l'autre côté du site archéologique, tu peux trouver l'Odéon, qui était utilisé pour les représentations musicales, les lectures publiques, ou les récitations poétiques. Il est beaucoup plus petit que le Grand Théâtre, et beaucoup plus jeune. Il n'a que 3 000 places et n'a été construit qu'à la fin du 1er siècle après J-C. "
     };
     private String theatre4[] = {

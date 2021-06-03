@@ -4,4 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.RulesActivity"/>
+    tools:context=".activity.RulesActivity"
+    android:background="@drawable/background_columns_right">
+
+
+    <TextView
+        android:id="@+id/rules_text"
+        android:layout_width="356dp"
+        android:layout_height="508dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/rules"
+        android:textAllCaps="false"
+        android:textColor="#8A0000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/button_to_go_back_to_choicejourneyactivity"
+        android:layout_width="314dp"
+        android:layout_height="179dp"
+        android:contentDescription="@string/logo_lugdunum_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo_lugdunum_red" />
+</androidx.constraintlayout.widget.ConstraintLayout>
