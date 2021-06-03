@@ -19,18 +19,7 @@
             android:textColor="@android:color/holo_red_light"
             android:background="@android:color/holo_blue_light"
             android:textSize="50sp"
-            android:text="Jeu curiosités"/>
-
-        <Button
-            android:id="@+id/button_game_2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:textColor="@android:color/holo_red_light"
-            android:background="@android:color/holo_blue_light"
-            android:textSize="50sp"
-            android:text="Jeu théatre"/>
+            android:text="@string/jeu_curiosit_s"/>
 
         <Button
             android:id="@+id/button_game_3"
@@ -41,7 +30,7 @@
             android:textColor="@android:color/holo_red_light"
             android:background="@android:color/holo_blue_light"
             android:textSize="50sp"
-            android:text="Jeu fourvière"/>
+            android:text="@string/jeu_fourvi_re"/>
 
 
     </LinearLayout>

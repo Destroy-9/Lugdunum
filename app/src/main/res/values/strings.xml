@@ -3,4 +3,20 @@
     <string name="play_button">Jouer</string>
     <string name="rules_button">Règles</string>
     <string name="title_activity_maps">Map</string>
+    <string name="introduction_paragraph">&#8200;&#8200; Bonjour et bienvenue dans <b>LUGDUNUM </b>!\n\n &#8200;&#8200;Lorsque vous cliquerez sur le bouton ci-dessous, vous plongerez dans une histoire qui vous fera parcourir la colline qui prie* de <i>Saint-Just</i> au <i>Vieux-Lyon</i>. À tout moment, si vous vous sentez perdu, vous pourrez appuyer sur la <u>bougie</u> pour éclairer votre chemin.\n &#8200;&#8200;Pour commencer, veuillez vous rendre à la station de métro Vieux Lyon (accessible via métro D) et prendre le funiculaire F1 jusqu\'à l\'arrêt St Just.\n &#8200;&#8200; Une fois sorti de la station St Just, vous pourrez accéder au jeu en cliquant sur le bouton ci-dessous et en commençant à descendre (tourner à gauche en sortant de la station). \n\n Bonne visite !</string>
+    <string name="team">L\'équipe de LUGDUNUM</string>
+    <string name="hill_explanation">* La colline qui prie : Fourvière \n La colline qui travaille : La Croix Rousse</string>
+    <string name="map">Map</string>
+    <string name="games_access">Accès jeux</string>
+    <string name="logo_lugdunum">logo_lugdunum</string>
+    <string name="settings_button">settings_button</string>
+    <string name="play_button_black">play_button_black</string>
+    <string name="map_compass">map_compass</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="password">Password</string>
+    <string name="logolaurelwreath">logoLaurelWreath</string>
+    <string name="loginbutton">loginButton</string>
+    <string name="signinbutton">signInButton</string>
+    <string name="jeu_curiosit_s">Jeu curiosités</string>
+    <string name="jeu_fourvi_re">Jeu fourvière</string>
 </resources>

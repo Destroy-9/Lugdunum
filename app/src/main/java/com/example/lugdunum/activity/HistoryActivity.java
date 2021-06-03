@@ -1,11 +1,13 @@
 package com.example.lugdunum.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -27,6 +29,7 @@ import android.widget.ViewSwitcher;
 
 import com.example.lugdunum.R;
 import com.example.lugdunum.Scenario;
+import com.example.lugdunum.User;
 import com.example.lugdunum.games.CuriosityGameActivity;
 import com.example.lugdunum.games.FourviereGameActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -50,6 +53,13 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     private int messageCount;
     private int currentIndex;
     private int gameNumber;
+    private boolean trionValidate;
+    private boolean curiositesValidate;
+    private boolean theatreValidate;
+    private boolean theatrePlayValidate;
+    private boolean fourviereValidate;
+    private boolean trabouleValidate;
+    private User mUser;
 
     // Partie Map
     private LocationManager mLm;
@@ -62,19 +72,68 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     FragmentManager fragmentManager;
 
 
+    /****************************************************************************************************
+     ****************************************************************************************************
+     *
+     **********                              Partie HISTOIRE                                   **********
+     *
+     ****************************************************************************************************
+     ****************************************************************************************************/
+    public void nonValidate() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Attention !")
+                .setMessage("Tu n'es pas à l'endroit indiqué. Cela t'empêchera de profiter pleinement de la suite de l'histoire. Souhaites-tu continuer malgré tout ?")
+                .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        nextBtn_function();
+                    }
+                })
+                .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        currentIndex--;
+                    }
+                })
+                .setCancelable(false)
+                .create()
+                .show();
+    }
+
+    public void nextBtn_function(){
+        if (gameNumber == 1) {
+            Intent intent = new Intent(HistoryActivity.this, CuriosityGameActivity.class);
+            startActivity(intent);
+        } else if (gameNumber == 2) {
+            Intent intent = new Intent(HistoryActivity.this, FourviereGameActivity.class);
+            startActivity(intent);
+        } else if (gameNumber == 3) {
+            HistoryActivity.this.finish();
+        }
+        mNextBtn.setText("Suivant");
+        scenario.incState();
+        mImage.setImageResource(scenario.getCurrentRhino());
+        mPoem.setImageResource(0);
+        history = scenario.getHistory();
+        messageCount = history.length;
+        currentIndex = 0;
+
+        mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-/***************************************************************************************************
-****************************************************************************************************
-*
-**********                              Partie HISTOIRE                                   **********
-*
-****************************************************************************************************
-****************************************************************************************************/
+        // initialization of booleans
+        trionValidate = false;
+        curiositesValidate = false;
+        theatreValidate = false;
+        theatrePlayValidate = false;
+        fourviereValidate = false;
+        trabouleValidate = false;
 
         // get The references if Button and TextSwitcher
         mNextBtn = (Button) findViewById(R.id.nextButton);
@@ -109,7 +168,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mTextHistory.setOutAnimation(out);
 
         // Array of String to Show In TextSwitcher
-        scenario = new Scenario();
+        mUser = (User) getApplicationContext();
+        scenario = new Scenario(mUser.getPseudo());
         history = scenario.getHistory();
         messageCount = history.length;
         // to keep current Index of textID array
@@ -129,26 +189,16 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 // TODO Auto-generated method stub
                 currentIndex++;
                 if (currentIndex == messageCount) {
-                    if (gameNumber == 1){
-                        Intent intent = new Intent(HistoryActivity.this, CuriosityGameActivity.class);
-                        startActivity(intent);
+                    if ((scenario.getState() == 0 && !trionValidate) || (scenario.getState() == 1 && !curiositesValidate) || (scenario.getState() == 5 && !theatreValidate) || (scenario.getState() == 6 && !theatrePlayValidate) || (scenario.getState() == 10 && !fourviereValidate) || (scenario.getState() == 14 && !trabouleValidate)){
+                        nonValidate();
                     }
-                    else if (gameNumber == 2){
-                        Intent intent = new Intent(HistoryActivity.this, FourviereGameActivity.class);
-                        startActivity(intent);
+                    else {
+                        nextBtn_function();
                     }
-                    else if (gameNumber == 3){
-                        HistoryActivity.this.finish();
-                    }
-                    mNextBtn.setText("Suivant");
-                    scenario.incState();
-                    mImage.setImageResource(scenario.getCurrentRhino());
-                    mPoem.setImageResource(0);
-                    history = scenario.getHistory();
-                    messageCount = history.length;
-                    currentIndex = 0;
                 }
-                mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
+                else {
+                    mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
+                }
 
                 // If index reaches maximum then reset it
                 if (currentIndex == messageCount-1 || messageCount == 1){

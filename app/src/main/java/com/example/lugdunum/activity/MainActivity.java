@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.api.Response;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private User mUser;
     private boolean mOnLogin = false;
     private boolean mCreateNewUser = false;
-    private boolean mUserValidated =false;
+    private boolean mUserValidated = false;
 
 
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mLoginButton = (ImageView) findViewById(R.id.loginButton);
         mSignInButton = (ImageView) findViewById(R.id.signInButton);
         mPlayButton = (ImageView) findViewById(R.id.playButton);
+        mUser = (User) getApplicationContext(); // To have mUser accessible to every activity
         mPlayButton.setEnabled(false);
 
 
@@ -117,11 +119,15 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mUser = new User(mPseudo.getText().toString(), mPassword.getText().toString());
+                mUser.setAll(mPseudo.getText().toString(), mPassword.getText().toString());
                 System.out.println("***Pseudo : "+mPseudo.getText().toString()+" ***");
                 System.out.println("***Mot de passe : "+mPassword.getText().toString()+" ***");
 
-                /*if (mOnLogin) {
+                // To enter in debug mode
+                if (mUser.debugMode()){
+                    Toast.makeText(MainActivity.this, "Mode debug activé", Toast.LENGTH_LONG).show();
+                }
+                /*elif (mOnLogin) {
                     GetUserQuery getUserQuery = GetUserQuery.builder().build();
                     Apollo.apolloClient.query(getUserQuery)
                         .enqueue(new ApolloCall.Callback<GetUserQuery.Data>() {

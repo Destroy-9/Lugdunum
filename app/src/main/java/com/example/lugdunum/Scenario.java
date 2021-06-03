@@ -4,7 +4,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Scenario {
+
     private int state;
+    private String pseudo;
+    private int currentRhino;
+
+
     private String intro[] = {
             "Ave *user* ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?",
             "Pardon, tu ne dois pas comprendre ce que je raconte. Heureusement, ta langue n'est pas si différente de la mienne. Mon nom complet est Julius Valerius Rhinus, mais utilise mon cognomen (Rhinus), c'est plus court.",
@@ -86,13 +91,14 @@ public class Scenario {
             "Je te souhaite bon vent, *user* !"
     };
 
-    private int currentRhino;
 
-    public Scenario() {
-
+    public Scenario(String pseudo) {
+        this.pseudo = pseudo;
+        intro[0] = "Ave " + pseudo + " ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?";
         state = 0;
         currentRhino = R.drawable.rhino_arms_crossed;
     }
+
 
     public String[] getHistory(){
         String res[];
@@ -221,7 +227,7 @@ public class Scenario {
         if (state < 2){
             currentRhino = R.drawable.rhino_arms_crossed;
         }
-        else if (state < 12){
+        else if (state < 15){
             currentRhino = R.drawable.rhino_without_helmet;
         }
         else{

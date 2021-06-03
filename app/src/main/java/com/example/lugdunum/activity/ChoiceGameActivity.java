@@ -21,7 +21,7 @@ public class ChoiceGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choixgame);
 
-        //creation of the link between choixgame and fourvieregame
+        //creation of the link between choicegame and fourvieregame
         mGoFourviere = (Button) findViewById(R.id.button_game_3);
         mGoFourviere.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,8 +31,7 @@ public class ChoiceGameActivity extends AppCompatActivity {
             }
         });
 
-        //no links for the other games
-
+        //creation of the link between curiositygame and fourvieregame
         mGoCuriosites = (Button) findViewById(R.id.button_game_1);
         mGoCuriosites.setOnClickListener(new View.OnClickListener() {
             @Override
