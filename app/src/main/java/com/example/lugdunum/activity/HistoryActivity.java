@@ -20,7 +20,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
@@ -44,8 +43,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
     // Partie histoire
     private TextSwitcher mTextHistory;
-    private Button mNextBtn;
-    private Button mBackBtn;
+    private ImageView mNextBtn;
+    private ImageView mBackBtn;
     private ImageView mImage;
     private ImageView mPoem;
     private String history[];
@@ -111,7 +110,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         } else if (gameNumber == 3) {
             HistoryActivity.this.finish();
         }
-        mNextBtn.setText("Suivant");
         scenario.incState();
         mImage.setImageResource(scenario.getCurrentRhino());
         mPoem.setImageResource(0);
@@ -136,8 +134,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         trabouleValidate = false;
 
         // get The references if Button and TextSwitcher
-        mNextBtn = (Button) findViewById(R.id.nextButton);
-        mBackBtn = (Button) findViewById(R.id.backButton);
+        mNextBtn = (ImageView) findViewById(R.id.nextButton);
+        mBackBtn = (ImageView) findViewById(R.id.previousButton);
         mTextHistory = (TextSwitcher) findViewById(R.id.historySwitcher);
         mImage = (ImageView) findViewById(R.id.image);
         mPoem = (ImageView) findViewById(R.id.poem);
@@ -228,7 +226,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 else if (currentIndex == -1) {
                     scenario.decState();
                     history = scenario.getHistory();
-                    mNextBtn.setText("Suivant");
                     messageCount = history.length;
                     currentIndex = messageCount - 1;
                     mImage.setImageResource(scenario.getCurrentRhino());
@@ -240,7 +237,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 else{
                     mImage.setImageResource(scenario.getCurrentRhino());
                     mPoem.setImageResource(0);
-                    mNextBtn.setText("Suivant");
                 }
                 mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
 

@@ -1,5 +1,6 @@
 package com.example.lugdunum;
 
+import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -145,7 +146,7 @@ public class Scenario {
         return res;
     }
 
-    public int getContent(ImageView mImage, ImageView mPoem, Button mNextBtn){
+    public int getContent(ImageView mImage, ImageView mPoem, ImageView mNextBtn){
         int res;
 
         switch (state) {
@@ -159,7 +160,6 @@ public class Scenario {
                 break;
             case 3:
                 res = 0;
-                mNextBtn.setText("Partir");
                 break;
             case 4: res = 0;
                 mImage.setImageResource(R.drawable.history_saint_juste_church);
@@ -168,8 +168,9 @@ public class Scenario {
                 mImage.setImageResource(R.drawable.history_theatre_entry);
                 break;
             case 6: res = 0;
+                Drawable findButton = Drawable.createFromPath("@drawable/find");
                 mImage.setImageResource(R.drawable.history_theater);
-                mNextBtn.setText("Trouvé !");
+                mNextBtn.setImageDrawable(findButton);
                 break;
             case 7: res = 0;
                 mPoem.setImageResource(R.drawable.history_poem);
@@ -188,20 +189,23 @@ public class Scenario {
                 break;
             case 12:
                 res = 0;
-                mNextBtn.setText("Partir");
+                Drawable leaveButton = Drawable.createFromPath("@drawable/leave_button");
+                mNextBtn.setImageDrawable(leaveButton);
                 break;
             case 13: res = 0;
                 mImage.setImageResource(R.drawable.history_esplanade_exit);
                 break;
             case 14: res = 0;
-                mNextBtn.setText("Je suis en bas !");
+                Drawable iAmDownstairsButton = Drawable.createFromPath("@drawable/i_am_downstairs_button");
+                mNextBtn.setImageDrawable(iAmDownstairsButton);
                 mImage.setImageResource(R.drawable.history_stairs_end);
                 break;
             case 15: res = 0;
                 mImage.setImageResource(R.drawable.history_door27);
                 break;
             case 16: res = 3;
-                mNextBtn.setText("Finir");
+                Drawable endButton = Drawable.createFromPath("@drawable/end_button");
+                mNextBtn.setImageDrawable(endButton);
                 break;
             default: mImage.setImageResource(getCurrentRhino());
                 res = 0;
