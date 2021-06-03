@@ -96,6 +96,8 @@ public class Scenario {
     public Scenario(String pseudo) {
         this.pseudo = pseudo;
         intro[0] = "Ave " + pseudo + " ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?";
+        traboule[0] = "Cher " + pseudo + ", c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Reviens quand tu veux, tu pourras m'y retrouver. ";
+        fin[0] =  "Je te souhaite bon vent, " + pseudo + " !";
         state = 0;
         currentRhino = R.drawable.rhino_arms_crossed;
     }
@@ -168,9 +170,8 @@ public class Scenario {
                 mImage.setImageResource(R.drawable.history_theatre_entry);
                 break;
             case 6: res = 0;
-                Drawable findButton = Drawable.createFromPath("@drawable/find");
                 mImage.setImageResource(R.drawable.history_theater);
-                mNextBtn.setImageDrawable(findButton);
+                mNextBtn.setImageResource(R.drawable.find);
                 break;
             case 7: res = 0;
                 mPoem.setImageResource(R.drawable.history_poem);
@@ -189,23 +190,20 @@ public class Scenario {
                 break;
             case 12:
                 res = 0;
-                Drawable leaveButton = Drawable.createFromPath("@drawable/leave_button");
-                mNextBtn.setImageDrawable(leaveButton);
+                mNextBtn.setImageResource(R.drawable.leave_button);
                 break;
             case 13: res = 0;
                 mImage.setImageResource(R.drawable.history_esplanade_exit);
                 break;
             case 14: res = 0;
-                Drawable iAmDownstairsButton = Drawable.createFromPath("@drawable/i_am_downstairs_button");
-                mNextBtn.setImageDrawable(iAmDownstairsButton);
+                mNextBtn.setImageResource(R.drawable.i_am_downstairs_button);
                 mImage.setImageResource(R.drawable.history_stairs_end);
                 break;
             case 15: res = 0;
                 mImage.setImageResource(R.drawable.history_door27);
                 break;
             case 16: res = 3;
-                Drawable endButton = Drawable.createFromPath("@drawable/end_button");
-                mNextBtn.setImageDrawable(endButton);
+                mNextBtn.setImageResource(R.drawable.end_button);
                 break;
             default: mImage.setImageResource(getCurrentRhino());
                 res = 0;

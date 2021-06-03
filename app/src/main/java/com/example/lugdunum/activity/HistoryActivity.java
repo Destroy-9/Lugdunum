@@ -110,6 +110,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         } else if (gameNumber == 3) {
             HistoryActivity.this.finish();
         }
+        mNextBtn.setImageResource(R.drawable.next_button);
         scenario.incState();
         mImage.setImageResource(scenario.getCurrentRhino());
         mPoem.setImageResource(0);
@@ -235,6 +236,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
                 }
                 else{
+                    mNextBtn.setImageResource(R.drawable.next_button);
                     mImage.setImageResource(scenario.getCurrentRhino());
                     mPoem.setImageResource(0);
                 }
