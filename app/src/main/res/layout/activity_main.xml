@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    android:background="@drawable/ecranacc">
 
     <ImageView
         android:id="@+id/playButton"
-        android:layout_width="357dp"
-        android:layout_height="229dp"
+        android:layout_width="327dp"
+        android:layout_height="178dp"
         android:layout_marginBottom="36dp"
         android:contentDescription="@string/play_button"
         android:visibility="gone"
