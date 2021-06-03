@@ -29,6 +29,7 @@ import android.widget.ViewSwitcher;
 
 import com.example.lugdunum.R;
 import com.example.lugdunum.Scenario;
+import com.example.lugdunum.User;
 import com.example.lugdunum.games.CuriosityGameActivity;
 import com.example.lugdunum.games.FourviereGameActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -58,6 +59,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     private boolean theatrePlayValidate;
     private boolean fourviereValidate;
     private boolean trabouleValidate;
+    private User mUser;
 
     // Partie Map
     private LocationManager mLm;
@@ -166,7 +168,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mTextHistory.setOutAnimation(out);
 
         // Array of String to Show In TextSwitcher
-        scenario = new Scenario();
+        mUser = (User) getApplicationContext();
+        scenario = new Scenario(mUser.getPseudo());
         history = scenario.getHistory();
         messageCount = history.length;
         // to keep current Index of textID array

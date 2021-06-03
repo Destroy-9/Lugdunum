@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:networkSecurityConfig="@xml/network_security_config"
-        tools:targetApi="n">
+        tools:targetApi="n"
+        android:name=".User"> <!-- To have the User class accessible to every activity -->
 
         <activity android:name=".activity.HistoryActivity"/>
         <!--

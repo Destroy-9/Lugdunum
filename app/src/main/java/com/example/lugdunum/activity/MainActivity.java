@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mLoginButton = (ImageView) findViewById(R.id.loginButton);
         mSignInButton = (ImageView) findViewById(R.id.signInButton);
         mPlayButton = (ImageView) findViewById(R.id.playButton);
+        mUser = (User) getApplicationContext(); // To have mUser accessible to every activity
         mPlayButton.setEnabled(false);
 
 
@@ -118,12 +119,12 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mUser = new User(mPseudo.getText().toString(), mPassword.getText().toString());
+                mUser.setAll(mPseudo.getText().toString(), mPassword.getText().toString());
                 System.out.println("***Pseudo : "+mPseudo.getText().toString()+" ***");
                 System.out.println("***Mot de passe : "+mPassword.getText().toString()+" ***");
 
                 // To enter in debug mode
-                if (mUser.getPseudo().equals("CMN<3") && mUser.getPassword().equals("DijkstraGo2021")){
+                if (mUser.debugMode()){
                     Toast.makeText(MainActivity.this, "Mode debug activé", Toast.LENGTH_LONG).show();
                 }
                 /*elif (mOnLogin) {
