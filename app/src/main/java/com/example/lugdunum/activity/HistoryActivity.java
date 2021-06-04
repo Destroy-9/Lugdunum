@@ -46,7 +46,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     private ImageView mNextBtn;
     private ImageView mBackBtn;
     private ImageView mImage;
-    private ImageView mPoem;
+    private TextView mPoem;
     private String history[];
     private Scenario scenario;
     private int messageCount;
@@ -113,7 +113,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mNextBtn.setImageResource(R.drawable.next_button);
         scenario.incState();
         mImage.setImageResource(scenario.getCurrentRhino());
-        mPoem.setImageResource(0);
+        mImage.setTag(scenario.getCurrentRhino());
+        if (mPoem.getVisibility() == View.VISIBLE) {
+            mPoem.setVisibility(View.GONE);
+        }
         history = scenario.getHistory();
         messageCount = history.length;
         currentIndex = 0;
@@ -139,7 +142,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mBackBtn = (ImageView) findViewById(R.id.previousButton);
         mTextHistory = (TextSwitcher) findViewById(R.id.historySwitcher);
         mImage = (ImageView) findViewById(R.id.image);
-        mPoem = (ImageView) findViewById(R.id.poem);
+        mPoem = (TextView) findViewById(R.id.poem);
 
         // Set the ViewFactory of the TextSwitcher that will create TextView object when asked
         mTextHistory.setFactory(new ViewSwitcher.ViewFactory() {
@@ -152,6 +155,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 t.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
                 // set displayed text size
                 t.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24.f);
+                t.setTextColor(Color.parseColor("#870000"));
                 return t;
             }
         });
@@ -178,6 +182,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         currentIndex++;
         mTextHistory.setCurrentText(history[currentIndex]);
         mImage.setImageResource(scenario.getCurrentRhino());
+        mImage.setTag(scenario.getCurrentRhino());
         mBackBtn.setVisibility(View.GONE);
         // ClickListener for NEXT button
         // When clicked on Button TextSwitcher will switch between labels
@@ -230,7 +235,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     messageCount = history.length;
                     currentIndex = messageCount - 1;
                     mImage.setImageResource(scenario.getCurrentRhino());
-                    mPoem.setImageResource(0);
+                    mImage.setTag(scenario.getCurrentRhino());
+                    if (mPoem.getVisibility() == View.VISIBLE) {
+                        mPoem.setVisibility(View.GONE);
+                    }
 
                     gameNumber = scenario.getContent(mImage, mPoem, mNextBtn);
 
@@ -238,7 +246,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 else{
                     mNextBtn.setImageResource(R.drawable.next_button);
                     mImage.setImageResource(scenario.getCurrentRhino());
-                    mPoem.setImageResource(0);
+                    mImage.setTag(scenario.getCurrentRhino());
+                    if (mPoem.getVisibility() == View.VISIBLE) {
+                        mPoem.setVisibility(View.GONE);
+                    }
                 }
                 mTextHistory.setText(history[currentIndex]); // set Text in TextSwitcher
 
@@ -266,10 +277,16 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
             public void onClick(View v) {
                 if (mImage.getVisibility() == View.VISIBLE) {
                     mImage.setVisibility(View.GONE);
+                    if ((Integer)mImage.getTag() == 0 && mPoem.getVisibility() == View.VISIBLE){
+                        mPoem.setVisibility(View.GONE);
+                    }
                     fragmentManager.beginTransaction().show(mapFragment).commit();
                 }
                 else {
                     mImage.setVisibility(View.VISIBLE);
+                    if ((Integer)mImage.getTag() == 0 && mPoem.getVisibility() == View.GONE){
+                        mPoem.setVisibility(View.VISIBLE);
+                    }
                     fragmentManager.beginTransaction().hide(mapFragment).commit();
                 }
             }

@@ -18,7 +18,8 @@
         tools:targetApi="n"
         android:name=".User"> <!-- To have the User class accessible to every activity -->
 
-        <activity android:name=".activity.HistoryActivity"/>
+        <activity android:name=".activity.HistoryActivity"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,24 +30,32 @@
         -->
         <activity
             android:name=".activity.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SettingsActivity"
+            android:screenOrientation="portrait"
 
             android:parentActivityName=".activity.ChoiceJourneyActivity"/>
 
 
-        <activity android:name=".games.CuriosityGameActivity"/>
-        <activity android:name=".activity.ChoiceGameActivity" />
-        <activity android:name=".games.FourviereGameActivity" />
+        <activity android:name=".games.CuriosityGameActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ChoiceGameActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".games.FourviereGameActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.RulesActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activity.SettingsActivity" />
         <activity
             android:name=".activity.ChoiceJourneyActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".activity.MainActivity" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
