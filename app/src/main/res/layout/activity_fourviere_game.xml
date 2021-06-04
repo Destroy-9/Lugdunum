@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".games.FourviereGameActivity"><![CDATA[
+    tools:context=".games.FourviereGameActivity"
+    android:background="@drawable/background_temple"><![CDATA[
 
 
     android:id="@+id/linearLayout"
@@ -20,7 +21,7 @@
 
     <ImageView
         android:id="@+id/endroit"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="498dp"
         android:layout_marginBottom="132dp"
         android:background="@drawable/fourviere_puzzle_lion"

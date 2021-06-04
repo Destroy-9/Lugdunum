@@ -30,15 +30,10 @@ public class CuriosityGameActivity extends Activity {
 
 
     private ConstraintLayout mLayout;
-    //private TextView mytext;
-    //private View view;
-    //private LayoutInflater LayoutInflater;
-    //private PopupWindow popupWindow;
     private TextView mytxtvw;
     private TextView mTextViewWellSpotted;
     private TextView mTextViewFindBridge;
     private Toast toast;
-    //private Context context;
 
 
 

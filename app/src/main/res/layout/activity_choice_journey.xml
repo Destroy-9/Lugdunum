@@ -42,7 +42,7 @@
         android:layout_marginRight="10dp"
         android:text="@string/introduction_paragraph"
         android:textColor="#870000"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +60,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/introduction_paragraph" />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_end_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="signature"/>
+
     <ImageView
         android:id="@+id/mapCompass"
         android:layout_width="251dp"
@@ -67,9 +74,16 @@
         android:contentDescription="@string/map_compass"
         android:src="@drawable/map_compass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/historyButton"
         app:layout_constraintTop_toBottomOf="@+id/signature" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_top_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="mapCompass"/>
 
     <ImageView
         android:id="@+id/historyButton"
@@ -81,7 +95,7 @@
         android:src="@drawable/play_button_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signature"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_top_play"
         app:layout_constraintVertical_bias="0.944" />
 
     <TextView
