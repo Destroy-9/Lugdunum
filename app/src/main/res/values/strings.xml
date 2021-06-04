@@ -19,6 +19,53 @@
     <string name="signinbutton">signInButton</string>
     <string name="jeu_curiosit_s">Jeu curiosités</string>
     <string name="jeu_fourvi_re">Jeu fourvière</string>
-    <string name="rules"><u><b>PRINCIPE :</b></u>\n\n Cette application permet de visiter le <i>Vieux Lyon</i> de façon ludique. \n C\'est une sorte de course d\'orientation mais ici, le téléphone est la "carte". \n Quelques mini-jeux vous attendent sur ton chemin, nous espérons que tu apprenderas des choses sur Lyon. \n Bonne visite ! \n\n<u><b>REGLES :</b></u>\n\n 1 - Pour recommencer le parcours, rendez-vous tout d\'abord station de métro Vieux Lyon (accessible via métro D) \n 2 - Ensuite, cliquez sur le bouton "Lugdunum" pour rejoindre l\'écran de début de partie. \n 3 - Enfin, suivez les instruction de cette écran et amusez-vous !   </string>
+    <string name="rules"><u><b>PRINCIPE :</b></u>\n\nCette application permet de visiter le <i>Vieux Lyon</i> de façon ludique. \nC\'est une sorte de course d\'orientation mais ici, le téléphone est la "carte". \nQuelques mini-jeux t\'attendent sur ton chemin, nous espérons que tu apprendras des choses sur Lyon. \nBonne visite ! \n\n<u><b>REGLES :</b></u>\n\n 1 - Pour commencer le parcours, rends-toi tout d\'abord à la station de métro Vieux Lyon (accessible via métro D) \n 2 - Ensuite, clique sur le bouton "Lugdunum" pour rejoindre l\'écran de début de partie. \n 3 - Enfin, suis les instructions, laisse toi guider et amuse toi !   </string>
     <string name="logo_lugdunum_red">logo_lugdunum_red</string>
+    <string name="poem"> <b>LYON ( LUGDUNUM )</b>\n
+<b>Ville Mystérieuse</b>\n\n\n
+On te surnomme ville aux trois fleuves\n
+Tu es aussi ville de piété\n
+De la révolution tu ne voulus\n
+Mais la résistance tu connus\n\n
+On te surnomme ville à Mystère\n
+Croyants du Christ- Francs maçons- Matérialistes\n
+Se croisent toujours sous ta bannière\n\n
+Ta vérité est d\'une certaine teneur\n
+Dont seule tu connais l\'espace intérieur\n\n
+Ville littéraire, tu es\n
+Ville de prières, tu restes\n
+Ville planétaire, tu le deviens\n\n
+Tes rues piétonnières\n
+Résonnent de la diversité\n
+Des chants colorés\n
+Des passants de toutes nationalités\n
+En quête de services et transports proposés\n
+Dont le tramway est le dernier-né\n\n
+Catholiques sociaux ouverts\n
+Canuts révolutionnaires\n
+Bourgeois propriétaires\n
+Furent la diversité de ta lumière\n\n
+Vestiges de pierre\n
+Tu es ville de l\'esprit et de chair\n
+On t\'envie pour ta gastronomie\n\n
+<b>Croix Rousse</b> : tu restes symbolique\n
+Passé des fureurs ouvrières\n
+De la soierie lyonnaise si recherché\n
+Ton marché coloré\n
+Egaie bien des matinées\n
+<b>Bellecour</b> : tu es ce conte d\'amour\n
+Dont on fait le tour\n
+<b>Fourvière</b> : tu perpétues la colline qui prie\n
+Pour ce qui te concerne <b>quartier de la part dieu</b>\n
+Tu ravis le lot des badauds……………………….\n
+…………………………………………………………………\n\n
+Lyon :<b>grandes écoles et universités</b>\n
+Sont en ton centre ………….. ou à ta périphérie\n\n
+Tourmentée et solide\n
+Massive et tendre\n
+Carrefour de l\'Europe\n
+Est ta destinée.\n\n\n
+
+<b>Guy CREQUIE</b>
+</string>
 </resources>

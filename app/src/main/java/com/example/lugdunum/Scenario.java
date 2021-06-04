@@ -1,8 +1,10 @@
 package com.example.lugdunum;
 
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Scenario {
 
@@ -52,7 +54,7 @@ public class Scenario {
             "Essaie de déclamer ce poème de Guy Créquie si tu t'y sens : "
     };
     private String theatre3[] = {
-            "Ce théâtre est l'un des plus anciens du monde romain, et le plus ancien de Gaule. Il date de 15 avant J-C dans votre calendrier. À l'époque, il pouvait accueillir 10 000 spectateurs ! Même après des années de scène, j'avais toujours autant le trac avant de play_button_red.png ici. ",
+            "Ce théâtre est l'un des plus anciens du monde romain, et le plus ancien de Gaule. Il date de 15 avant J-C dans votre calendrier. À l'époque, il pouvait accueillir 10 000 spectateurs ! Même après des années de scène, j'avais toujours autant le trac avant de jouer ici. ",
             "De l'autre côté du site archéologique, tu peux trouver l'Odéon, qui était utilisé pour les représentations musicales, les lectures publiques, ou les récitations poétiques. Il est beaucoup plus petit que le Grand Théâtre, et beaucoup plus jeune. Il n'a que 3 000 places et n'a été construit qu'à la fin du 1er siècle après J-C. "
     };
     private String theatre4[] = {
@@ -96,6 +98,8 @@ public class Scenario {
     public Scenario(String pseudo) {
         this.pseudo = pseudo;
         intro[0] = "Ave " + pseudo + " ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?";
+        traboule[0] = "Cher " + pseudo + ", c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Reviens quand tu veux, tu pourras m'y retrouver. ";
+        fin[0] =  "Je te souhaite bon vent, " + pseudo + " !";
         state = 0;
         currentRhino = R.drawable.rhino_arms_crossed;
     }
@@ -146,14 +150,16 @@ public class Scenario {
         return res;
     }
 
-    public int getContent(ImageView mImage, ImageView mPoem, ImageView mNextBtn){
+    public int getContent(ImageView mImage, TextView mPoem, ImageView mNextBtn){
         int res;
 
         switch (state) {
             case 0: mImage.setImageResource(R.drawable.history_fountain);
+            mImage.setTag(R.drawable.history_fountain);
                 res = 0;
                 break;
             case 1: mImage.setImageResource(R.drawable.history_curiosity_portal);
+                mImage.setTag(R.drawable.history_curiosity_portal);
                 res = 0;
                 break;
             case 2: res = 1;
@@ -163,51 +169,60 @@ public class Scenario {
                 break;
             case 4: res = 0;
                 mImage.setImageResource(R.drawable.history_saint_juste_church);
+                mImage.setTag(R.drawable.history_saint_juste_church);
                 break;
             case 5: res = 0;
                 mImage.setImageResource(R.drawable.history_theatre_entry);
+                mImage.setTag(R.drawable.history_theatre_entry);
                 break;
             case 6: res = 0;
-                Drawable findButton = Drawable.createFromPath("@drawable/find");
                 mImage.setImageResource(R.drawable.history_theater);
-                mNextBtn.setImageDrawable(findButton);
+                mImage.setTag(R.drawable.history_theater);
+                mNextBtn.setImageResource(R.drawable.find);
                 break;
             case 7: res = 0;
-                mPoem.setImageResource(R.drawable.history_poem);
+                if (mImage.getVisibility() == View.VISIBLE) {
+                    mPoem.setVisibility(View.VISIBLE);
+                }
                 mImage.setImageResource(0);
+                mImage.setTag(0);
                 break;
             case 8: res = 0;
                 mImage.setImageResource(R.drawable.history_odeon);
+                mImage.setTag(R.drawable.history_odeon);
                 break;
             case 9: res = 0;
                 mImage.setImageResource(R.drawable.history_theatre_exit);
+                mImage.setTag(R.drawable.history_theatre_exit);
                 break;
             case 10: res = 0;
                 mImage.setImageResource(R.drawable.history_fourviere);
+                mImage.setTag(R.drawable.history_fourviere);
                 break;
             case 11: res = 2;
                 break;
             case 12:
                 res = 0;
-                Drawable leaveButton = Drawable.createFromPath("@drawable/leave_button");
-                mNextBtn.setImageDrawable(leaveButton);
+                mNextBtn.setImageResource(R.drawable.leave_button);
                 break;
             case 13: res = 0;
                 mImage.setImageResource(R.drawable.history_esplanade_exit);
+                mImage.setTag(R.drawable.history_esplanade_exit);
                 break;
             case 14: res = 0;
-                Drawable iAmDownstairsButton = Drawable.createFromPath("@drawable/i_am_downstairs_button");
-                mNextBtn.setImageDrawable(iAmDownstairsButton);
+                mNextBtn.setImageResource(R.drawable.i_am_downstairs_button);
                 mImage.setImageResource(R.drawable.history_stairs_end);
+                mImage.setTag(R.drawable.history_stairs_end);
                 break;
             case 15: res = 0;
                 mImage.setImageResource(R.drawable.history_door27);
+                mImage.setTag(R.drawable.history_door27);
                 break;
             case 16: res = 3;
-                Drawable endButton = Drawable.createFromPath("@drawable/end_button");
-                mNextBtn.setImageDrawable(endButton);
+                mNextBtn.setImageResource(R.drawable.end_button);
                 break;
             default: mImage.setImageResource(getCurrentRhino());
+                mImage.setTag(getCurrentRhino());
                 res = 0;
                 break;
         }
