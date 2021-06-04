@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mPlayButton;
     private ImageView mLoginButton;
     private ImageView mSignInButton;
+    private ImageView mBackButton;
     private EditText mPseudo;
     private EditText mPassword;
     private boolean mEnablePseudo = false;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mLoginButton = (ImageView) findViewById(R.id.loginButton);
         mSignInButton = (ImageView) findViewById(R.id.signInButton);
         mPlayButton = (ImageView) findViewById(R.id.playButton);
+        mBackButton = (ImageView) findViewById(R.id.backButton);
         mUser = (User) getApplicationContext(); // To have mUser accessible to every activity
         mPlayButton.setEnabled(false);
 
@@ -94,11 +96,12 @@ public class MainActivity extends AppCompatActivity {
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLoginButton.setVisibility(View.INVISIBLE);
-                mSignInButton.setVisibility(View.INVISIBLE);
+                mLoginButton.setVisibility(View.GONE);
+                mSignInButton.setVisibility(View.GONE);
                 mPseudo.setVisibility(View.VISIBLE);
                 mPassword.setVisibility(View.VISIBLE);
                 mPlayButton.setVisibility(View.VISIBLE);
+                mBackButton.setVisibility(View.VISIBLE);
                 mOnLogin = true;
             }
         });
@@ -107,11 +110,12 @@ public class MainActivity extends AppCompatActivity {
         mSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLoginButton.setVisibility(View.INVISIBLE);
-                mSignInButton.setVisibility(View.INVISIBLE);
+                mLoginButton.setVisibility(View.GONE);
+                mSignInButton.setVisibility(View.GONE);
                 mPseudo.setVisibility(View.VISIBLE);
                 mPassword.setVisibility(View.VISIBLE);
                 mPlayButton.setVisibility(View.VISIBLE);
+                mBackButton.setVisibility(View.VISIBLE);
                 mOnLogin = false;
             }
         });
@@ -194,6 +198,18 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, ChoiceJourneyActivity.class);
                     startActivity(intent);
               //  }
+            }
+        });
+
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mLoginButton.setVisibility(View.VISIBLE);
+                mSignInButton.setVisibility(View.VISIBLE);
+                mPseudo.setVisibility(View.GONE);
+                mPassword.setVisibility(View.GONE);
+                mPlayButton.setVisibility(View.GONE);
+                mBackButton.setVisibility(View.GONE);
             }
         });
     }

@@ -9,23 +9,22 @@
 
     <ImageView
         android:id="@+id/playButton"
-        android:layout_width="327dp"
-        android:layout_height="178dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="265dp"
+        android:layout_height="125dp"
+        android:layout_marginBottom="25dp"
         android:contentDescription="@string/play_button"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/play_button" />
+        app:srcCompat="@drawable/play_button_red" />
 
     <EditText
         android:id="@+id/editTextTextPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:autofillHints="@string/pseudo"
+        android:layout_marginBottom="40dp"
+        android:hint="@string/pseudo"
         android:ems="10"
         android:inputType="textPersonName"
         android:visibility="gone"
@@ -33,14 +32,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#870000"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:autofillHints="@string/password"
+        android:layout_marginBottom="75dp"
+        android:hint="@string/password"
         android:ems="10"
         android:inputType="textPassword"
         android:visibility="gone"
@@ -48,6 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#870000"
         tools:ignore="LabelFor" />
 
     <ImageView
@@ -73,5 +74,17 @@
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/sign_in_button_red" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:srcCompat="@drawable/previous_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
