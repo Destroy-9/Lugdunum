@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private User mUser;
     private boolean mOnLogin;
     private boolean mUserValidated = false;
-    private String message = null;
+    private String message = "Veuillez attendre quelques secondes\nActivation du serveur";
 
     // Method which permits to change the display of the buttons on the screen
     void changeVisibility (boolean playButtonBecomeVisible){
