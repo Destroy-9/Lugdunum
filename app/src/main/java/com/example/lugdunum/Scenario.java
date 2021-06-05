@@ -1,23 +1,24 @@
 package com.example.lugdunum;
 
-import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import com.example.lugdunum.games.CuriosityGameActivity;
-
-import static androidx.core.content.ContextCompat.startActivity;
+import android.widget.TextView;
 
 public class Scenario {
+
     private int state;
+    private String pseudo;
+    private int currentRhino;
+
+
     private String intro[] = {
             "Ave *user* ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?",
             "Pardon, tu ne dois pas comprendre ce que je raconte. Heureusement, ta langue n'est pas si différente de la mienne. Mon nom complet est Julius Valerius Rhinus, mais utilise mon cognomen (Rhinus), c'est plus court.",
             "Je suis né en l'an 700, en plein pendant le règne de Jules César. Je crois que vous nommez cette année \"53 avant J-C\". Je n'ai jamais compris pourquoi vous considérez que Jules César a règné 50 ans avant lui-même d'ailleurs... Mais peu importe. ",
-            "En l'an 711, des intempéries diluviennent s'abattirent sur la cité de Lugdunum durant plusieurs jours, et il arriva ce dont tout le monde avait peur à l'époque : le ciel nous tomba sur la tête. Lorsque celui-ci relâcha son étreinte sur la terre, beaucoup de personnes restèrent prisonnières des nuages, dont moi. Ce fut un moment terrible. Voir tous mes amis rester à terre quand moi je m'envolais... ",
+            "En l'an 711, des intempéries diluviennent s'abattirent sur la cité de Lugdunum durant plusieurs jours, et il arriva ce dont tout le monde avait peur à l'époque : le ciel nous tomba sur la tête. ",
+            "Lorsque celui-ci relâcha son étreinte sur la terre, beaucoup de personnes restèrent prisonnières des nuages, dont moi. Ce fut un moment terrible. Voir tous mes amis rester à terre quand moi je m'envolais... ",
             "Mais ce n'est pas tout, car lorsque les nuages s'évaporèrent, je me suis évaporé avec eux. Cela sonna le glas de mon existence physique. Je devins un âme errante entre ciel et terre.",
             "Depuis, je me matérialise régulièrement à travers tout ce que je peux. La dernière fois que c'est arrivé, c'était lors de la tempête de 1999, j'avais pu me condenser en nuage. ",
             "C'est la première fois que je retourne véritablement sur terre depuis ce qui est arrivé, grâce à ton application. Comme quoi, il y a du bon aussi dans les nouvelles technologies (même si les ondes perturbent mon cycle du sommeil). ",
@@ -37,8 +38,11 @@ public class Scenario {
     };
     private String curiosites_leave[] = {
             "Très bien, on s'en va. Le mieux est de retourner sur nos pas, et de reprendre notre route à la sortie du parking. À la sortie du parking, donc, on continue de descendre un peu, en se mettant sur le trottoir de gauche. ",
-            "On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romaines. Je me suis douché toute ma vie là dedans ! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. ",
-            "Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la *Grotte Bérelle*, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. ",
+            "On va passer devant des résidences un peu oranges derrière lesquelles se trouvent des thermes romains. Je me suis douché toute ma vie là dedans ! Tu peux aller voir si tu veux, mais ce n'est plus très intéressant aujourd'hui. ",
+            "En face, tu peux admirer la façade de l'église Saint-Just, construite en 1662 par les Chanoines de Saint-Just. "
+    };
+    private String entree_theatre[] = {
+            "Ensuite, on passera devant le Lycée Saint-Just, ancien séminaire construit par Napoléon III et sous lequel se trouve la Grotte Bérelle, citerne gallo romaine de 440 m^3 qui constituait les réserves en eau de la ville. ",
             "Enfin, arrivés vers la place des minimes, on restera bien à gauche pour remonter en direction du théâtre ! On se retrouve là-bas. "
     };
     private String theatre1[] = {
@@ -55,7 +59,10 @@ public class Scenario {
     };
     private String theatre4[] = {
             "Il y a aussi le prétoire du gouverneur de Lyon dans les parages, mais n'y vas pas, c'est dangereux les prétoires (c'est ce que vous appelez un palais de justice je crois maintenant). ",
-            "Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte les marches et va en direction de la basilique de Fourvière, on se retrouve là-bas !"
+            "Bon, je te laisse découvrir le site. Une fois que tu auras fait le tour, monte les marches et va en direction de la basilique de Fourvière."
+    };
+    private String fourviere0[] = {
+            "Elle ressemble à ça. On se retrouve là-bas !"
     };
     private String fourviere1[] = {
             "Tu as trouvé la basilique ! Elle est chouette non ? Cet endroit était le forum Vetus à mon époque (d'où le nom de Fourvière). ",
@@ -70,24 +77,33 @@ public class Scenario {
             "Je te laisse contempler l'éblouissant intérieur de la Basilique Notre-Dame de Fourvière si tu le souhaites, ainsi que la magnifique vue sur la ville de Lyon qui est disponible en allant vers l'esplanade. Dis moi quand tu veux partir !"
     };
     private String fourviere_leave[] = {
-            "Super, allons-y ! Quand tu es sur l'esplanade, il te faut descendre les escaliers qui te mèneront au jardin du Rosaire. La balade est plutôt agréable tu verras. ",
+            "Super, allons-y ! Quand tu es sur l'esplanade, il te faut descendre les escaliers qui te mèneront au jardin du Rosaire. La balade est plutôt agréable tu verras. "
+    };
+    private String escaliers[] = {
             "En bas du jardin, quand tu passeras le portail, il te faudra traverser la route pour prendre les escaliers. Je te laisse me dire lorsque tu arrives en bas. "
     };
     private String traboule[] = {
             "Cher *user*, c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Reviens quand tu veux, tu pourras m'y retrouver. ",
-            "Rassures toi, je ne te quitte pas comme ça, perdu au milieu de la ville. Tu es ici dans la rue du Boeuf, dans laquelle se trouve une traboule au numéro 27. Pousse la porte, et traverse la. ",
+            "Rassures toi, je ne te quitte pas comme ça, perdu au milieu de la ville. Tu es ici dans la rue du Boeuf, dans laquelle se trouve une traboule au numéro 27. Pousse la porte, et traverse la. "
+    };
+    private String traboule_in[] = {
             "En sortant de la traboule, tourne à droite dans la rue Saint-Jean. En continuant tout droit, tu traverseras la place Saint-Jean sur laquelle se trouve la Cathédrale, puis tu trouveras l'entrée du funiculaire.",
             "À la sortie de la traboule, je ne serai plus là. Je me serai évaporé dans les combles. "
     };
-    private String fin[] = {"Je te souhaite bon vent, *user* !"};
+    private String fin[] = {
+            "Je te souhaite bon vent, *user* !"
+    };
 
-    private int currentRhino;
 
-    public Scenario() {
-
+    public Scenario(String pseudo) {
+        this.pseudo = pseudo;
+        intro[0] = "Ave " + pseudo + " ! Tibi gratias ago pro tui invenire me. Quid ? Vos operor non intellego quid dicam ?";
+        traboule[0] = "Cher " + pseudo + ", c'est ici que nos chemins se séparent. Je te remercie énormément de m'avoir permis de me balader à Lugdunum à hauteur d'homme ! Reviens quand tu veux, tu pourras m'y retrouver. ";
+        fin[0] =  "Je te souhaite bon vent, " + pseudo + " !";
         state = 0;
-        currentRhino = R.drawable.rhino1;
+        currentRhino = R.drawable.rhino_arms_crossed;
     }
+
 
     public String[] getHistory(){
         String res[];
@@ -103,21 +119,29 @@ public class Scenario {
                 break;
             case 4: res = curiosites_leave;
                 break;
-            case 5: res = theatre1;
+            case 5: res = entree_theatre;
                 break;
-            case 6: res = theatre2;
+            case 6: res = theatre1;
                 break;
-            case 7: res = theatre3;
+            case 7: res = theatre2;
                 break;
-            case 8: res = theatre4;
+            case 8: res = theatre3;
                 break;
-            case 9: res = fourviere1;
+            case 9: res = theatre4;
                 break;
-            case 10: res = fourviere2;
+            case 10: res = fourviere0;
                 break;
-            case 11: res = fourviere_leave;
+            case 11: res = fourviere1;
                 break;
-            case 12: res = traboule;
+            case 12: res = fourviere2;
+                break;
+            case 13: res = fourviere_leave;
+                break;
+            case 14: res = escaliers;
+                break;
+            case 15: res = traboule;
+                break;
+            case 16: res = traboule_in;
                 break;
             default: res = fin;
                 break;
@@ -126,46 +150,79 @@ public class Scenario {
         return res;
     }
 
-    public int getContent(ImageView mImage, ImageView mPoem, Button mNextBtn){
+    public int getContent(ImageView mImage, TextView mPoem, ImageView mNextBtn){
         int res;
 
         switch (state) {
-            case 0: mImage.setImageResource(R.drawable.fountain);
+            case 0: mImage.setImageResource(R.drawable.history_fountain);
+            mImage.setTag(R.drawable.history_fountain);
                 res = 0;
                 break;
-            case 1: mImage.setImageResource(R.drawable.curiositeportal);
+            case 1: mImage.setImageResource(R.drawable.history_curiosity_portal);
+                mImage.setTag(R.drawable.history_curiosity_portal);
                 res = 0;
                 break;
             case 2: res = 1;
                 break;
             case 3:
                 res = 0;
-                mNextBtn.setText("Partir");
+                break;
+            case 4: res = 0;
+                mImage.setImageResource(R.drawable.history_saint_juste_church);
+                mImage.setTag(R.drawable.history_saint_juste_church);
                 break;
             case 5: res = 0;
-                mImage.setImageResource(R.drawable.theater);
-                mNextBtn.setText("Trouvé !");
+                mImage.setImageResource(R.drawable.history_theatre_entry);
+                mImage.setTag(R.drawable.history_theatre_entry);
                 break;
             case 6: res = 0;
-                mPoem.setImageResource(R.drawable.poem);
-                mImage.setImageResource(0);
+                mImage.setImageResource(R.drawable.history_theater);
+                mImage.setTag(R.drawable.history_theater);
+                mNextBtn.setImageResource(R.drawable.find);
                 break;
             case 7: res = 0;
-                mImage.setImageResource(R.drawable.odeon);
+                if (mImage.getVisibility() == View.VISIBLE) {
+                    mPoem.setVisibility(View.VISIBLE);
+                }
+                mImage.setImageResource(0);
+                mImage.setTag(0);
                 break;
-            case 9: res = 2;
+            case 8: res = 0;
+                mImage.setImageResource(R.drawable.history_odeon);
+                mImage.setTag(R.drawable.history_odeon);
                 break;
-            case 10:
+            case 9: res = 0;
+                mImage.setImageResource(R.drawable.history_theatre_exit);
+                mImage.setTag(R.drawable.history_theatre_exit);
+                break;
+            case 10: res = 0;
+                mImage.setImageResource(R.drawable.history_fourviere);
+                mImage.setTag(R.drawable.history_fourviere);
+                break;
+            case 11: res = 2;
+                break;
+            case 12:
                 res = 0;
-                mNextBtn.setText("Partir");
+                mNextBtn.setImageResource(R.drawable.leave_button);
                 break;
-            case 11: res = 0;
-                mNextBtn.setText("Je suis en bas !");
+            case 13: res = 0;
+                mImage.setImageResource(R.drawable.history_esplanade_exit);
+                mImage.setTag(R.drawable.history_esplanade_exit);
                 break;
-            case 12: res = 3;
-                mNextBtn.setText("Finir");
+            case 14: res = 0;
+                mNextBtn.setImageResource(R.drawable.i_am_downstairs_button);
+                mImage.setImageResource(R.drawable.history_stairs_end);
+                mImage.setTag(R.drawable.history_stairs_end);
+                break;
+            case 15: res = 0;
+                mImage.setImageResource(R.drawable.history_door27);
+                mImage.setTag(R.drawable.history_door27);
+                break;
+            case 16: res = 3;
+                mNextBtn.setImageResource(R.drawable.end_button);
                 break;
             default: mImage.setImageResource(getCurrentRhino());
+                mImage.setTag(getCurrentRhino());
                 res = 0;
                 break;
         }
@@ -187,13 +244,13 @@ public class Scenario {
 
     public int getCurrentRhino() {
         if (state < 2){
-            currentRhino = R.drawable.rhino1;
+            currentRhino = R.drawable.rhino_arms_crossed;
         }
-        else if (state < 12){
-            currentRhino = R.drawable.rhino2;
+        else if (state < 15){
+            currentRhino = R.drawable.rhino_without_helmet;
         }
         else{
-            currentRhino = R.drawable.rhino3;
+            currentRhino = R.drawable.rhino;
         }
 
         return currentRhino;

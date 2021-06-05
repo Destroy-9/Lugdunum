@@ -4,43 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity"
+    android:background="@drawable/welcome_screen">
 
     <ImageView
         android:id="@+id/playButton"
-        android:layout_width="357dp"
-        android:layout_height="229dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="265dp"
+        android:layout_height="125dp"
+        android:layout_marginBottom="25dp"
+        android:contentDescription="@string/play_button"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/playbutton" />
+        app:srcCompat="@drawable/play_button_red" />
 
     <EditText
         android:id="@+id/editTextTextPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginBottom="40dp"
+        android:hint="@string/pseudo"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Pseudo"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        android:textColor="#870000"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="75dp"
+        android:hint="@string/password"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Password"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#870000"
+        tools:ignore="LabelFor" />
+
+    <ImageView
+        android:id="@+id/loginButton"
+        android:layout_width="290dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/loginbutton"
+        app:layout_constraintBottom_toTopOf="@+id/signInButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/login_button_red" />
+
+    <ImageView
+        android:id="@+id/signInButton"
+        android:layout_width="290dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/signinbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sign_in_button_red" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:srcCompat="@drawable/previous_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

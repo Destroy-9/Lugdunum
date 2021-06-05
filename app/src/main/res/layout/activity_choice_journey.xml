@@ -4,47 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoiceJourneyActivity">
+    tools:context=".activity.ChoiceJourneyActivity"
+    android:background="@drawable/background_door"
+    style="@android:style/TextAppearance.DeviceDefault.Medium">
+
+    <ImageView
+        android:id="@+id/lugdunum"
+        android:layout_width="328dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/logo_lugdunum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_lugdunum_black" />
 
     <ImageView
         android:id="@+id/settingsIcon"
-        android:layout_width="95dp"
-        android:layout_height="135dp"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/settingsbutton" />
+        app:srcCompat="@drawable/settings_button"
+        android:contentDescription="@string/settings_button" />
 
-    <Button
-        android:id="@+id/historyButton"
+    <TextView
+        android:id="@+id/introduction_paragraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/introduction_paragraph"
+        android:textColor="#870000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lugdunum" />
+
+    <TextView
+        android:id="@+id/signature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lancer l'histoire"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/team"
+        android:textSize="18sp"
+        android:textColor="#870000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introduction_paragraph" />
+
+    <ImageView
+        android:id="@+id/mapCompass"
+        android:layout_width="251dp"
+        android:layout_height="162dp"
+        android:contentDescription="@string/map_compass"
+        android:src="@drawable/map_compass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signature" />
+
+    <ImageView
+        android:id="@+id/historyButton"
+        android:layout_width="145dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:contentDescription="@string/play_button_black"
+        android:src="@drawable/play_button_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signature"
+        app:layout_constraintVertical_bias="0.944" />
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/hill_explanation"
+        android:textColor="#870000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/historyButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/mapCompass"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/mapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Map"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/map"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/gameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signature"
+        app:layout_constraintVertical_bias="0.97" />
 
     <Button
         android:id="@+id/gameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Acces jeux pour l'instant"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/games_access"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/historyButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

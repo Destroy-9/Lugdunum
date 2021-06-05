@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.ChoiceGameActivity">
+
+
+        <Button
+            android:id="@+id/button_game_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/holo_red_light"
+            android:background="@android:color/holo_blue_light"
+            android:textSize="50sp"
+            android:text="@string/jeu_curiosit_s"/>
+
+        <Button
+            android:id="@+id/button_game_3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/holo_red_light"
+            android:background="@android:color/holo_blue_light"
+            android:textSize="50sp"
+            android:text="@string/jeu_fourvi_re"/>
+
+
+    </LinearLayout>

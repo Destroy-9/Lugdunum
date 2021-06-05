@@ -9,10 +9,8 @@ public class MapContent {
 
     public int numActiv;
     public int numCercle;
-    public boolean isCreated;
 
     public MapContent (){
-        isCreated = false;
         numCercle=0;
         numActiv=0;
 

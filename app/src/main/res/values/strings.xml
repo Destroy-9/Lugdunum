@@ -3,4 +3,68 @@
     <string name="play_button">Jouer</string>
     <string name="rules_button">Règles</string>
     <string name="title_activity_maps">Map</string>
+    <string name="introduction_paragraph">&#8200;&#8200; Bonjour et bienvenue dans <b>LUGDUNUM </b>!\n\n &#8200;&#8200;Lorsque vous cliquerez sur le bouton ci-dessous, vous plongerez dans une histoire qui vous fera parcourir la colline qui prie* de <i>Saint-Just</i> au <i>Vieux-Lyon</i>. À tout moment, si vous vous sentez perdu, vous pourrez appuyer sur la <u>bougie</u> pour éclairer votre chemin.\n &#8200;&#8200;Pour commencer, veuillez vous rendre à la station de métro Vieux Lyon (accessible via métro D) et prendre le funiculaire F1 jusqu\'à l\'arrêt St Just.\n &#8200;&#8200; Une fois sorti de la station St Just, vous pourrez accéder au jeu en cliquant sur le bouton ci-dessous et en commençant à descendre (tourner à gauche en sortant de la station). \n\n Bonne visite !</string>
+    <string name="team">L\'équipe de LUGDUNUM</string>
+    <string name="hill_explanation">* La colline qui prie : Fourvière \n La colline qui travaille : La Croix Rousse</string>
+    <string name="map">Map</string>
+    <string name="games_access">Accès jeux</string>
+    <string name="logo_lugdunum">logo_lugdunum</string>
+    <string name="settings_button">settings_button</string>
+    <string name="play_button_black">play_button_black</string>
+    <string name="map_compass">map_compass</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="password">Password</string>
+    <string name="logolaurelwreath">logoLaurelWreath</string>
+    <string name="loginbutton">loginButton</string>
+    <string name="signinbutton">signInButton</string>
+    <string name="jeu_curiosit_s">Jeu curiosités</string>
+    <string name="jeu_fourvi_re">Jeu fourvière</string>
+    <string name="rules"><u><b>PRINCIPE :</b></u>\n\nCette application permet de visiter le <i>Vieux Lyon</i> de façon ludique. \nC\'est une sorte de course d\'orientation mais ici, le téléphone est la "carte". \nQuelques mini-jeux t\'attendent sur ton chemin, nous espérons que tu apprendras des choses sur Lyon. \nBonne visite ! \n\n<u><b>REGLES :</b></u>\n\n 1 - Pour commencer le parcours, rends-toi tout d\'abord à la station de métro Vieux Lyon (accessible via métro D) \n 2 - Ensuite, clique sur le bouton "Lugdunum" pour rejoindre l\'écran de début de partie. \n 3 - Enfin, suis les instructions, laisse toi guider et amuse toi !   </string>
+    <string name="logo_lugdunum_red">logo_lugdunum_red</string>
+    <string name="poem"> <b>LYON ( LUGDUNUM )</b>\n
+        <b>Ville Mystérieuse</b>\n\n\n
+        On te surnomme ville aux trois fleuves\n
+        Tu es aussi ville de piété\n
+        De la révolution tu ne voulus\n
+        Mais la résistance tu connus\n\n
+        On te surnomme ville à Mystère\n
+        Croyants du Christ- Francs maçons- Matérialistes\n
+        Se croisent toujours sous ta bannière\n\n
+        Ta vérité est d\'une certaine teneur\n
+        Dont seule tu connais l\'espace intérieur\n\n
+        Ville littéraire, tu es\n
+        Ville de prières, tu restes\n
+        Ville planétaire, tu le deviens\n\n
+        Tes rues piétonnières\n
+        Résonnent de la diversité\n
+        Des chants colorés\n
+        Des passants de toutes nationalités\n
+        En quête de services et transports proposés\n
+        Dont le tramway est le dernier-né\n\n
+        Catholiques sociaux ouverts\n
+        Canuts révolutionnaires\n
+        Bourgeois propriétaires\n
+        Furent la diversité de ta lumière\n\n
+        Vestiges de pierre\n
+        Tu es ville de l\'esprit et de chair\n
+        On t\'envie pour ta gastronomie\n\n
+        <b>Croix Rousse</b> : tu restes symbolique\n
+        Passé des fureurs ouvrières\n
+        De la soierie lyonnaise si recherché\n
+        Ton marché coloré\n
+        Egaie bien des matinées\n
+        <b>Bellecour</b> : tu es ce conte d\'amour\n
+        Dont on fait le tour\n
+        <b>Fourvière</b> : tu perpétues la colline qui prie\n
+        Pour ce qui te concerne <b>quartier de la part dieu</b>\n
+        Tu ravis le lot des badauds……………………….\n
+        …………………………………………………………………\n\n
+        Lyon :<b>grandes écoles et universités</b>\n
+        Sont en ton centre ………….. ou à ta périphérie\n\n
+        Tourmentée et solide\n
+        Massive et tendre\n
+        Carrefour de l\'Europe\n
+        Est ta destinée.\n\n\n
+        <b>Guy CREQUIE</b>
+        </string>
 </resources>

@@ -1,23 +1,19 @@
 package com.example.lugdunum.games;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.app.Activity;
 import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.example.lugdunum.HistoryActivity;
 import com.example.lugdunum.R;
 
 public class CuriosityGameActivity extends Activity {
@@ -49,7 +45,7 @@ public class CuriosityGameActivity extends Activity {
     private void showDialogShare() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.popup_window1);
+        dialog.setContentView(R.layout.popup_back_chair);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(true);
         dialog.show();
@@ -59,7 +55,7 @@ public class CuriosityGameActivity extends Activity {
     private void showDialogTour() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.popup_window);
+        dialog.setContentView(R.layout.popup_crayon);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(true);
         dialog.show();
@@ -112,7 +108,7 @@ public class CuriosityGameActivity extends Activity {
                 mButtonCrayonHidden.setVisibility(View.INVISIBLE);
                 mButtonNextGameIsBridge.setVisibility(View.VISIBLE);
                 mButtonMoreInfo.setVisibility(View.VISIBLE);
-                mLayout.setBackgroundResource(R.drawable.with_crayon);
+                mLayout.setBackgroundResource(R.drawable.curiosity_with_crayon);
             }
         });
 
@@ -128,7 +124,7 @@ public class CuriosityGameActivity extends Activity {
                 Button button = (Button) v;
                 button.setVisibility(View.INVISIBLE);
                 mButtonBridgeHidden.setVisibility(View.VISIBLE);
-                mLayout.setBackgroundResource(R.drawable.without_bridge);
+                mLayout.setBackgroundResource(R.drawable.curiosity_without_bridge);
             }
         });
 
@@ -138,7 +134,7 @@ public class CuriosityGameActivity extends Activity {
             public void onClick(View v) {
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                                             ? View.GONE : View.INVISIBLE);
-                mLayout.setBackgroundResource(R.drawable.with_bridge);
+                mLayout.setBackgroundResource(R.drawable.curiosity_with_bridge);
                 mButtonNextGameIsChair.setVisibility(View.VISIBLE);
             }
         });
@@ -147,7 +143,7 @@ public class CuriosityGameActivity extends Activity {
         mButtonNextGameIsChair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLayout.setBackgroundResource(R.drawable.without_chair);
+                mLayout.setBackgroundResource(R.drawable.curiosity_without_chair);
                 mTextViewFindBridge.setText("Il manque une chaise ici, peux-tu la trouver ?");
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.INVISIBLE)
                         ? View.GONE : View.VISIBLE);
@@ -160,7 +156,7 @@ public class CuriosityGameActivity extends Activity {
             public void onClick(View v) {
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                         ? View.GONE : View.INVISIBLE);
-                mLayout.setBackgroundResource(R.drawable.with_chair);
+                mLayout.setBackgroundResource(R.drawable.curiosity_with_chair);
                 mButtonCloseView.setVisibility(View.VISIBLE);
                 mButtonEnd.setVisibility(View.VISIBLE);
             }

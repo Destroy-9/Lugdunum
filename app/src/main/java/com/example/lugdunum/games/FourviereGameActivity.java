@@ -37,8 +37,8 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         mTabEndroit = new int[]{4, 1, 2, 3};
 
-        mstatnoire = (ImageView) findViewById(R.id.statnoire);
-        mStatmarie = (ImageView) findViewById(R.id.marie);
+        mstatnoire = (ImageView) findViewById(R.id.blackStatue);
+        mStatmarie = (ImageView) findViewById(R.id.marieStatue);
         mStatcroix = (ImageView) findViewById(R.id.croix);
         mStatlion = (ImageView) findViewById(R.id.lion);
         mstatnoire.setTag(1);
@@ -52,13 +52,13 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         mImageView = (ImageView) findViewById(R.id.endroit);
         switch(mTabEndroit[mIndexEndroit]){
-            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+            case 4 : mImageView.setImageResource(R.drawable.fourviere_puzzle_lion);
             break;
-            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+            case 2: mImageView.setImageResource(R.drawable.fourviere_puzzle_marie_statue);
             break;
-            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+            case 3: mImageView.setImageResource(R.drawable.fourviere_puzzle_cross);
             break;
-            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+            case 1: mImageView.setImageResource(R.drawable.fourviere_puzzle_black_statue);
             break;
 
         }
@@ -93,13 +93,13 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
                 mIndexEndroit++;
             }
             switch(mTabEndroit[mIndexEndroit]){
-                case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                case 4 : mImageView.setImageResource(R.drawable.fourviere_puzzle_lion);
                     break;
-                case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                case 2: mImageView.setImageResource(R.drawable.fourviere_puzzle_marie_statue);
                     break;
-                case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                case 3: mImageView.setImageResource(R.drawable.fourviere_puzzle_cross);
                     break;
-                case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                case 1: mImageView.setImageResource(R.drawable.fourviere_puzzle_black_statue);
                     break;
 
             }
@@ -116,20 +116,20 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         builder.setTitle("Bienvenue")
                 .setMessage("Regarde autour de toi, cela te permettra d'associer les statues au bon environnement !")
-                .setPositiveButton("Play", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Jouer", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Start
                         mScore = 0;
                         mIndexEndroit = 0;
                         switch(mTabEndroit[mIndexEndroit]){
-                            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                            case 4 : mImageView.setImageResource(R.drawable.fourviere_puzzle_lion);
                                 break;
-                            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                            case 2: mImageView.setImageResource(R.drawable.fourviere_puzzle_marie_statue);
                                 break;
-                            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                            case 3: mImageView.setImageResource(R.drawable.fourviere_puzzle_cross);
                                 break;
-                            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                            case 1: mImageView.setImageResource(R.drawable.fourviere_puzzle_black_statue);
                                 break;
 
                         }
@@ -146,20 +146,20 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
 
         builder.setTitle("Dommage")
                 .setMessage("Tu as eu " + mScore + " réponses positives!")
-                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Essaie encore", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Try Again
                         mScore = 0;
                         mIndexEndroit = 0;
                         switch(mTabEndroit[mIndexEndroit]){
-                            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                            case 4 : mImageView.setImageResource(R.drawable.fourviere_puzzle_lion);
                                 break;
-                            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                            case 2: mImageView.setImageResource(R.drawable.fourviere_puzzle_marie_statue);
                                 break;
-                            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                            case 3: mImageView.setImageResource(R.drawable.fourviere_puzzle_cross);
                                 break;
-                            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                            case 1: mImageView.setImageResource(R.drawable.fourviere_puzzle_black_statue);
                                 break;
 
                         }
@@ -178,13 +178,13 @@ public class FourviereGameActivity extends AppCompatActivity implements View.OnC
                                         mScore = 0;
                                         mIndexEndroit = 0;
                                         switch(mTabEndroit[mIndexEndroit]){
-                                            case 4 : mImageView.setImageResource(R.drawable.lionpuzzle);
+                                            case 4 : mImageView.setImageResource(R.drawable.fourviere_puzzle_lion);
                                                 break;
-                                            case 2: mImageView.setImageResource(R.drawable.mariepuzzle);
+                                            case 2: mImageView.setImageResource(R.drawable.fourviere_puzzle_marie_statue);
                                                 break;
-                                            case 3: mImageView.setImageResource(R.drawable.croixpuzzle);
+                                            case 3: mImageView.setImageResource(R.drawable.fourviere_puzzle_cross);
                                                 break;
-                                            case 1: mImageView.setImageResource(R.drawable.statnoirepuzzle);
+                                            case 1: mImageView.setImageResource(R.drawable.fourviere_puzzle_black_statue);
                                                 break;
 
                                         }
