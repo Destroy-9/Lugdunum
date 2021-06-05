@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -17,7 +20,7 @@ import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
 import com.example.lugdunum.Apollo;
 import com.example.lugdunum.CreateUserMutation;
-import com.example.lugdunum.GetUserQuery;
+import com.example.lugdunum.LoginQuery;
 import com.example.lugdunum.R;
 import com.example.lugdunum.User;
 
@@ -29,17 +32,36 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView mPlayButton;
     private ImageView mLoginButton;
-    private ImageView mSignInButton;
+    private ImageView mSignUpButton;
     private ImageView mBackButton;
     private EditText mPseudo;
     private EditText mPassword;
     private boolean mEnablePseudo = false;
     private boolean mEnablePassword = false;
     private User mUser;
-    private boolean mOnLogin = false;
-    private boolean mCreateNewUser = false;
+    private boolean mOnLogin;
     private boolean mUserValidated = false;
+    private String message = null;
 
+    // Method which permits to change the display of the buttons on the screen
+    void changeVisibility (boolean playButtonBecomeVisible){
+        if (playButtonBecomeVisible){
+            mLoginButton.setVisibility(View.GONE);
+            mSignUpButton.setVisibility(View.GONE);
+            mPseudo.setVisibility(View.VISIBLE);
+            mPassword.setVisibility(View.VISIBLE);
+            mPlayButton.setVisibility(View.VISIBLE);
+            mBackButton.setVisibility(View.VISIBLE);
+        }
+        else {
+            mLoginButton.setVisibility(View.VISIBLE);
+            mSignUpButton.setVisibility(View.VISIBLE);
+            mPseudo.setVisibility(View.GONE);
+            mPassword.setVisibility(View.GONE);
+            mPlayButton.setVisibility(View.GONE);
+            mBackButton.setVisibility(View.GONE);
+        }
+    }
 
 
     @Override
@@ -50,13 +72,15 @@ public class MainActivity extends AppCompatActivity {
         mPseudo = (EditText) findViewById(R.id.editTextTextPseudo);
         mPassword = (EditText) findViewById(R.id.editTextTextPassword);
         mLoginButton = (ImageView) findViewById(R.id.loginButton);
-        mSignInButton = (ImageView) findViewById(R.id.signInButton);
+        mSignUpButton = (ImageView) findViewById(R.id.signUpButton);
         mPlayButton = (ImageView) findViewById(R.id.playButton);
         mBackButton = (ImageView) findViewById(R.id.backButton);
         mUser = (User) getApplicationContext(); // To have mUser accessible to every activity
         mPlayButton.setEnabled(false);
+        mOnLogin = false;
 
 
+        // Listener which permit to enter a pseudo
         mPseudo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -75,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Listener which permit to enter a password
         mPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -93,83 +118,114 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // When the login button is clicked, the other button appeared
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLoginButton.setVisibility(View.GONE);
-                mSignInButton.setVisibility(View.GONE);
-                mPseudo.setVisibility(View.VISIBLE);
-                mPassword.setVisibility(View.VISIBLE);
-                mPlayButton.setVisibility(View.VISIBLE);
-                mBackButton.setVisibility(View.VISIBLE);
+                changeVisibility(true);
                 mOnLogin = true;
             }
         });
 
-
-        mSignInButton.setOnClickListener(new View.OnClickListener() {
+        // When the sign up button is clicked, the other button appeared
+        mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLoginButton.setVisibility(View.GONE);
-                mSignInButton.setVisibility(View.GONE);
-                mPseudo.setVisibility(View.VISIBLE);
-                mPassword.setVisibility(View.VISIBLE);
-                mPlayButton.setVisibility(View.VISIBLE);
-                mBackButton.setVisibility(View.VISIBLE);
+                changeVisibility(true);
                 mOnLogin = false;
             }
         });
 
+        // When the back button is clicked, the other button appeared
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeVisibility(false);
+            }
+        });
+
+
+        // When the play button is clicked, all the procedure of login/sign up is processed
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mUser.setAll(mPseudo.getText().toString(), mPassword.getText().toString());
-                System.out.println("***Pseudo : "+mPseudo.getText().toString()+" ***");
-                System.out.println("***Mot de passe : "+mPassword.getText().toString()+" ***");
+                System.out.println("***Pseudo : " + mPseudo.getText().toString() + " ***");
+                System.out.println("***Mot de passe : " + mPassword.getText().toString() + " ***");
+
+                // Creation of a handler to display the Toast and wait for server's answer
+                Handler uiHandler = new Handler();
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        uiHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                                if (mUserValidated) {
+                                    //creation of the link between mainActivity and ChoiceJourneyActivity
+                                    Intent intent = new Intent(MainActivity.this, ChoiceJourneyActivity.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        }, 1000);
+                    }
+                };
 
                 // To enter in debug mode
-                if (mUser.debugMode()){
-                    Toast.makeText(MainActivity.this, "Mode debug activé", Toast.LENGTH_LONG).show();
-                }
-                /*elif (mOnLogin) {
-                    GetUserQuery getUserQuery = GetUserQuery.builder().build();
-                    Apollo.apolloClient.query(getUserQuery)
-                        .enqueue(new ApolloCall.Callback<GetUserQuery.Data>() {
-                            @Override
-                            public void onResponse(@NotNull Response<GetUserQuery.Data> response) {
-                                Log.e("Apollo", "response: " + Objects.requireNonNull(response.data()).toString());
-                                //if response.date().username == username
-                                //check mdp
-                                mUserValidated = true;
-                                //else  mUserValidated = false;
-                            }
+                if (mUser.debugMode()) {
+                    message = "Mode debug activé";
+                    mUserValidated = true;
+                } else {
 
-                            @Override
-                            public void onFailure(@NotNull ApolloException e) {
-                                Log.e("Apollo", "Error", e);
-                                mUserValidated = false;
-                            }
-                        });
-                }
-                else {
-                    GetUserQuery getUserQuery = GetUserQuery.builder().build();
-                    Apollo.apolloClient.query(getUserQuery)
-                            .enqueue(new ApolloCall.Callback<GetUserQuery.Data>() {
+                    // Login processing
+                    if (mOnLogin) {
+                        LoginQuery loginQuery = LoginQuery.builder()
+                                .username(mPseudo.getText().toString())
+                                .password(mPassword.getText().toString())
+                                .build();
+                        Apollo.apolloClient.query(loginQuery)
+                               .enqueue(new ApolloCall.Callback<LoginQuery.Data>() {
                                 @Override
-                                public void onResponse(@NotNull Response<GetUserQuery.Data> response) {
-                                    Log.e("Apollo", "response: " + Objects.requireNonNull(response.data()).toString());
-                                    //if username is not in database
-                                    mCreateNewUser = true;
-                                    //else    mCreateNewUser = false;
+                                public void onResponse(@NotNull Response<LoginQuery.Data> response) {
+                                    System.out.println("***"+ response.getData().login());
+
+                                    // Wrong username given, not found in the data base
+                                    if (Objects.requireNonNull(response.getData()).login().equals("1")) {
+                                        mUserValidated = false;
+                                        message = "Erreur de pseudo";
+                                        System.out.println("*** Username wrong "+ response.getData().toString());
+                                    }
+                                    else {
+
+                                        // Wrong password given, don't correspond to the username
+                                        if (Objects.requireNonNull(response.getData()).login().equals("2")) {
+                                            mUserValidated = false;
+                                            message = "Erreur de mot de passe";
+                                            System.out.println("*** Password wrong "+ response.getData().toString());
+                                        }
+
+                                        // Authentication succeeded
+                                        else {
+                                            mUserValidated = true;
+                                            message = "Authentification réussite";
+                                            System.out.println("*** Good "+ response.getData().toString());
+
+                                        }
+                                    }
                                 }
 
                                 @Override
                                 public void onFailure(@NotNull ApolloException e) {
                                     Log.e("Apollo", "Error", e);
-                                    mCreateNewUser = false;
+                                    mUserValidated = false;
                                 }
                             });
-                    if (mCreateNewUser) {
+                    }
+
+                    // sign up processing
+                    else {
                         CreateUserMutation createUserMutation = CreateUserMutation.builder()
                                 .username(mPseudo.getText().toString())
                                 .password(mPassword.getText().toString())
@@ -179,37 +235,29 @@ public class MainActivity extends AppCompatActivity {
                                 .enqueue(new ApolloCall.Callback<CreateUserMutation.Data>() {
                                     @Override
                                     public void onResponse(@NotNull Response<CreateUserMutation.Data> response) {
-                                        Log.i("TAG", response.toString());
-                                        mUserValidated = true;
+
+                                        // Username already exist in the data base
+                                        if (response.getData().createUser() == null){
+                                            message = "Ce pseudo existe déjà";
+                                            mUserValidated = false;
+                                        }
+
+                                        // Sign up succeeded
+                                        else {
+                                            message = "Compte créé";
+                                            mUserValidated = true;
+                                        }
                                     }
 
                                     @Override
                                     public void onFailure(@NotNull ApolloException e) {
-                                        Log.e("TAG", e.getMessage(), e);
+                                        Log.e("Failure mutation", e.getMessage(), e);
                                         mUserValidated = false;
                                     }
                                 });
                     }
                 }
-
-                 */
-             //   if (mUserValidated) {
-                    //creation of the link between mainActivity and ChoiceJourneyActivity
-                    Intent intent = new Intent(MainActivity.this, ChoiceJourneyActivity.class);
-                    startActivity(intent);
-              //  }
-            }
-        });
-
-        mBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mLoginButton.setVisibility(View.VISIBLE);
-                mSignInButton.setVisibility(View.VISIBLE);
-                mPseudo.setVisibility(View.GONE);
-                mPassword.setVisibility(View.GONE);
-                mPlayButton.setVisibility(View.GONE);
-                mBackButton.setVisibility(View.GONE);
+                runnable.run();
             }
         });
     }
