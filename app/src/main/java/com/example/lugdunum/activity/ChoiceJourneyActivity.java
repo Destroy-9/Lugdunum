@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lugdunum.R;
 import com.example.lugdunum.User;
+
+import org.w3c.dom.Text;
 
 public class ChoiceJourneyActivity extends AppCompatActivity {
 
@@ -18,6 +22,8 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
     private Button mMapButton;
     private Button mGameButton;
     private ImageView mHistoryButton;
+    private TextView mIntroText;
+    private TextView mSignatureText;
     private User mUser;
 
 
@@ -30,6 +36,11 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
         mMapButton = (Button) findViewById(R.id.mapButton);
         mGameButton = (Button) findViewById(R.id.gameButton);
         mHistoryButton = (ImageView) findViewById(R.id.historyButton);
+        mIntroText = (TextView) findViewById(R.id.introduction_paragraph);
+        mSignatureText = (TextView) findViewById(R.id.signature);
+
+        mIntroText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 19.f);
+        mSignatureText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 19);
 
 
         mUser = (User) getApplicationContext();

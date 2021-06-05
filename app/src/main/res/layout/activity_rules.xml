@@ -8,19 +8,24 @@
     android:background="@drawable/background_columns_right">
 
 
-    <TextView
-        android:id="@+id/rules_text"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="356dp"
         android:layout_height="508dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/rules"
-        android:textAllCaps="false"
-        android:textColor="#8A0000"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/rules_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:text="@string/rules"
+            android:textAllCaps="false"
+            android:textColor="#8A0000"
+            android:textSize="18sp" />
+    </androidx.core.widget.NestedScrollView>
 
     <ImageView
         android:id="@+id/button_to_go_back_to_choicejourneyactivity"

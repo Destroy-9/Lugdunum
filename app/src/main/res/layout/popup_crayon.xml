@@ -41,8 +41,10 @@
             android:text="Construite pour servir de repère visuel au même titre que la basilique de Fourvière, elle mesure 165m de haut, soit la hauteur de l'esplanade de la Basilique. Elle est composée de 41 étages pour une surface de 37 000m² et un diamètre de 44m. La pyramide qui lui a valu son surnom du Crayon est haute de 23m.
     Elle repose sur un noyau central en béton armé (à l'intérieur duquel se trouvent les ascenseurs) et sur 71 poteaux répartis à la périphérie. Sa façade est en béton ajouré."
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@android:color/white"
-            android:textStyle="italic" />
+            android:textColor="#870000"
+            android:shadowColor="@color/black"
+            android:shadowDx="@android:integer/config_longAnimTime"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
