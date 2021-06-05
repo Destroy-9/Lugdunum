@@ -45,6 +45,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     Circle[] interets;
     FragmentManager fragmentManager;
     public final MapContent mContent = new MapContent();
+    public boolean gameStarted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,6 +191,12 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 }
             }
             setInvisibleCircle();
+            gameStarted = false;
+            Toast.makeText(this, "vive babar", Toast.LENGTH_LONG).show();
+            if (interets[mContent.numCercle].isVisible()==false){
+                interets[mContent.numCercle].setVisible(true);
+            }
+
 
     }
 
@@ -204,11 +211,11 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             LatLng here = new LatLng(latitude, longitude);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here,15));
             //mMap.addMarker(new MarkerOptions().position(here).title("Vous êtes ici"));
-
-            if (interets[mContent.numCercle].isVisible()==false){
-              interets[mContent.numCercle].setVisible(true);
+            if (interets[mContent.numCercle].isVisible()==false && gameStarted == false){
+                interets[mContent.numCercle].setVisible(true);
             }
             testPos(location);
+
         }
     }
 
@@ -225,13 +232,12 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         if (results[0]<interets[mContent.numCercle].getRadius()){
             setInvisibleCircle();
             if (interets[mContent.numCercle+1].isVisible()==false){
-                interets[mContent.numCercle+1].setVisible(true);
+                //interets[mContent.numCercle+1].setVisible(true);
             }
             mDescription.setVisibility(View.VISIBLE);
             fragmentManager.beginTransaction().hide(mapFragment).commit();
-            mContent.numCercle++;
             setGame(mContent.numActiv);
-
+            mContent.numCercle++;
 
 
 
@@ -253,16 +259,19 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 startActivity(intent);
                 interets[mContent.numCercle+1].setVisible(false);
                 mContent.numActiv++;
+                gameStarted = true;
                 break;
             case 1:
                 intent = new Intent(MapsActivity.this, FourviereGameActivity.class);
                 startActivity(intent);
                 mContent.numActiv++;
+                gameStarted = true;
                 break;
             case 2:
               //  intent = new Intent(MapsActivity.this, TheatreGameActivity.class);
               //  startActivity(intent);
                 mContent.numActiv++;
+                //gameStarted = true;
                 break;
         }
     }
