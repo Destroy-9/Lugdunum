@@ -16,7 +16,7 @@
     <string name="password">Password</string>
     <string name="logolaurelwreath">logoLaurelWreath</string>
     <string name="loginbutton">loginButton</string>
-    <string name="signinbutton">signInButton</string>
+    <string name="signupbutton">signUpButton</string>
     <string name="jeu_curiosit_s">Jeu curiosités</string>
     <string name="jeu_fourvi_re">Jeu fourvière</string>
     <string name="rules"><u><b>PRINCIPE :</b></u>\n\nCette application permet de visiter le <i>Vieux Lyon</i> de façon ludique. \nC\'est une sorte de course d\'orientation mais ici, le téléphone est la "carte". \nQuelques mini-jeux t\'attendent sur ton chemin, nous espérons que tu apprendras des choses sur Lyon. \nBonne visite ! \n\n<u><b>REGLES :</b></u>\n\n 1 - Pour commencer le parcours, rends-toi tout d\'abord à la station de métro Vieux Lyon (accessible via métro D) \n 2 - Ensuite, clique sur le bouton "Lugdunum" pour rejoindre l\'écran de début de partie. \n 3 - Enfin, suis les instructions, laisse toi guider et amuse toi !   </string>
