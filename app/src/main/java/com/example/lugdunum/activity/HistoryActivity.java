@@ -407,6 +407,14 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 .strokeWidth(5)
                 .fillColor(0x55FF6666);
 
+        CircleOptions cercleType2 = new CircleOptions();
+        cercleType2
+                .center(new LatLng(45.756773, 4.816251))
+                .radius(33)
+                .strokeColor(Color.RED)
+                .strokeWidth(5)
+                .fillColor(0x55FF6666);
+
         interets = new Circle[7];
         for (int i = 0; i < interets.length; i++) {
             switch (i) {
@@ -427,7 +435,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     interets[i].setCenter(new LatLng(45.7591, 4.8213));
                     break;
                 case 4: //théatreJeu
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(cercleType2);
                     interets[i].setCenter(new LatLng(45.7597, 4.8199));
                     break;
                 case 5: //fourvière
