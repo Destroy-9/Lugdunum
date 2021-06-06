@@ -1,0 +1,8 @@
+mutation addLocalization ($lng: Float!, $lat: Float!, $userId: ID!) {
+    addLocalization (lng: $lng, lat: $lat, userId: $userId) {
+        id,
+        lat,
+        lng,
+        userId
+    }
+}

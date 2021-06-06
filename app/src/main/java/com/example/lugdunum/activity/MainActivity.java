@@ -25,8 +25,7 @@ import com.example.lugdunum.User;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,14 +67,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("QQQ " +Thread.currentThread().getName());
-            }
-        }, 0, 5000);
 
         mPseudo = (EditText) findViewById(R.id.editTextTextPseudo);
         mPassword = (EditText) findViewById(R.id.editTextTextPassword);
@@ -185,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 if (mUser.debugMode()) {
                     message = "Mode debug activé";
                     mUserValidated = true;
+                    mUser.setID("DebugMode");
                 } else {
 
                     // Login processing

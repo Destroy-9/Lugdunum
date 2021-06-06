@@ -283,7 +283,7 @@
                   "defaultValue": null
                 },
                 {
-                  "name": "long",
+                  "name": "lng",
                   "description": null,
                   "type": {
                     "kind": "NON_NULL",
@@ -425,7 +425,7 @@
         {
           "kind": "OBJECT",
           "name": "Localization",
-          "description": "Represents localization with lat and long",
+          "description": "Represents localization with lat and lng",
           "fields": [
             {
               "name": "id",
@@ -456,7 +456,7 @@
               "deprecationReason": null
             },
             {
-              "name": "long",
+              "name": "lng",
               "description": null,
               "args": [],
               "type": {
@@ -596,7 +596,7 @@
                   "defaultValue": null
                 },
                 {
-                  "name": "long",
+                  "name": "lng",
                   "description": null,
                   "type": {
                     "kind": "NON_NULL",

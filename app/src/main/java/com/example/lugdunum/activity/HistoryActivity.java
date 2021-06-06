@@ -15,6 +15,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -26,11 +27,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
+import com.apollographql.apollo.ApolloCall;
+import com.apollographql.apollo.api.Response;
+import com.apollographql.apollo.exception.ApolloException;
 import com.example.lugdunum.R;
 import com.example.lugdunum.Scenario;
 import com.example.lugdunum.User;
+import com.example.lugdunum.Apollo;
+import com.example.lugdunum.AddLocalizationMutation;
 import com.example.lugdunum.games.CuriosityGameActivity;
 import com.example.lugdunum.games.FourviereGameActivity;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -38,6 +45,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class HistoryActivity extends FragmentActivity implements LocationListener {
 
@@ -69,6 +81,9 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     //TextView mDescription;
     Circle[] interets;
     FragmentManager fragmentManager;
+    private Timer timer = new Timer();
+    private double longitude;
+    private double latitude;
 
 
     /****************************************************************************************************
@@ -128,6 +143,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
 
         // initialization of booleans
         trionValidate = false;
@@ -291,6 +307,14 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 }
             }
         });
+        // Send the location to the server periodically
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                sendLocalisation();
+                //System.out.println("QQQ " +Thread.currentThread().getName());
+            }
+        }, 10000, 60000);
     }
 
     @Override
@@ -427,8 +451,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
 
         Toast.makeText(this, "Location: "+latitude+"/"+longitude, Toast.LENGTH_LONG).show();
 
@@ -438,6 +462,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
             //mMap.addMarker(new MarkerOptions().position(here).title("Vous êtes ici"));
             testPos(location);
         }
+
+
     }
 
     public void testPos(@NonNull Location location){
@@ -491,5 +517,32 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    public void sendLocalisation(){
+        AddLocalizationMutation addLocalizationMutation = AddLocalizationMutation.builder()
+                .lng(longitude)
+                .lat(latitude)
+                .userId(mUser.getID())
+                .build();
+        Apollo.apolloClient
+                .mutate(addLocalizationMutation)
+                .enqueue(new ApolloCall.Callback<AddLocalizationMutation.Data>() {
+                    @Override
+                    public void onResponse(@NotNull Response<AddLocalizationMutation.Data> response) {
+                        Log.i("Mutation succeeded", "onResponse: "+response.getData().toString());
+                    }
+
+                    @Override
+                    public void onFailure(@NotNull ApolloException e) {
+                        Log.e("Failure mutation", e.getMessage(), e);
+                    }
+                });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
     }
 }
