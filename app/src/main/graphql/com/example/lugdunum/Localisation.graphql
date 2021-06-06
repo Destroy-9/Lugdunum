@@ -1,5 +1,0 @@
-mutation Localisation ($lat: Float!, $long: Float!, $userId: ID) {
-    localisation (lat: $lat, long: $long, userId: $userId) {
-        Localization
-    }
-}

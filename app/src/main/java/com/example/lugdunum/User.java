@@ -6,15 +6,18 @@ public class User extends Application {
 
     private String mPseudo;
     private String mPassword;
+    private String mID;
 
     public User (String pseudo, String password){
         mPseudo = pseudo;
         mPassword = password;
+        mID = null;
     }
 
     public User (){
         mPseudo = null;
         mPassword = null;
+        mID = null;
     }
 
     public String getPseudo() {
@@ -25,6 +28,8 @@ public class User extends Application {
         return mPassword;
     }
 
+    public String getID () { return mID; }
+
     public void setPseudo(String pseudo) {
         mPseudo = pseudo;
     }
@@ -33,9 +38,13 @@ public class User extends Application {
         mPassword = password;
     }
 
-    public void setAll(String pseudo, String password){
+    public void setPseudoPassword(String pseudo, String password){
         mPseudo = pseudo;
         mPassword = password;
+    }
+
+    public void setID (String ID){
+        mID = ID;
     }
 
     public boolean debugMode () {

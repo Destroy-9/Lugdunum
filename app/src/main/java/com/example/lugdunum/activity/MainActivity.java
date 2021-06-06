@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -27,6 +25,8 @@ import com.example.lugdunum.User;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("QQQ " +Thread.currentThread().getName());
+            }
+        }, 0, 5000);
 
         mPseudo = (EditText) findViewById(R.id.editTextTextPseudo);
         mPassword = (EditText) findViewById(R.id.editTextTextPassword);
@@ -150,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mUser.setAll(mPseudo.getText().toString(), mPassword.getText().toString());
+                mUser.setPseudoPassword(mPseudo.getText().toString(), mPassword.getText().toString());
                 System.out.println("***Pseudo : " + mPseudo.getText().toString() + " ***");
                 System.out.println("***Mot de passe : " + mPassword.getText().toString() + " ***");
 
@@ -210,8 +218,8 @@ public class MainActivity extends AppCompatActivity {
                                         else {
                                             mUserValidated = true;
                                             message = "Authentification réussite";
+                                            mUser.setID(response.getData().login());
                                             System.out.println("*** Good "+ response.getData().toString());
-
                                         }
                                     }
                                 }
@@ -246,6 +254,7 @@ public class MainActivity extends AppCompatActivity {
                                         else {
                                             message = "Compte créé";
                                             mUserValidated = true;
+                                            mUser.setID(response.getData().createUser().toString());
                                         }
                                     }
 
