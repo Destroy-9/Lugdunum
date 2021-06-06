@@ -30,6 +30,7 @@ import android.widget.ViewSwitcher;
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
+import com.example.lugdunum.MapContent;
 import com.example.lugdunum.R;
 import com.example.lugdunum.Scenario;
 import com.example.lugdunum.User;
@@ -79,12 +80,13 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     private GoogleMap mMap;
     SupportMapFragment mapFragment;
     ImageView mHelpButton;
-    //TextView mDescription;
     Circle[] interets;
     FragmentManager fragmentManager;
     private Timer timer = new Timer();
     private double longitude;
     private double latitude;
+    public final MapContent mContent = new MapContent();
+    private boolean gameStarted;
 
 
     /****************************************************************************************************
@@ -107,6 +109,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         nextBtn_function();
+                        setInvisibleCircle();
+                        mContent.incCercle();
+                        fragmentManager.beginTransaction().hide(mapFragment).commit();
+                        mImage.setVisibility(View.VISIBLE);
                     }
                 })
                 .setNegativeButton("Non", new DialogInterface.OnClickListener() {
@@ -297,7 +303,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mapFragment = (SupportMapFragment) fragmentManager.findFragmentById(R.id.map);
         fragmentManager.beginTransaction().hide(mapFragment).commit();
         mImage.setVisibility(View.VISIBLE);
-        //mDescription = (TextView) findViewById(R.id.description);
         mHelpButton = (ImageView) findViewById(R.id.HelpButton);
         mHelpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -399,122 +404,106 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 .strokeWidth(5)
                 .fillColor(0x55FF6666);
 
-        interets = new Circle[11];
+        interets = new Circle[7];
         for (int i = 0; i < interets.length; i++) {
             switch (i) {
-                case 0:
+                case 0: //fontaine trion
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.756773, 4.816251));
+                    interets[i].setCenter(new LatLng(45.7561167, 4.8185359));
                     break;
-                case 1:
+                case 1: //jardin des curiosités
                     interets[i] = mMap.addCircle(cercleType1);
                     interets[i].setCenter(new LatLng(45.755072, 4.821873));
                     break;
-                case 2:
+                case 2: // places minimes
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.75617, 4.820167));
+                    interets[i].setCenter(new LatLng(45.7571, 4.8210));
                     break;
-                case 3:
+                case 3: //entrée théatre
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.756939, 4.819727));
+                    interets[i].setCenter(new LatLng(45.7591, 4.8213));
                     break;
-                case 4:
+                case 4: //théatreJeu
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.75645, 4.821691));
+                    interets[i].setCenter(new LatLng(45.7597, 4.8199));
                     break;
-                case 5:
+                case 5: //fourvière
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.758034, 4.821782));
+                    interets[i].setCenter(new LatLng(45.7624, 4.8219));
                     break;
-                case 6:
+                case 6: //entrée escalier
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.758713, 4.819754));
+                    interets[i].setCenter(new LatLng(45.7627, 4.8253));
                     break;
-                case 7:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762301, 4.822372));
-                    break;
-                case 8:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762678, 4.823016));
-                    break;
-                case 9:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.76107, 4.824555));
-                    break;
-                case 10:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762111, 4.82746));
-                    break;
-                default:
-                    System.out.println("ca passe ici");
             }
         }
-        interets[0].setVisible(true);
-        interets[1].setVisible(false);
-        interets[2].setVisible(false);
-        interets[3].setVisible(false);
-        interets[4].setVisible(false);
-        interets[5].setVisible(false);
-        interets[6].setVisible(false);
-        interets[7].setVisible(false);
-        interets[8].setVisible(false);
-        interets[9].setVisible(false);
-        interets[10].setVisible(false);
+        setInvisibleCircle();
+        gameStarted = false;
+        interets[mContent.numCercle].setVisible(true);
     }
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
-
-        Toast.makeText(this, "Location: "+latitude+"/"+longitude, Toast.LENGTH_LONG).show();
+        double latitude = location.getLatitude();
+        double longitude = location.getLongitude();
 
         if (mMap != null) {
             LatLng here = new LatLng(latitude, longitude);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here,15));
-            //mMap.addMarker(new MarkerOptions().position(here).title("Vous êtes ici"));
+            if (gameStarted !=true) {
+                interets[mContent.numCercle].setVisible(true);
+            }
             testPos(location);
+
         }
-
-
     }
 
     public void testPos(@NonNull Location location){
-        int res=0;
-        Toast.makeText(this, "ca passe ici", Toast.LENGTH_LONG).show();
-        //LatLng test = new LatLng(45.756796,4.816242);
         float results [] = new float [1];
-        while (!interets[res].isVisible() && res<10){
-            res++;
-        }
+
         Location.distanceBetween(
-                interets[res].getCenter().latitude, interets[res].getCenter().longitude,
+                interets[mContent.numCercle].getCenter().latitude, interets[mContent.numCercle].getCenter().longitude,
                 location.getLatitude(), location.getLongitude(),
                 results
         );
-        if (results[0]<interets[res].getRadius()){
-            interets[res].setVisible(false);
-            interets[res+1].setVisible(true);
-            mImage.setVisibility(View.VISIBLE);
+        if (results[0]<interets[mContent.numCercle].getRadius()){
+            setInvisibleCircle();
             fragmentManager.beginTransaction().hide(mapFragment).commit();
-            setGame(res);
-
+            mImage.setVisibility(View.VISIBLE);
+            setGame(mContent.numCercle);
+            mContent.incCercle();
         }
-        Toast.makeText(this, "ca passe la", Toast.LENGTH_LONG).show();
+    }
+
+    public void setInvisibleCircle(){
+        for (int i=0; i< interets.length; i++){
+            interets[i].setVisible(false);
+        }
     }
 
     public void setGame(int numero){
-        Intent intent;
         switch (numero){
             case 0:
-                intent = new Intent(HistoryActivity.this, CuriosityGameActivity.class);
-                startActivity(intent);
+                trionValidate = true;
                 break;
             case 1:
-                intent = new Intent(HistoryActivity.this, FourviereGameActivity.class);
-                startActivity(intent);
+                curiositesValidate = true;
+                gameStarted = true;
                 break;
+            case 3:
+                theatreValidate = true;
+                break;
+            case 4:
+                theatrePlayValidate = true;
+                break;
+            case 5:
+                fourviereValidate = true;
+                gameStarted = true;
+                break;
+            case 6:
+                trabouleValidate = true;
+                break;
+
         }
     }
 

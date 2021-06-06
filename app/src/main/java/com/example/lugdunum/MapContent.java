@@ -1,10 +1,10 @@
 package com.example.lugdunum;
 
-public class mapContent {
+public class MapContent {
 
     public int numCercle;
 
-    public mapContent(){
+    public MapContent(){
         numCercle = 0;
     }
 
