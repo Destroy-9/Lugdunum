@@ -168,7 +168,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 // create a TextView
                 TextView t = new TextView(HistoryActivity.this);
                 // set the gravity of text to top and center horizontal
-                t.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+                t.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL);
                 // set displayed text size
                 t.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24.f);
                 t.setTextColor(Color.parseColor("#870000"));
