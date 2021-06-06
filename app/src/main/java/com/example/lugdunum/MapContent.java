@@ -17,4 +17,9 @@ public class MapContent {
 
 
     }
+    public void incCercle(){
+        if (numCercle<6){
+            numCercle++;
+        }
+    }
 }

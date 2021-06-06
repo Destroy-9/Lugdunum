@@ -70,7 +70,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     Circle[] interets;
     FragmentManager fragmentManager;
     public final MapContent mContent = new MapContent();
-    public boolean gameStarted;
 
 
     /****************************************************************************************************
@@ -89,6 +88,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         nextBtn_function();
+                        setInvisibleCircle();
+                        mContent.incCercle();
+                        fragmentManager.beginTransaction().hide(mapFragment).commit();
+                        mImage.setVisibility(View.VISIBLE);
                     }
                 })
                 .setNegativeButton("Non", new DialogInterface.OnClickListener() {
@@ -347,6 +350,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     protected void onPause() {
         super.onPause();
 
+
         if (mLm != null){
             mLm.removeUpdates(this);
         }
@@ -363,61 +367,43 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 .strokeWidth(5)
                 .fillColor(0x55FF6666);
 
-        interets = new Circle[11];
+        interets = new Circle[7];
         for (int i = 0; i < interets.length; i++) {
             switch (i) {
-                case 0:
+                case 0: //fontaine trion
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.756773, 4.816251));
+                    interets[i].setCenter(new LatLng(45.7561167, 4.8185359));
                     break;
-                case 1:
+                case 1: //jardin des curiosités
                     interets[i] = mMap.addCircle(cercleType1);
                     interets[i].setCenter(new LatLng(45.755072, 4.821873));
                     break;
-                case 2:
+                case 2: // places minimes
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.75617, 4.820167));
+                    interets[i].setCenter(new LatLng(45.7571, 4.8210));
                     break;
-                case 3:
+                case 3: //entrée théatre
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.756939, 4.819727));
+                    interets[i].setCenter(new LatLng(45.7591, 4.8213));
                     break;
-                case 4:
+                case 4: //théatreJeu
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.75645, 4.821691));
+                    interets[i].setCenter(new LatLng(45.7597, 4.8199));
                     break;
-                case 5:
+                case 5: //fourvière
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.758034, 4.821782));
+                    interets[i].setCenter(new LatLng(45.7624, 4.8219));
                     break;
-                case 6:
+                case 6: //entrée escalier
                     interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.758713, 4.819754));
-                    break;
-                case 7:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762301, 4.822372));
-                    break;
-                case 8:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762678, 4.823016));
-                    break;
-                case 9:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.76107, 4.824555));
-                    break;
-                case 10:
-                    interets[i] = mMap.addCircle(cercleType1);
-                    interets[i].setCenter(new LatLng(45.762111, 4.82746));
+                    interets[i].setCenter(new LatLng(45.7627, 4.8253));
                     break;
             }
         }
         setInvisibleCircle();
-        gameStarted = false;
         Toast.makeText(this, "vive babar", Toast.LENGTH_LONG).show();
-        if (interets[mContent.numCercle].isVisible()==false){
-            interets[mContent.numCercle].setVisible(true);
-        }
+        interets[mContent.numCercle].setVisible(true);
+
     }
 
     @Override
@@ -430,9 +416,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         if (mMap != null) {
             LatLng here = new LatLng(latitude, longitude);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here,15));
-            if (interets[mContent.numCercle].isVisible()==false && gameStarted == false){
-                interets[mContent.numCercle].setVisible(true);
-            }
+            interets[mContent.numCercle].setVisible(true);
+
             testPos(location);
 
         }
@@ -451,7 +436,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
             fragmentManager.beginTransaction().hide(mapFragment).commit();
             mImage.setVisibility(View.VISIBLE);
             setGame(mContent.numCercle);
-            mContent.numCercle++;
+            mContent.incCercle();
         }
     }
 
@@ -468,16 +453,17 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 break;
             case 1:
                 curiositesValidate = true;
-                gameStarted = true;
                 break;
-            case 5:
+            case 3:
                 theatreValidate = true;
+                break;
+            case 4:
                 theatrePlayValidate = true;
                 break;
-            case 6:
+            case 5:
                 fourviereValidate = true;
                 break;
-            case 10:
+            case 6:
                 trabouleValidate = true;
                 break;
 
