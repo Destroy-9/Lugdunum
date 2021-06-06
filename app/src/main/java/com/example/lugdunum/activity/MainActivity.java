@@ -235,9 +235,10 @@ public class MainActivity extends AppCompatActivity {
                                 .enqueue(new ApolloCall.Callback<CreateUserMutation.Data>() {
                                     @Override
                                     public void onResponse(@NotNull Response<CreateUserMutation.Data> response) {
+                                        System.out.println("***"+ response.getErrors());
 
                                         // Username already exist in the data base
-                                        if (response.getData().createUser() == null){
+                                        if (response.getErrors() != null){
                                             message = "Ce pseudo existe déjà";
                                             mUserValidated = false;
                                         }
@@ -246,7 +247,9 @@ public class MainActivity extends AppCompatActivity {
                                         else {
                                             message = "Compte créé";
                                             mUserValidated = true;
-                                            mUser.setID(response.getData().createUser().toString());
+                                            mUser.setID(response.getData().createUser().id());
+                                            System.out.println("***"+ response.getData().createUser().id());
+
                                         }
                                     }
 
