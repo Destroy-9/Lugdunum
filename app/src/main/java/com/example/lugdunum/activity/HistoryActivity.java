@@ -110,6 +110,9 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                     public void onClick(DialogInterface dialog, int which) {
                         nextBtn_function();
                         setInvisibleCircle();
+                        if (mContent.numCercle == 1 || mContent.numCercle == 5){
+                            gameStarted = true;
+                        }
                         mContent.incCercle();
                         fragmentManager.beginTransaction().hide(mapFragment).commit();
                         mImage.setVisibility(View.VISIBLE);
