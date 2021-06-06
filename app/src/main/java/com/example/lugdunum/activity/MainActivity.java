@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
                                         // Authentication succeeded
                                         else {
                                             mUserValidated = true;
-                                            message = "Authentification réussite";
+                                            message = "Authentification réussie";
                                             mUser.setID(response.getData().login());
                                             System.out.println("*** Good "+ response.getData().toString());
                                         }

@@ -67,4 +67,10 @@
         Est ta destinée.\n\n\n
         <b>Guy CREQUIE</b>
         </string>
+    <string name="switch_map_button">switch_map_button</string>
+    <string name="next">Suivant</string>
+    <string name="next_button">next_button</string>
+    <string name="previous">Précédent</string>
+    <string name="previous_button">previous_button</string>
+    <string name="rhino_arms_crossed">rhino_arms_crossed</string>
 </resources>

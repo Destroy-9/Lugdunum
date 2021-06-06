@@ -27,7 +27,8 @@
             android:src="@drawable/switch_map_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/switch_map_button" />
 
         <ImageView
             android:id="@+id/nextButton"
@@ -37,9 +38,10 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
             android:src="@drawable/next_button"
-            android:text="Suivant"
+            android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/next_button" />
 
         <ImageView
             android:id="@+id/previousButton"
@@ -49,9 +51,10 @@
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="15dp"
             android:src="@drawable/previous_button"
-            android:text="Précédent"
+            android:text="@string/previous"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/previous_button" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="wrap_content"
@@ -81,9 +84,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+        <androidx.fragment.app.FragmentContainerView
 
-            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
@@ -101,7 +103,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/poem"
                 android:textColor="#870000"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +119,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/rhino_arms_crossed" />
+            app:srcCompat="@drawable/rhino_arms_crossed"
+            android:contentDescription="@string/rhino_arms_crossed" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
