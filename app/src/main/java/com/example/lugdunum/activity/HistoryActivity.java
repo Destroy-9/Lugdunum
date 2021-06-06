@@ -70,6 +70,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     private boolean theatrePlayValidate;
     private boolean fourviereValidate;
     private boolean trabouleValidate;
+    private boolean mMapVisible = false;
     private User mUser;
 
     // Partie Map
@@ -94,6 +95,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
      ****************************************************************************************************
      ****************************************************************************************************/
     public void nonValidate() {
+        if (mMapVisible){
+            mImage.setVisibility(View.VISIBLE);
+            removeVisibility();
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle("Attention !")
@@ -117,12 +122,18 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
     public void nextBtn_function(){
         if (gameNumber == 1) {
+            mImage.setVisibility(View.VISIBLE);
+            removeVisibility();
             Intent intent = new Intent(HistoryActivity.this, CuriosityGameActivity.class);
             startActivity(intent);
         } else if (gameNumber == 2) {
+            mImage.setVisibility(View.VISIBLE);
+            removeVisibility();
             Intent intent = new Intent(HistoryActivity.this, FourviereGameActivity.class);
             startActivity(intent);
         } else if (gameNumber == 3) {
+            mImage.setVisibility(View.VISIBLE);
+            removeVisibility();
             HistoryActivity.this.finish();
         }
         mNextBtn.setImageResource(R.drawable.next_button);
@@ -297,13 +308,16 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                         mPoem.setVisibility(View.GONE);
                     }
                     fragmentManager.beginTransaction().show(mapFragment).commit();
+                    System.out.println("***** In visible");
+                    fragmentManager.beginTransaction().attach(mapFragment).commit();
+                    mMapVisible = true;
                 }
                 else {
                     mImage.setVisibility(View.VISIBLE);
                     if ((Integer)mImage.getTag() == 0 && mPoem.getVisibility() == View.GONE){
                         mPoem.setVisibility(View.VISIBLE);
                     }
-                    fragmentManager.beginTransaction().hide(mapFragment).commit();
+                    removeVisibility();
                 }
             }
         });
@@ -545,4 +559,12 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         super.onDestroy();
         timer.cancel();
     }
+
+    public void removeVisibility(){
+        fragmentManager.beginTransaction().hide(mapFragment).commit();
+        System.out.println("***** In gone");
+        fragmentManager.beginTransaction().detach(mapFragment).commit();
+        mMapVisible = false;
+    }
+
 }
