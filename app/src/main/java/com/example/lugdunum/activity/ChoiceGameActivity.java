@@ -13,7 +13,7 @@ import com.example.lugdunum.games.FourviereGameActivity;
 
 public class ChoiceGameActivity extends AppCompatActivity {
 
-    private Button mGoCuriosites;
+    private Button mGoCuriosities;
     private Button mGoFourviere;
 
     @Override
@@ -32,8 +32,8 @@ public class ChoiceGameActivity extends AppCompatActivity {
         });
 
         //creation of the link between curiositygame and fourvieregame
-        mGoCuriosites = (Button) findViewById(R.id.button_game_1);
-        mGoCuriosites.setOnClickListener(new View.OnClickListener() {
+        mGoCuriosities = (Button) findViewById(R.id.button_game_1);
+        mGoCuriosities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ChoiceGameActivity.this, CuriosityGameActivity.class);

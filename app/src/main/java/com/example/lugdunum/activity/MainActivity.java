@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
+
 import com.example.lugdunum.Apollo;
 import com.example.lugdunum.CreateUserMutation;
 import com.example.lugdunum.LoginQuery;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean mOnLogin;
     private boolean mUserValidated = false;
     private String message = "Veuillez attendre quelques secondes\nActivation du serveur";
+
 
     // Method which permits to change the display of the buttons on the screen
     void changeVisibility (boolean playButtonBecomeVisible){
@@ -189,13 +191,11 @@ public class MainActivity extends AppCompatActivity {
                                .enqueue(new ApolloCall.Callback<LoginQuery.Data>() {
                                 @Override
                                 public void onResponse(@NotNull Response<LoginQuery.Data> response) {
-                                    System.out.println("***"+ response.getData().login());
 
                                     // Wrong username given, not found in the data base
                                     if (Objects.requireNonNull(response.getData()).login().equals("1")) {
                                         mUserValidated = false;
                                         message = "Erreur de pseudo";
-                                        System.out.println("*** Username wrong "+ response.getData().toString());
                                     }
                                     else {
 
@@ -203,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
                                         if (Objects.requireNonNull(response.getData()).login().equals("2")) {
                                             mUserValidated = false;
                                             message = "Erreur de mot de passe";
-                                            System.out.println("*** Password wrong "+ response.getData().toString());
                                         }
 
                                         // Authentication succeeded
@@ -211,7 +210,6 @@ public class MainActivity extends AppCompatActivity {
                                             mUserValidated = true;
                                             message = "Authentification réussie";
                                             mUser.setID(response.getData().login());
-                                            System.out.println("*** Good "+ response.getData().toString());
                                         }
                                     }
                                 }
@@ -235,7 +233,6 @@ public class MainActivity extends AppCompatActivity {
                                 .enqueue(new ApolloCall.Callback<CreateUserMutation.Data>() {
                                     @Override
                                     public void onResponse(@NotNull Response<CreateUserMutation.Data> response) {
-                                        System.out.println("***"+ response.getErrors());
 
                                         // Username already exist in the data base
                                         if (response.getErrors() != null){
@@ -248,8 +245,6 @@ public class MainActivity extends AppCompatActivity {
                                             message = "Compte créé";
                                             mUserValidated = true;
                                             mUser.setID(response.getData().createUser().id());
-                                            System.out.println("***"+ response.getData().createUser().id());
-
                                         }
                                     }
 

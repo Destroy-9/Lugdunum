@@ -15,7 +15,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -25,12 +24,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
+
 import com.example.lugdunum.MapContent;
 import com.example.lugdunum.R;
 import com.example.lugdunum.Scenario;
@@ -55,7 +54,7 @@ import java.util.TimerTask;
 
 public class HistoryActivity extends FragmentActivity implements LocationListener {
 
-    // Partie histoire
+    // History Part
     private TextSwitcher mTextHistory;
     private ImageView mNextBtn;
     private ImageView mBackBtn;
@@ -75,7 +74,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     private boolean mMapVisible = false;
     private User mUser;
 
-    // Partie Map
+    // Map Part
     private LocationManager mLm;
     public static final int PERMS_CALL_ID = 1234;
     private GoogleMap mMap;
@@ -93,7 +92,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     /****************************************************************************************************
      ****************************************************************************************************
      *
-     **********                              Partie HISTOIRE                                   **********
+     **********                              HISTORY Part                                   *************
      *
      ****************************************************************************************************
      ****************************************************************************************************/
@@ -165,8 +164,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-
-        // initialization of booleans
+        // Initialization of booleans
         trionValidate = false;
         curiositesValidate = false;
         theatreValidate = false;
@@ -174,7 +172,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         fourviereValidate = false;
         trabouleValidate = false;
 
-        // get The references if Button and TextSwitcher
+        // Get The references if Button and TextSwitcher
         mNextBtn = (ImageView) findViewById(R.id.nextButton);
         mBackBtn = (ImageView) findViewById(R.id.previousButton);
         mTextHistory = (TextSwitcher) findViewById(R.id.historySwitcher);
@@ -185,7 +183,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mTextHistory.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                // TODO Auto-generated method stub
                 // create a TextView
                 TextView t = new TextView(HistoryActivity.this);
                 // set the gravity of text to top and center horizontal
@@ -203,7 +200,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         Animation in_back = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
         Animation out_back = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
 
-        // set the animation type to TextSwitcher
+        // Set the animation type to TextSwitcher
         mTextHistory.setInAnimation(in);
         mTextHistory.setOutAnimation(out);
 
@@ -212,10 +209,10 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         scenario = new Scenario(mUser.getPseudo());
         history = scenario.getHistory();
         messageCount = history.length;
-        // to keep current Index of textID array
+        // To keep current Index of textID array
         currentIndex = -1;
 
-        //text and image appear on start
+        //Text and image appear on start
         currentIndex++;
         mTextHistory.setCurrentText(history[currentIndex]);
         mImage.setImageResource(scenario.getCurrentRhino());
@@ -255,7 +252,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         mBackBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 mTextHistory.setInAnimation(in_back);
                 mTextHistory.setOutAnimation(out_back);
 
@@ -299,7 +295,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
  /**************************************************************************************************
   **************************************************************************************************
   *
-  *********                              Partie MAP                                        *********
+  *********                              MAP Part                                        ***********
   *
   **************************************************************************************************
   **************************************************************************************************/
@@ -317,7 +313,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                         mPoem.setVisibility(View.GONE);
                     }
                     fragmentManager.beginTransaction().show(mapFragment).commit();
-                    System.out.println("***** In visible");
                     fragmentManager.beginTransaction().attach(mapFragment).commit();
                     mMapVisible = true;
                 }
@@ -330,14 +325,14 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
                 }
             }
         });
+        
         // Send the location to the server periodically
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 sendLocalisation();
-                //System.out.println("QQQ " +Thread.currentThread().getName());
             }
-        }, 10000, 60000);
+        }, 10000, 120000);
     }
 
     @Override
@@ -383,7 +378,7 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
             public void onMapReady(GoogleMap googleMap) {
                 HistoryActivity.this.mMap = googleMap;
                 googleMap.setMyLocationEnabled(true);
-                afficheCerles();
+                displayCircles();
             }
         });
     }
@@ -398,18 +393,18 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
     }
 
 
-    public void afficheCerles() {
+    public void displayCircles() {
 
-        CircleOptions cercleType1 = new CircleOptions();
-        cercleType1
+        CircleOptions circleType1 = new CircleOptions();
+        circleType1
                 .center(new LatLng(45.756773, 4.816251))
                 .radius(100)
                 .strokeColor(Color.RED)
                 .strokeWidth(5)
                 .fillColor(0x55FF6666);
 
-        CircleOptions cercleType2 = new CircleOptions();
-        cercleType2
+        CircleOptions circleType2 = new CircleOptions();
+        circleType2
                 .center(new LatLng(45.756773, 4.816251))
                 .radius(33)
                 .strokeColor(Color.RED)
@@ -420,31 +415,31 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
         for (int i = 0; i < interets.length; i++) {
             switch (i) {
                 case 0: //fontaine trion
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(circleType1);
                     interets[i].setCenter(new LatLng(45.7561167, 4.8185359));
                     break;
                 case 1: //jardin des curiosités
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(circleType1);
                     interets[i].setCenter(new LatLng(45.755072, 4.821873));
                     break;
                 case 2: // places minimes
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(circleType1);
                     interets[i].setCenter(new LatLng(45.7571, 4.8210));
                     break;
                 case 3: //entrée théatre
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(circleType1);
                     interets[i].setCenter(new LatLng(45.7591, 4.8213));
                     break;
                 case 4: //théatreJeu
-                    interets[i] = mMap.addCircle(cercleType2);
+                    interets[i] = mMap.addCircle(circleType2);
                     interets[i].setCenter(new LatLng(45.7597, 4.8199));
                     break;
                 case 5: //fourvière
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(circleType1);
                     interets[i].setCenter(new LatLng(45.7624, 4.8219));
                     break;
                 case 6: //entrée escalier
-                    interets[i] = mMap.addCircle(cercleType1);
+                    interets[i] = mMap.addCircle(circleType1);
                     interets[i].setCenter(new LatLng(45.7627, 4.8253));
                     break;
             }
@@ -563,7 +558,6 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
     public void removeVisibility(){
         fragmentManager.beginTransaction().hide(mapFragment).commit();
-        System.out.println("***** In gone");
         fragmentManager.beginTransaction().detach(mapFragment).commit();
         mMapVisible = false;
     }

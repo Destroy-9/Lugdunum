@@ -18,7 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        //creation of the link between SettingsActivity and RulesActivity
+        // Creation of the link between SettingsActivity and RulesActivity
         mRulesButton = (ImageView) findViewById(R.id.rulesButton);
         mRulesButton.setOnClickListener(new View.OnClickListener() {
             @Override

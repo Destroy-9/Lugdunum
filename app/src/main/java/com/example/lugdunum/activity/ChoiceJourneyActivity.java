@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.example.lugdunum.R;
 import com.example.lugdunum.User;
 
-import org.w3c.dom.Text;
 
 public class ChoiceJourneyActivity extends AppCompatActivity {
 
@@ -68,7 +67,7 @@ public class ChoiceJourneyActivity extends AppCompatActivity {
         });
 
 
-        //creation of the link between mainActivity and ChoiceJourneyActivity
+        // Creation of the link between mainActivity and ChoiceJourneyActivity
         mGameButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ChoiceJourneyActivity.this, ChoiceGameActivity.class);
