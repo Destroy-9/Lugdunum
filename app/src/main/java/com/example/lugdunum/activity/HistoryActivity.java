@@ -451,8 +451,8 @@ public class HistoryActivity extends FragmentActivity implements LocationListene
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
 
         if (mMap != null) {
             LatLng here = new LatLng(latitude, longitude);
