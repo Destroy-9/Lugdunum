@@ -76,12 +76,12 @@
 
     <TextView
         android:id="@+id/myTextView"
-        android:layout_width="179dp"
-        android:layout_height="87dp"
-        android:text="Trouve la tour Crayon dans l'image...."
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:text="Regarde autour de toi et essaye de trouver la tour Crayon dans l'image...."
+        android:textColor="#870000"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#870000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,12 +103,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.181"
         android:visibility="gone"/>
+    <TextView
+        android:id="@+id/wellSpotted2"
+        android:layout_width="135dp"
+        android:layout_height="34dp"
+        android:text="Trouvé !!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#870000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/findBridge"
         android:layout_width="313dp"
         android:layout_height="69dp"
-        android:text="De même, retrouve le pont dans l'image !!"
+        android:text="De même, essaye de retrouver le pont dans l'image !!"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#870000"

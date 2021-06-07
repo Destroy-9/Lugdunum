@@ -32,6 +32,7 @@ public class CuriosityGameActivity extends Activity {
     private ConstraintLayout mLayout;
     private TextView mytxtvw;
     private TextView mTextViewWellSpotted;
+    private TextView mTextViewWellSpotted2;
     private TextView mTextViewFindBridge;
     private Toast toast;
 
@@ -73,6 +74,7 @@ public class CuriosityGameActivity extends Activity {
         mButtonEnd = (Button) findViewById(R.id.nextEnd);
         mytxtvw=(TextView)findViewById(R.id.myTextView);
         mTextViewWellSpotted =(TextView)findViewById(R.id.wellSpotted);
+        mTextViewWellSpotted2 =(TextView)findViewById(R.id.wellSpotted2);
         mTextViewFindBridge =(TextView)findViewById(R.id.findBridge);
         mLayout = findViewById(R.id.ConstraintLayout);
 
@@ -97,6 +99,8 @@ public class CuriosityGameActivity extends Activity {
                 }
                 mTextViewWellSpotted.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
                                              ? View.GONE : View.VISIBLE);
+                mTextViewWellSpotted2.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
+                                                           ? View.GONE : View.INVISIBLE);
                 mytxtvw.setVisibility((mytxtvw.getVisibility() == View.VISIBLE)
                                               ? View.GONE : View.INVISIBLE);
                 mButtonWrongTouch.setVisibility(View.INVISIBLE);
@@ -113,6 +117,8 @@ public class CuriosityGameActivity extends Activity {
             public void onClick(View v) {
                 mTextViewWellSpotted.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
                                              ? View.GONE : View.INVISIBLE);
+                mTextViewWellSpotted2.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
+                                                            ? View.GONE : View.INVISIBLE);
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                                             ? View.GONE : View.VISIBLE);
                 mButtonMoreInfo.setVisibility(View.GONE);
@@ -127,6 +133,8 @@ public class CuriosityGameActivity extends Activity {
         mButtonBridgeHidden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mTextViewWellSpotted2.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
+                                                            ? View.GONE : View.VISIBLE);
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                                             ? View.GONE : View.INVISIBLE);
                 mLayout.setBackgroundResource(R.drawable.curiosity_with_bridge);
@@ -138,22 +146,28 @@ public class CuriosityGameActivity extends Activity {
         mButtonNextGameIsChair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mTextViewWellSpotted2.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
+                                                            ? View.GONE : View.INVISIBLE);
                 mLayout.setBackgroundResource(R.drawable.curiosity_without_chair);
                 mTextViewFindBridge.setText("Il manque une chaise ici, peux-tu la trouver ?");
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.INVISIBLE)
                         ? View.GONE : View.VISIBLE);
                 mButtonChairHidden.setVisibility(View.VISIBLE);
                 mButtonNextGameIsChair.setVisibility(View.INVISIBLE);
+                mButtonBridgeHidden.setVisibility(View.INVISIBLE);
             }
         });
         mButtonChairHidden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mTextViewWellSpotted2.setVisibility((mTextViewWellSpotted.getVisibility() == View.VISIBLE)
+                                                            ? View.GONE : View.INVISIBLE);
                 mTextViewFindBridge.setVisibility((mTextViewFindBridge.getVisibility() == View.VISIBLE)
                         ? View.GONE : View.INVISIBLE);
                 mLayout.setBackgroundResource(R.drawable.curiosity_with_chair);
                 mButtonCloseView.setVisibility(View.VISIBLE);
                 mButtonEnd.setVisibility(View.VISIBLE);
+                mButtonBridgeHidden.setVisibility(View.INVISIBLE);
             }
         });
 
