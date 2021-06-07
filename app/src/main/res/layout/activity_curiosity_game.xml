@@ -24,24 +24,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.38" />
 
-    <Button
+    <ImageView
         android:id="@+id/nextGameIsBridge"
-        android:layout_width="145dp"
-        android:layout_height="47dp"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
         android:layout_marginTop="552dp"
-        android:text="Suivant"
+        android:src="@drawable/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
 
-    <Button
+    <ImageView
         android:id="@+id/moreInfo"
-        android:layout_width="110dp"
-        android:layout_height="34dp"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
         android:layout_marginTop="324dp"
-        android:text="Plus d'info"
+        android:src="@drawable/more_info_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,14 +61,14 @@
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
 
-    <Button
+    <ImageView
         android:id="@+id/nextGameIsChair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
         android:layout_marginTop="536dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Suivant"
+        android:src="@drawable/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
@@ -133,14 +133,14 @@
         app:layout_constraintVertical_bias="0.45"
         android:visibility="gone"/>
 
-    <Button
+    <ImageView
         android:id="@+id/closeView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:src="@drawable/close_vision_button"
         android:layout_marginStart="140dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="388dp"
-        android:text="Vue de près"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
@@ -158,14 +158,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.191" />
 
-    <Button
+    <ImageView
         android:id="@+id/nextEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
         android:layout_marginTop="536dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Suivant"
+        android:src="@drawable/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
